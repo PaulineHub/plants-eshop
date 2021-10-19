@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  color: #212806;
+  background-color: #fcf8f3;
+  line-height: 1;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif; }
+
+h1 {
+  font-size: 70px;
+  color: #fcf8f3;
+  font-family: 'Playfair Display', serif; }
+
+h2 {
+  font-size: 60px;
+  color: #212806;
+  font-family: 'Playfair Display', serif;
+  font-weight: 100; }
+
+h3 {
+  font-size: 50px;
+  color: #212806;
+  font-family: 'Playfair Display', serif;
+  font-weight: 100;
+  margin-bottom: 10px; }
+
+h4 {
+  font-size: 25px;
+  color: #212806;
+  font-family: 'Playfair Display', serif;
+  font-weight: 100;
+  margin: 15px; }
+
+.btn {
+  background-color: #2B390A;
+  border: 1px solid #2B390A;
+  border-radius: 40px;
+  color: #fcf8f3;
+  font-size: 1.25rem;
+  text-decoration: none;
+  padding: 0.5em 1.5em 0.6em;
+  width: fit-content;
+  cursor: pointer; }
+  .btn--clair {
+    background-color: #fcf8f3;
+    color: #2B390A; }
+    .btn--clair .fa-chevron-right {
+      color: #2B390A; }
+
+nav {
+  color: #fcf8f3;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 2; }
+  nav ul {
+    list-style-type: none; }
+  nav .menu {
+    flex-grow: 2; }
+  nav .logo {
+    padding-left: 30px; }
+  nav .menuPrincipal {
+    margin: 0;
+    line-height: 40px;
+    display: flex;
+    flex-direction: row; }
+    nav .menuPrincipal .menuPrincipalLi {
+      padding: 0px 15px;
+      font-size: 18px;
+      font-family: 'Playfair Display', serif; }
+
+.fas-wrapper {
+  height: 32px;
+  margin-right: 30px; }
+  .fas-wrapper .fa-search, .fas-wrapper .fa-shopping-bag {
+    font-size: 25px;
+    padding: 0px 15px;
+    font-family: 'FontAwesome';
+    color: #fcf8f3;
+    cursor: pointer; }
+
+.main-hero-section {
+  position: relative;
+  height: 1000px; }
+  .main-hero-section .hero-bcg-wrapper {
+    position: absolute;
+    background: url("./img/boutique-plantes.jpg") no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 1000px;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .main-hero-section .titleContent {
+    position: absolute;
+    width: 40%;
+    top: 500px;
+    padding-left: 60px; }
+
+.review-ruban {
+  background-color: #f8f0e7;
+  height: 80px;
+  width: 70%;
+  z-index: 1;
+  position: absolute;
+  left: 15%;
+  bottom: -40px;
+  text-align: center; }
+  .review-ruban p {
+    margin-top: 25px; }
+
+.stars-block {
+  margin: 0px 10px; }
+
+.fa-star {
+  color: goldenrod; }
+
+.concept-section {
+  background-color: #fcf8f3;
+  position: relative;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .concept-section .wrapper-concept-section-title {
+    width: 60%;
+    height: 340px;
+    text-align: center; }
+  .concept-section .btn--clair {
+    right: 45%; }
+
+.concept-image-container {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%; }
+  .concept-image-container--1 {
+    background-image: url("./img/cercle-femme.jpg");
+    top: 80px;
+    left: 150px; }
+  .concept-image-container--2 {
+    background-image: url("./img/cercle-home-jungle.jpg");
+    bottom: 90px;
+    left: 310px; }
+  .concept-image-container--3 {
+    background-image: url("./img/cercle-plante.jpg");
+    top: 200px;
+    right: 150px; }
+
+.best-sellers-section {
+  background-color: #fcf8f3;
+  position: relative;
+  height: 550px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 70px; }
+
+.description-best-sellers-section {
+  display: flex;
+  flex-direction: column; }
+
+.btn--best-seller {
+  position: absolute;
+  bottom: 30px; }
+
+.wrapper-best-sellers-selection {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center; }
+
+.best-seller-product {
+  margin-top: 10px; }
+
+.content-best-seller {
+  margin-top: 20px; }
+
+.best-seller-img {
+  background-image: url("./img/plantes5-carre430.jpg");
+  height: 400px;
+  width: 430px; }
+
+.arrow-wrapper {
+  position: absolute;
+  top: 0px;
+  right: 50px;
+  display: flex; }
+  .arrow-wrapper .arrows {
+    padding: 0px 10px;
+    cursor: pointer; }
+
+.review-section {
+  background-color: #f8f0e7;
+  position: relative;
+  height: 400px; }
+
+.explore-products-section {
+  background-color: #fcf8f3;
+  position: relative;
+  height: 400px; }
+
+.instagram-section {
+  background-color: #fcf8f3;
+  position: relative;
+  height: 400px; }
+
+footer {
+  background-color: #2B390A;
+  position: relative;
+  height: 100px; }
+
+/*# sourceMappingURL=styles.css.map */

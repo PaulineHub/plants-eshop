@@ -8,6 +8,7 @@ $beige-rose: #f8f0e7;
 $beige-fonce:#e0cfba;
 $beige-clair: #fcf8f3;
 $black : #212806;
+$star : goldenrod;
 
 body {
   margin: 0;
@@ -33,7 +34,7 @@ h2 {
 }
 
 h3 {
-    font-size: 50px;
+    font-size: 45px;
     color: $black;
     font-family: 'Playfair Display', serif;
     font-weight: 100;
@@ -158,7 +159,8 @@ nav {
   margin: 0px 10px;
 }
 .fa-star {
-  color: goldenrod;
+  color: $star;
+  font-size: 24px;
 }
 
 //***CONCEPT SECTION***//
@@ -211,6 +213,7 @@ nav {
   display: flex;
   flex-direction: row;
   padding-left: 70px;
+  margin: 50px 0px;
 }
 
 .description-best-sellers-section {
@@ -257,12 +260,63 @@ nav {
   }
 }
 
-//***REVIEW SECTION***//
+//***TESTIMONIAL SECTION***//
 
-.review-section {
+.testimonial-section {
   background-color: $beige-rose;
   position:relative;
-  height: 400px;
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  margin: 150px 0px;
+}
+
+.testimonial-split-img {
+  background: url('./img/testimonial-plants.jpeg') no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 50%;
+}
+
+.testimonial-split-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.testimonial-wrapper {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .testimonial-paragraph {
+      text-align: center;
+      
+    }
+    .testimonial-user {
+      margin-top: 20px;
+      text-transform: uppercase;
+    }
+    .slider-testimonial {
+      display: flex;
+      justify-content: space-between;
+      height: 12px;
+      margin-top: 20px;
+
+      .slider-dot{
+        border: 1px solid $black;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        margin: 0px 3px;
+        &--active {
+          background-color: $black;
+        }
+      }
+    }
 }
 
 //***EXPLORE PRODUCTS SECTION***//
@@ -270,7 +324,39 @@ nav {
 .explore-products-section {
   background-color: $beige-clair;
   position:relative;
-  height: 400px;
+  height: 740px;
+  width: 1450px;
+  margin: 100px auto;
+  .explore-products-heading {
+    margin-bottom: 40px;
+  }
+}
+
+.explore-products-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.explore-product-category {
+  width: 470px;
+  height: 740px;
+  .explore-product-img {
+    background-size: cover;
+    width: 470px;
+    height: 520px;
+    &--plantes {
+      background : url(./img/explore-plantes-470.jpg) no-repeat;
+    }
+    &--cactus {
+      background : url(./img/explore-cactus-470.jpg) no-repeat;
+    }
+    &--fleurs-sechees {
+      background : url(./img/fleurs-sechees-X.jpg) no-repeat;
+    }
+  }
+  .explore-product-category-title {
+    text-align: center;
+  }
 }
 
 //***INSTAGRAM SECTION***//

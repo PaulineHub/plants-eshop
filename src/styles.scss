@@ -10,9 +10,12 @@ $beige-clair: #fcf8f3;
 $black : #212806;
 $star : goldenrod;
 
-body {
+* {
   margin: 0;
   padding: 0;
+}
+
+body {
   color: $black;
   background-color: $beige-clair;
   line-height: 1;
@@ -21,32 +24,38 @@ body {
 }
 
 h1 {
-    font-size: 70px;
+    font-size: 4.5em;
     color: $beige-clair ;
     font-family: 'Playfair Display', serif;
+    margin-bottom: 50px;
 }
 
 h2 {
-    font-size: 60px;
+    font-size: 3.75em;
     color: $black;
     font-family: 'Playfair Display', serif;
     font-weight: 100;
+    margin-bottom: 50px;
 }
 
 h3 {
-    font-size: 45px;
+    font-size: 3em;
     color: $black;
     font-family: 'Playfair Display', serif;
     font-weight: 100;
-    margin-bottom: 10px;
+    margin: 30px 0px;
 }
 
 h4 {
-  font-size: 25px;
+  font-size: 1.75em;
   color: $black;
   font-family: 'Playfair Display', serif;
   font-weight: 100;
   margin: 15px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .btn {
@@ -69,6 +78,7 @@ h4 {
 }
 
 //***NAVIGATION***//
+
 nav {
   color:$beige-clair ;
   font-weight: bold;
@@ -88,7 +98,13 @@ nav {
     flex-grow:2;
   }
   .logo {
-    padding-left: 30px;
+    padding: 0 30px;
+    font-size: 30px;
+    color: $beige-clair;
+    font-family: 'Playfair Display', serif;
+    font-weight: 100;
+    margin-bottom: 10px;
+
   }
   .menuPrincipal {
     margin: 0;
@@ -114,6 +130,16 @@ nav {
   cursor: pointer;
   }
 }
+
+.heading-wrapper-centered {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 3.5em;
+  height: 340px;
+  text-align: center;
+}
+
 
 //***HERO SECTION***//
 
@@ -172,11 +198,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  .wrapper-concept-section-title {
-    width:60%;
-    height: 340px;
-    text-align: center;
-  }
+
   .btn--clair {
     right: 45%;
   }
@@ -341,21 +363,33 @@ nav {
   width: 470px;
   height: 740px;
   .explore-product-img {
-    background-size: cover;
     width: 470px;
     height: 520px;
     &--plantes {
       background : url(./img/explore-plantes-470.jpg) no-repeat;
+      background-position-y: -60px;
     }
     &--cactus {
       background : url(./img/explore-cactus-470.jpg) no-repeat;
     }
     &--fleurs-sechees {
-      background : url(./img/fleurs-sechees-X.jpg) no-repeat;
+      background : url(./img/explore-fleurs-470.jpg) no-repeat center;
     }
   }
   .explore-product-category-title {
     text-align: center;
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    &--plantes {
+          background-color: rgb(248, 236, 223);
+    }
+    &--cactus {
+          background-color: rgb(224, 230, 227);
+    }
+    &--fleurs-sechees {
+          background-color: rgb(239, 239, 240);
+    }
   }
 }
 
@@ -365,6 +399,13 @@ nav {
   background-color: $beige-clair;
   position:relative;
   height: 400px;
+}
+
+.divider-line {
+  width: 24px;
+  height: 2px;
+  margin: 2em auto;
+  background-color: #8e9373;
 }
 
 //***FOOTER***//

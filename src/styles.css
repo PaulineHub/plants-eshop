@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-body {
+* {
   margin: 0;
-  padding: 0;
+  padding: 0; }
+
+body {
   color: #212806;
   background-color: #fcf8f3;
   line-height: 1;
@@ -9,29 +11,34 @@ body {
   font-family: 'Open Sans', sans-serif; }
 
 h1 {
-  font-size: 70px;
+  font-size: 4.5em;
   color: #fcf8f3;
-  font-family: 'Playfair Display', serif; }
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 50px; }
 
 h2 {
-  font-size: 60px;
-  color: #212806;
-  font-family: 'Playfair Display', serif;
-  font-weight: 100; }
-
-h3 {
-  font-size: 45px;
+  font-size: 3.75em;
   color: #212806;
   font-family: 'Playfair Display', serif;
   font-weight: 100;
-  margin-bottom: 10px; }
+  margin-bottom: 50px; }
+
+h3 {
+  font-size: 3em;
+  color: #212806;
+  font-family: 'Playfair Display', serif;
+  font-weight: 100;
+  margin: 30px 0px; }
 
 h4 {
-  font-size: 25px;
+  font-size: 1.75em;
   color: #212806;
   font-family: 'Playfair Display', serif;
   font-weight: 100;
   margin: 15px; }
+
+a {
+  text-decoration: none; }
 
 .btn {
   background-color: #2B390A;
@@ -66,7 +73,12 @@ nav {
   nav .menu {
     flex-grow: 2; }
   nav .logo {
-    padding-left: 30px; }
+    padding: 0 30px;
+    font-size: 30px;
+    color: #fcf8f3;
+    font-family: 'Playfair Display', serif;
+    font-weight: 100;
+    margin-bottom: 10px; }
   nav .menuPrincipal {
     margin: 0;
     line-height: 40px;
@@ -86,6 +98,14 @@ nav {
     font-family: 'FontAwesome';
     color: #fcf8f3;
     cursor: pointer; }
+
+.heading-wrapper-centered {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 3.5em;
+  height: 340px;
+  text-align: center; }
 
 .main-hero-section {
   position: relative;
@@ -131,10 +151,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center; }
-  .concept-section .wrapper-concept-section-title {
-    width: 60%;
-    height: 340px;
-    text-align: center; }
   .concept-section .btn--clair {
     right: 45%; }
 
@@ -263,22 +279,37 @@ nav {
   width: 470px;
   height: 740px; }
   .explore-product-category .explore-product-img {
-    background-size: cover;
     width: 470px;
     height: 520px; }
     .explore-product-category .explore-product-img--plantes {
-      background: url(./img/explore-plantes-470.jpg) no-repeat; }
+      background: url(./img/explore-plantes-470.jpg) no-repeat;
+      background-position-y: -60px; }
     .explore-product-category .explore-product-img--cactus {
       background: url(./img/explore-cactus-470.jpg) no-repeat; }
     .explore-product-category .explore-product-img--fleurs-sechees {
-      background: url(./img/fleurs-sechees-X.jpg) no-repeat; }
+      background: url(./img/explore-fleurs-470.jpg) no-repeat center; }
   .explore-product-category .explore-product-category-title {
-    text-align: center; }
+    text-align: center;
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 15px; }
+    .explore-product-category .explore-product-category-title--plantes {
+      background-color: #f8ecdf; }
+    .explore-product-category .explore-product-category-title--cactus {
+      background-color: #e0e6e3; }
+    .explore-product-category .explore-product-category-title--fleurs-sechees {
+      background-color: #efeff0; }
 
 .instagram-section {
   background-color: #fcf8f3;
   position: relative;
   height: 400px; }
+
+.divider-line {
+  width: 24px;
+  height: 2px;
+  margin: 2em auto;
+  background-color: #8e9373; }
 
 footer {
   background-color: #2B390A;

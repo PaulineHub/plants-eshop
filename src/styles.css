@@ -6,6 +6,7 @@
 body {
   color: #212806;
   background-color: #fcf8f3;
+  font-size: 1vw;
   line-height: 1;
   font-weight: 400;
   font-family: 'Open Sans', sans-serif; }
@@ -39,14 +40,18 @@ h4 {
 
 h5 {
   margin-top: 0;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   font-family: 'Playfair Display', serif;
   font-size: 1.25em;
   line-height: 120%;
   font-weight: 300; }
 
+p {
+  line-height: 1.5em; }
+
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #fcf8f3; }
 
 ul {
   list-style-type: none; }
@@ -67,6 +72,21 @@ ul {
     .btn--clair .fa-chevron-right {
       color: #212806; }
 
+@media screen and (max-width: 991px) {
+  body {
+    font-size: 16px; }
+
+  h1 {
+    font-size: 3.5em; }
+
+  h2 {
+    font-size: 2.75em; }
+
+  h3 {
+    font-size: 2.5em; }
+
+  h4 {
+    font-size: 1.5em; } }
 nav {
   color: #fcf8f3;
   font-weight: bold;
@@ -88,7 +108,7 @@ nav {
     flex-direction: row; }
     nav .menuPrincipal .menuPrincipalLi {
       padding: 0px 15px;
-      font-size: 18px;
+      font-size: 1.25em;
       font-family: 'Playfair Display', serif; }
 
 .logo {
@@ -102,27 +122,44 @@ nav {
 .fas-wrapper {
   height: 32px;
   margin-right: 30px; }
-  .fas-wrapper .fa-search, .fas-wrapper .fa-shopping-bag {
+  .fas-wrapper .fa-search,
+  .fas-wrapper .fa-shopping-bag, .fas-wrapper .fa-bars {
     font-size: 25px;
     padding: 0px 15px;
     font-family: 'FontAwesome';
     color: #fcf8f3;
     cursor: pointer; }
+  .fas-wrapper .fa-bars {
+    display: none; }
 
 .heading-wrapper-centered {
-  width: 60%;
+  width: 80%;
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 3.5em;
   height: 340px;
   text-align: center; }
 
+@media screen and (max-width: 991px) {
+  nav {
+    height: 60px;
+    justify-content: space-between; }
+    nav .menu {
+      display: none; }
+
+  .logo {
+    margin: auto; }
+
+  .fas-wrapper .fa-search {
+    display: none; }
+  .fas-wrapper .fa-bars {
+    display: inline-block; } }
 .main-hero-section {
   position: relative;
   height: 1000px; }
   .main-hero-section .hero-bcg-wrapper {
     position: absolute;
-    background: url("./img/boutique-plantes.jpg") no-repeat;
+    background: url("./img/img-accueil/boutique-plantes.jpg") no-repeat;
     background-size: cover;
     overflow: hidden;
     height: 1000px;
@@ -131,10 +168,16 @@ nav {
     bottom: 0; }
   .main-hero-section .titleContent {
     position: absolute;
-    width: 40%;
+    width: 790px;
     top: 500px;
     padding-left: 60px; }
 
+@media screen and (max-width: 991px) {
+  .main-hero-section .titleContent {
+    width: 500px; } }
+@media screen and (max-width: 768px) {
+  .main-hero-section .titleContent {
+    width: 400px; } }
 .review-ruban {
   background-color: #f8f0e7;
   height: 80px;
@@ -156,13 +199,19 @@ nav {
 
 .concept-section {
   background-color: #fcf8f3;
-  position: relative;
-  height: 650px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  padding-top: 12.5em; }
+  .concept-section .heading-wrapper-centered {
+    position: relative;
+    z-index: 1; }
   .concept-section .btn--clair {
     right: 45%; }
+
+.relative-container {
+  position: relative;
+  max-width: 1600px; }
 
 .concept-image-container {
   position: absolute;
@@ -170,22 +219,18 @@ nav {
   height: 160px;
   border-radius: 50%; }
   .concept-image-container--1 {
-    background-image: url("./img/cercle-femme.jpg");
-    top: 80px;
-    left: 150px; }
+    top: -140px;
+    left: 10px; }
   .concept-image-container--2 {
-    background-image: url("./img/cercle-home-jungle.jpg");
     bottom: 90px;
-    left: 310px; }
+    left: 160px; }
   .concept-image-container--3 {
-    background-image: url("./img/cercle-plante.jpg");
-    top: 200px;
-    right: 150px; }
+    top: 0px;
+    right: 0px; }
 
 .best-sellers-section {
   background-color: #fcf8f3;
   position: relative;
-  height: 550px;
   display: flex;
   flex-direction: row;
   padding-left: 70px;
@@ -193,11 +238,11 @@ nav {
 
 .description-best-sellers-section {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-right: 10px; }
 
 .btn--best-seller {
-  position: absolute;
-  bottom: 30px; }
+  margin-top: 2.5em; }
 
 .wrapper-best-sellers-selection {
   display: flex;
@@ -207,39 +252,40 @@ nav {
   text-align: center; }
 
 .best-seller-product {
-  margin-top: 10px; }
+  margin-top: 10px;
+  padding: 0px 5px; }
 
 .content-best-seller {
   margin-top: 20px; }
 
 .best-seller-img {
-  background-image: url("./img/plantes5-carre430.jpg");
-  height: 400px;
-  width: 430px; }
+  width: 100%;
+  min-width: 300px; }
 
 .arrow-wrapper {
   position: absolute;
-  top: 0px;
-  right: 50px;
+  top: -20px;
+  right: 0px;
   display: flex; }
   .arrow-wrapper .arrows {
     padding: 0px 10px;
     cursor: pointer; }
 
+@media screen and (max-width: 991px) {
+  .best-sellers-section {
+    flex-wrap: wrap; }
+
+  .btn--best-seller {
+    margin-top: 2em; } }
 .testimonial-section {
   background-color: #f8f0e7;
   position: relative;
-  height: 750px;
   display: flex;
   justify-content: center;
   margin: 150px 0px; }
 
-.testimonial-split-img {
-  background: url("./img/testimonial-plants.jpeg") no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
-  width: 50%; }
-
+/*.testimonial-split-img {
+}*/
 .testimonial-split-content {
   display: flex;
   flex-direction: column;
@@ -275,7 +321,6 @@ nav {
 .explore-products-section {
   background-color: #fcf8f3;
   position: relative;
-  height: 740px;
   width: 1450px;
   margin: 100px auto; }
   .explore-products-section .explore-products-heading {
@@ -287,17 +332,9 @@ nav {
 
 .explore-product-category {
   width: 470px;
-  height: 740px; }
-  .explore-product-category .explore-product-img {
-    width: 470px;
-    height: 520px; }
-    .explore-product-category .explore-product-img--plantes {
-      background: url(./img/explore-plantes-470.jpg) no-repeat;
-      background-position-y: -60px; }
-    .explore-product-category .explore-product-img--cactus {
-      background: url(./img/explore-cactus-470.jpg) no-repeat; }
-    .explore-product-category .explore-product-img--fleurs-sechees {
-      background: url(./img/explore-fleurs-470.jpg) no-repeat center; }
+  height: 740px;
+  /*.explore-product-img {
+  }*/ }
   .explore-product-category .explore-product-category-title {
     text-align: center;
     height: 50px;
@@ -383,8 +420,6 @@ footer {
   background-color: #212806;
   color: #fcf8f3;
   padding: 4.5em 2em 1em 2em; }
-  footer a {
-    color: #fcf8f3; }
   footer .logo {
     padding: 0px; }
 
@@ -395,16 +430,28 @@ footer {
 .footer-top-row {
   display: flex;
   justify-content: space-between; }
+  .footer-top-row .extra-padding-right {
+    padding-right: 10px; }
 
 .footer-menu-heading {
   margin-bottom: 1.5em;
   padding-bottom: 1.5em;
   border-bottom: 1px solid rgba(252, 248, 243, 0.5);
-  opacity: .9; }
+  opacity: 0.9; }
 
 .footer-mid-row {
   display: flex;
   padding: 3em 0; }
+  .footer-mid-row li {
+    line-height: 2em; }
+
+.layout-grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-row-gap: 16px;
+  grid-column-gap: 2.5em;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto; }
 
 .footer-end-row {
   display: flex;

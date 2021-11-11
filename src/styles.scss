@@ -5,10 +5,10 @@
 $green: #212806;
 $kaki: #8e9373;
 $beige-rose: #f8f0e7;
-$beige-fonce:#e0cfba;
+$beige-fonce: #e0cfba;
 $beige-clair: #fcf8f3;
-$black : #212806;
-$star : goldenrod;
+$black: #212806;
+$star: goldenrod;
 
 * {
   margin: 0;
@@ -18,32 +18,33 @@ $star : goldenrod;
 body {
   color: $black;
   background-color: $beige-clair;
+  font-size: 1vw;
   line-height: 1;
   font-weight: 400;
   font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
-    font-size: 4.5em;
-    color: $beige-clair ;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 50px;
+  font-size: 4.5em;
+  color: $beige-clair;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 50px;
 }
 
 h2 {
-    font-size: 3.75em;
-    color: $black;
-    font-family: 'Playfair Display', serif;
-    font-weight: 100;
-    margin-bottom: 50px;
+  font-size: 3.75em;
+  color: $black;
+  font-family: 'Playfair Display', serif;
+  font-weight: 100;
+  margin-bottom: 50px;
 }
 
 h3 {
-    font-size: 3em;
-    color: $black;
-    font-family: 'Playfair Display', serif;
-    font-weight: 100;
-    margin: 30px 0px;
+  font-size: 3em;
+  color: $black;
+  font-family: 'Playfair Display', serif;
+  font-weight: 100;
+  margin: 30px 0px;
 }
 
 h4 {
@@ -56,15 +57,20 @@ h4 {
 
 h5 {
   margin-top: 0;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   font-family: 'Playfair Display', serif;
   font-size: 1.25em;
   line-height: 120%;
   font-weight: 300;
 }
 
+p {
+  line-height: 1.5em;
+}
+
 a {
   text-decoration: none;
+  color: $beige-clair;
 }
 
 ul {
@@ -76,7 +82,7 @@ ul {
   border: 1px solid $green;
   border-radius: 40px;
   color: $beige-clair;
-  font-size:1.25rem;
+  font-size: 1.25rem;
   text-decoration: none;
   padding: 0.5em 1.5em 0.6em;
   width: fit-content;
@@ -84,16 +90,34 @@ ul {
   &--clair {
     background-color: $beige-clair;
     color: $green;
-  .fa-chevron-right {
-    color: $green;
+    .fa-chevron-right {
+      color: $green;
+    }
   }
+}
+
+@media screen and (max-width: 991px) {
+  body {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 3.5em;
+  }
+  h2 {
+    font-size: 2.75em;
+  }
+  h3 {
+    font-size: 2.5em;
+  }
+  h4 {
+    font-size: 1.5em;
   }
 }
 
 //***NAVIGATION***//
 
 nav {
-  color:$beige-clair ;
+  color: $beige-clair;
   font-weight: bold;
   position: fixed;
   top: 0;
@@ -103,9 +127,9 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  z-index:2;
+  z-index: 2;
   .menu {
-    flex-grow:2;
+    flex-grow: 2;
   }
   .menuPrincipal {
     margin: 0;
@@ -114,7 +138,7 @@ nav {
     flex-direction: row;
     .menuPrincipalLi {
       padding: 0px 15px;
-      font-size: 18px;
+      font-size: 1.25em;
       font-family: 'Playfair Display', serif;
     }
   }
@@ -127,23 +151,26 @@ nav {
   font-family: 'Playfair Display', serif;
   font-weight: 100;
   margin-bottom: 10px;
-
 }
 
 .fas-wrapper {
   height: 32px;
-  margin-right : 30px;
-  .fa-search, .fa-shopping-bag {
-  font-size:25px;
-  padding: 0px 15px;
-  font-family: 'FontAwesome';
-  color:$beige-clair;
-  cursor: pointer;
+  margin-right: 30px;
+  .fa-search,
+  .fa-shopping-bag, .fa-bars {
+    font-size: 25px;
+    padding: 0px 15px;
+    font-family: 'FontAwesome';
+    color: $beige-clair;
+    cursor: pointer;
+  }
+  .fa-bars {
+    display: none;
   }
 }
 
 .heading-wrapper-centered {
-  width: 60%;
+  width: 80%;
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 3.5em;
@@ -151,6 +178,26 @@ nav {
   text-align: center;
 }
 
+@media screen and (max-width: 991px){
+  nav {
+   height: 60px;
+   justify-content: space-between;
+   .menu {
+    display: none;
+    }
+  }
+  .logo {
+    margin: auto;
+  }
+  .fas-wrapper { 
+    .fa-search {
+      display: none;
+    }
+    .fa-bars {
+      display: inline-block;
+    }
+  }
+}
 
 //***HERO SECTION***//
 
@@ -158,21 +205,36 @@ nav {
   position: relative;
   height: 1000px;
   .hero-bcg-wrapper {
-  position: absolute;
-  background: url('./img/boutique-plantes.jpg') no-repeat;
-  background-size: cover;
-  overflow: hidden;
-  height: 1000px;
-  left: 0;
-  right: 0;
-  bottom: 0;
+    position: absolute;
+    background: url('./img/img-accueil/boutique-plantes.jpg') no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 1000px;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
   .titleContent {
     position: absolute;
-    width:40%;
-    top:500px;
+    width: 790px;
+    top: 500px;
     padding-left: 60px;
-    
+  }
+}
+
+@media screen and (max-width: 991px){
+  .main-hero-section {
+    .titleContent {
+    width: 500px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .main-hero-section {
+    .titleContent {
+    width: 400px;
+    }
   }
 }
 
@@ -204,15 +266,22 @@ nav {
 
 .concept-section {
   background-color: $beige-clair;
-  position:relative;
-  height: 650px;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  padding-top: 12.5em;
+  .heading-wrapper-centered {
+    position: relative;
+    z-index: 1;
+}
   .btn--clair {
     right: 45%;
   }
+}
+
+.relative-container {
+  position: relative;
+  max-width: 1600px;
 }
 
 .concept-image-container {
@@ -221,19 +290,16 @@ nav {
   height: 160px;
   border-radius: 50%;
   &--1 {
-    background-image: url("./img/cercle-femme.jpg");
-    top: 80px;
-    left: 150px;
+    top: -140px;
+    left: 10px;
   }
   &--2 {
-    background-image: url("./img/cercle-home-jungle.jpg");
     bottom: 90px;
-    left: 310px;
+    left: 160px;
   }
   &--3 {
-    background-image: url("./img/cercle-plante.jpg");
-    top: 200px;
-    right: 150px;
+    top: 0px;
+    right: 0px;
   }
 }
 
@@ -241,8 +307,7 @@ nav {
 
 .best-sellers-section {
   background-color: $beige-clair;
-  position:relative;
-  height: 550px;
+  position: relative;
   display: flex;
   flex-direction: row;
   padding-left: 70px;
@@ -252,11 +317,11 @@ nav {
 .description-best-sellers-section {
   display: flex;
   flex-direction: column;
+  margin-right: 10px;
 }
 
 .btn--best-seller {
-  position: absolute;
-  bottom: 30px;
+  margin-top: 2.5em;
 }
 
 .wrapper-best-sellers-selection {
@@ -269,6 +334,7 @@ nav {
 
 .best-seller-product {
   margin-top: 10px;
+  padding: 0px 5px;
 }
 
 .content-best-seller {
@@ -276,16 +342,14 @@ nav {
 }
 
 .best-seller-img {
-  background-image: url('./img/plantes5-carre430.jpg');
-  height:400px;
-  width: 430px;
-
+  width: 100%;
+  min-width: 300px;
 }
 
 .arrow-wrapper {
   position: absolute;
-  top: 0px;
-  right: 50px;
+  top: -20px;
+  right: 0px;
   display: flex;
   .arrows {
     padding: 0px 10px;
@@ -293,23 +357,28 @@ nav {
   }
 }
 
+@media screen and (max-width: 991px){
+  .best-sellers-section {
+  flex-wrap: wrap;
+  }
+  .btn--best-seller {
+  margin-top: 2em;
+  }
+}
+
 //***TESTIMONIAL SECTION***//
 
 .testimonial-section {
   background-color: $beige-rose;
-  position:relative;
-  height: 750px;
+  position: relative;
+
   display: flex;
   justify-content: center;
   margin: 150px 0px;
 }
 
-.testimonial-split-img {
-  background: url('./img/testimonial-plants.jpeg') no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
-  width: 50%;
-}
+/*.testimonial-split-img {
+}*/
 
 .testimonial-split-content {
   display: flex;
@@ -326,38 +395,36 @@ nav {
   align-items: center;
   justify-content: center;
   .testimonial-paragraph {
-      text-align: center;
-      
-    }
-    .testimonial-user {
-      margin-top: 20px;
-      text-transform: uppercase;
-    }
-    .slider-testimonial {
-      display: flex;
-      justify-content: space-between;
-      height: 12px;
-      margin-top: 20px;
+    text-align: center;
+  }
+  .testimonial-user {
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+  .slider-testimonial {
+    display: flex;
+    justify-content: space-between;
+    height: 12px;
+    margin-top: 20px;
 
-      .slider-dot{
-        border: 1px solid $black;
-        border-radius: 50%;
-        width: 12px;
-        height: 12px;
-        margin: 0px 3px;
-        &--active {
-          background-color: $black;
-        }
+    .slider-dot {
+      border: 1px solid $black;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      margin: 0px 3px;
+      &--active {
+        background-color: $black;
       }
     }
+  }
 }
 
 //***EXPLORE PRODUCTS SECTION***//
 
 .explore-products-section {
   background-color: $beige-clair;
-  position:relative;
-  height: 740px;
+  position: relative;
   width: 1450px;
   margin: 100px auto;
   .explore-products-heading {
@@ -373,33 +440,21 @@ nav {
 .explore-product-category {
   width: 470px;
   height: 740px;
-  .explore-product-img {
-    width: 470px;
-    height: 520px;
-    &--plantes {
-      background : url(./img/explore-plantes-470.jpg) no-repeat;
-      background-position-y: -60px;
-    }
-    &--cactus {
-      background : url(./img/explore-cactus-470.jpg) no-repeat;
-    }
-    &--fleurs-sechees {
-      background : url(./img/explore-fleurs-470.jpg) no-repeat center;
-    }
-  }
+  /*.explore-product-img {
+  }*/
   .explore-product-category-title {
     text-align: center;
     height: 50px;
     padding-top: 5px;
     padding-bottom: 15px;
     &--plantes {
-          background-color: rgb(248, 236, 223);
+      background-color: rgb(248, 236, 223);
     }
     &--cactus {
-          background-color: rgb(224, 230, 227);
+      background-color: rgb(224, 230, 227);
     }
     &--fleurs-sechees {
-          background-color: rgb(239, 239, 240);
+      background-color: rgb(239, 239, 240);
     }
   }
 }
@@ -489,12 +544,9 @@ nav {
 //***FOOTER***//
 
 footer {
-  background-color:$green;
-  color : $beige-clair;
+  background-color: $green;
+  color: $beige-clair;
   padding: 4.5em 2em 1em 2em;
-  a {
-    color: $beige-clair;
-  }
   .logo {
     padding: 0px;
   }
@@ -508,18 +560,33 @@ footer {
 .footer-top-row {
   display: flex;
   justify-content: space-between;
+  .extra-padding-right {
+    padding-right: 10px;
+  }
 }
 
 .footer-menu-heading {
   margin-bottom: 1.5em;
   padding-bottom: 1.5em;
-  border-bottom: 1px solid rgba(252,248,243,.5);
-  opacity: .9;
+  border-bottom: 1px solid rgba(252, 248, 243, 0.5);
+  opacity: 0.9;
 }
 
 .footer-mid-row {
   display: flex;
   padding: 3em 0;
+  li {
+    line-height: 2em;
+  }
+}
+
+.layout-grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-row-gap: 16px;
+  grid-column-gap: 2.5em;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
 }
 
 .footer-end-row {

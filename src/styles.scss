@@ -82,7 +82,7 @@ ul {
   border: 1px solid $green;
   border-radius: 40px;
   color: $beige-clair;
-  font-size: 1.25rem;
+  font-size: 1.25em;
   text-decoration: none;
   padding: 0.5em 1.5em 0.6em;
   width: fit-content;
@@ -111,6 +111,24 @@ ul {
   }
   h4 {
     font-size: 1.5em;
+  }
+  .btn {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1.75em;
+  }
+  h4 {
+    font-size: 1.25em;
   }
 }
 
@@ -144,13 +162,14 @@ nav {
   }
 }
 
-.logo {
-  padding: 0 30px;
-  font-size: 30px;
-  color: $beige-clair;
-  font-family: 'Playfair Display', serif;
-  font-weight: 100;
-  margin-bottom: 10px;
+.logo-container {
+  margin : 5px 5px 5px 40px;
+  .logo {
+    font-size: 2em;
+    color: $beige-clair;
+    font-family: 'Playfair Display', serif;
+    font-weight: 100;
+}
 }
 
 .fas-wrapper {
@@ -186,8 +205,10 @@ nav {
     display: none;
     }
   }
-  .logo {
-    margin: auto;
+  .logo-container {
+    .logo {
+      font-size: 1.75em;
+    }
   }
   .fas-wrapper { 
     .fa-search {
@@ -195,6 +216,16 @@ nav {
     }
     .fa-bars {
       display: inline-block;
+    }
+  }
+}
+
+@media screen and (max-width: 479px){
+  .logo-container {
+    width: 120px;
+    margin : 5px 5px 5px 30px;
+    .logo {
+      font-size: 1.5em;
     }
   }
 }
@@ -233,7 +264,15 @@ nav {
 @media screen and (max-width: 768px){
   .main-hero-section {
     .titleContent {
-    width: 400px;
+    width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 425px){
+  .main-hero-section {
+    .titleContent {
+    padding-left: 30px;
     }
   }
 }
@@ -242,16 +281,13 @@ nav {
 
 .review-ruban {
   background-color: $beige-rose;
-  height: 80px;
   width: 70%;
   z-index: 1;
   position: absolute;
   left: 15%;
-  bottom: -40px;
+  bottom: -30px;
   text-align: center;
-  p {
-    margin-top: 25px;
-  }
+  padding: 1em 0;
 }
 
 .stars-block {
@@ -260,6 +296,20 @@ nav {
 .fa-star {
   color: $star;
   font-size: 24px;
+}
+
+@media screen and (max-width: 479px) {
+  .review-ruban {
+    width: 100%;
+    left: 0px;
+    p {
+      margin-top: 0px;
+      display: block;
+    }
+    span {
+      display: block;
+    }
+  }
 }
 
 //***CONCEPT SECTION***//
@@ -303,6 +353,26 @@ nav {
   }
 }
 
+
+@media screen and (max-width: 1299px){
+  .concept-image-container {
+    &--1 {
+      top: -100px;
+      left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .concept-image-container {
+    width: 100px;
+    height: 100px;
+    &--2 {
+    bottom: 60px;
+    }
+  }
+}
+
 //***BEST SELLER SECTION***//
 
 .best-sellers-section {
@@ -327,7 +397,7 @@ nav {
 .wrapper-best-sellers-selection {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  overflow: hidden;
   align-items: center;
   text-align: center;
 }
@@ -371,14 +441,24 @@ nav {
 .testimonial-section {
   background-color: $beige-rose;
   position: relative;
-
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin: 150px 0px;
 }
 
-/*.testimonial-split-img {
-}*/
+.testimonial-split-img-container {
+  width: 50%;
+  overflow: hidden;
+  .testimonial-split-img {
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/img-accueil/testimonial-plants-917px.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
 
 .testimonial-split-content {
   display: flex;
@@ -394,6 +474,7 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 6.5em 5em;
   .testimonial-paragraph {
     text-align: center;
   }
@@ -420,28 +501,61 @@ nav {
   }
 }
 
+@media screen and (max-width: 991px) {
+  .testimonial-split-img-container {
+    width: 100%;
+    height: 50vh;
+    padding-top: 2em;
+    padding-right: 2em;
+    padding-left: 2em;
+  }
+  .testimonial-split-content {
+    width: 100%;
+  }
+  .testimonial-wrapper {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .testimonial-section {
+    margin: 100px 0px;
+  }
+  .testimonial-wrapper {
+    padding: 2.5em 0em;
+  }
+}
+
 //***EXPLORE PRODUCTS SECTION***//
 
 .explore-products-section {
   background-color: $beige-clair;
   position: relative;
-  width: 1450px;
   margin: 100px auto;
   .explore-products-heading {
     margin-bottom: 40px;
+    padding : 0em 5em;
   }
 }
 
 .explore-products-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  padding : 0em 5em;
+}
+
+.category-image-wrapper {
+  height : 480px;
+  overflow: hidden;
+  .explore-product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .explore-product-category {
-  width: 470px;
-  height: 740px;
-  /*.explore-product-img {
-  }*/
+  padding: 0em 0.5em;
   .explore-product-category-title {
     text-align: center;
     height: 50px;
@@ -458,6 +572,30 @@ nav {
     }
   }
 }
+
+@media screen and (max-width: 991px) {
+  .explore-products-section {
+    .explore-products-heading {
+      padding : 0em 2em;
+    }
+  }
+  .explore-products-wrapper {
+    padding : 0em 2em;
+  }
+  .category-image-wrapper {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .explore-products-wrapper {
+    flex-direction: column;
+  }
+  .explore-product-category {
+    padding: 1em 0.5em;
+}
+}
+
 
 //***INSTAGRAM SECTION***//
 
@@ -482,7 +620,6 @@ nav {
 .ig-image {
   position: absolute;
   &--01 {
-    /*width: 112px;*/
     left: 0;
     top: -180px;
     right: auto;
@@ -490,7 +627,6 @@ nav {
     width: 7.5em;
   }
   &--02 {
-    /*width: 240px;*/
     left: 140px;
     top: -140px;
     right: auto;
@@ -499,7 +635,6 @@ nav {
     width: 16em;
   }
   &--03 {
-    /*width: 255px;*/
     left: auto;
     top: -32%;
     right: 0;
@@ -507,7 +642,6 @@ nav {
     width: 17em;
   }
   &--04 {
-    /*width: 300px;*/
     left: 0;
     top: auto;
     right: auto;
@@ -515,7 +649,6 @@ nav {
     width: 20em;
   }
   &--05 {
-    /*width: 345px;*/
     left: auto;
     top: 0;
     right: 21%;
@@ -524,7 +657,6 @@ nav {
     width: 16em;
   }
   &--06 {
-    /*width: 315px;*/
     left: 32%;
     top: auto;
     right: auto;
@@ -532,7 +664,6 @@ nav {
     width: 23em;
   }
   &--07 {
-    /*width: 240px;*/
     left: auto;
     top: auto;
     right: 48px;
@@ -540,6 +671,44 @@ nav {
     width: 21em;
   }
 }
+
+@media screen and (max-width: 991px) {
+  .heading-wrapper-centered--insta {
+    width: 100%;
+    padding-bottom: 0em;
+  }
+  .instagram-grid {
+    height: 320px;
+  }
+.ig-image {
+  &--01 {
+    top: -40px;
+    width: 10%;
+  }
+  &--02 {
+    left: 90px;
+    top: -20px;
+    width: 18%;
+  }
+  &--03 {
+    width: 20%;
+  }
+  &--04 {
+    width: 23%;
+  }
+  &--05 {
+    width: 16%;
+  }
+  &--06 {
+    width: 28%;
+  }
+  &--07 {
+    width: 25%;
+  }
+}
+
+}
+
 
 //***FOOTER***//
 
@@ -577,6 +746,7 @@ footer {
   padding: 3em 0;
   li {
     line-height: 2em;
+    padding-bottom: .5em;
   }
 }
 
@@ -585,7 +755,7 @@ footer {
   grid-auto-columns: 1fr;
   grid-row-gap: 16px;
   grid-column-gap: 2.5em;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
 }
 
@@ -593,3 +763,27 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 479px) {
+  .footer-social-wrapper {
+    display: flex;
+  }
+  .layout-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .footer-menu-heading {
+    padding-bottom: 0em;
+  }
+  .footer-mid-row {
+    padding: 2em 0 0 0;
+  }
+  .footer-mid-row li {
+    line-height: 1em;
+  }
+  .footer-end-row {
+    flex-direction: column;
+  }
+}
+
+

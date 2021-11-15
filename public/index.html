@@ -14,7 +14,7 @@
 <body>
     <!--NAVIGATEUR-->
     <nav>
-        <div>
+        <div class="logo-container">
             <a href="./index.html"><span class="logo">La Maison Jungle</span></a>
         </div>
         <div class="menu">
@@ -114,12 +114,13 @@
     </section>
     <!--TESTIMONIAL SECTION-->
     <section class="testimonial-section">
-        <img src="../src/img/img-accueil/testimonial-plants-917px.png" alt="" class="testimonial-split-img">
+        <div class="testimonial-split-img-container">
+          <div class="testimonial-split-img"></div>
+        </div>
         <div class="testimonial-split-content">
             <div class="testimonial-wrapper">
                 <div class="testimonial-stars">
-                    <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
-                        class="fas fa-star"></i>
+                    <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
                 </div>
                 <div class="testimonial-paragraph">
                     <h3>J'ai pu me faire une vraie petite jungle dans mon salon, harmonieuse et adaptée à la luminosité de la pièce. Mon chat adore ! </h3>
@@ -136,15 +137,17 @@
         </div>
     </section>
     <!--EXPLORE PRODUCTS SECTION-->
-    <section class="explore-products-section">
+    <section class="explore-products-section container">
         <div class="explore-products-heading">
             <h2>Explore nos produits</h2>
         </div>
         <div class="explore-products-wrapper">   
             <div class="explore-product-category">
                 <a href="">
-                    <img src="../src/img/img-accueil/explore-plantes-470px.png" alt=""
-                        class="explore-product-img">
+                    <div class="category-image-wrapper">
+                        <img src="../src/img/img-accueil/explore-plantes-470px.png" alt=""
+                            class="explore-product-img">
+                    </div>
                     <div class="explore-product-category-title explore-product-category-title--plantes">
                         <h4>Plantes</h4>
                     </div>
@@ -152,8 +155,10 @@
             </div>
             <div class="explore-product-category">
                 <a href="">
-                    <img src="../src/img/img-accueil/explore-cactus-470px.png" alt=""
+                    <div class="category-image-wrapper">
+                        <img src="../src/img/img-accueil/explore-cactus-470px.png" alt=""
                         class="explore-product-img">
+                    </div>
                     <div class="explore-product-category-title explore-product-category-title--cactus">
                         <h4>Cactus</h4>
                     </div>
@@ -161,7 +166,9 @@
             </div>
             <div class="explore-product-category">
                 <a href="">
-                    <img src="../src/img/img-accueil/explore-fleurs-470px.png" alt="" class="explore-product-img">
+                    <div class="category-image-wrapper">
+                        <img src="../src/img/img-accueil/explore-fleurs-470px.png" alt="" class="explore-product-img">
+                    </div>
                     <div class="explore-product-category-title explore-product-category-title--fleurs-sechees">
                         <h4>Fleurs séchées</h4>
                     </div>
@@ -171,7 +178,7 @@
     </section>
     <!--INSTAGRAM SECTION-->
     <section class="instagram-section">
-        <div class="heading-wrapper-centered">
+        <div class="heading-wrapper-centered heading-wrapper-centered--insta">
             <img src="../src/img/img-accueil/instagram-circle.svg" alt="Suis notre aventure">
             <div class="divider-line"></div>
             <h3>Viens nous faire un coucou et jeter un oeil à nos actualités @lamaisonjungle</h3>
@@ -193,7 +200,7 @@
                 <div>
                     <a href="./index.html"><span class="logo">La Maison Jungle</span></a>
                 </div>
-                <div>
+                <div class="footer-social-wrapper">
                     <a href="" class="extra-padding-right">Instagram</a>   
                     <a href="">Facebook</a>
                 </div>

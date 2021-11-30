@@ -1,0 +1,577 @@
+//***WELCOME PAGE***//
+
+//***HERO SECTION***//
+
+.main-hero-section {
+  position: relative;
+  height: 1000px;
+  .hero-bcg-wrapper {
+    position: absolute;
+    background: url('./img/img-accueil/boutique-plantes.jpg') no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 1000px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .titleContent {
+    position: absolute;
+    width: 790px;
+    top: 500px;
+    padding-left: 60px;
+  }
+  .main-hero-title {
+    color: $beige-clair;
+  }
+}
+
+@media screen and (max-width: 991px){
+  .main-hero-section {
+    .titleContent {
+    width: 500px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .main-hero-section {
+    .titleContent {
+    width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 425px){
+  .main-hero-section {
+    .titleContent {
+    padding-left: 30px;
+    }
+  }
+}
+
+//***REVIEW-RUBAN***//
+
+.review-ruban {
+  background-color: $beige-rose;
+  width: 70%;
+  z-index: 1;
+  position: absolute;
+  left: 15%;
+  bottom: -30px;
+  text-align: center;
+  padding: 1em 0;
+}
+
+.stars-block {
+  margin: 0px 10px;
+}
+.fa-star {
+  color: $star;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 479px) {
+  .review-ruban {
+    width: 100%;
+    left: 0px;
+    p {
+      margin-top: 0px;
+      display: block;
+    }
+    span {
+      display: block;
+    }
+  }
+}
+
+//***CONCEPT SECTION***//
+
+.concept-section {
+  background-color: $beige-clair;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 12.5em;
+  .heading-wrapper-centered {
+    position: relative;
+    z-index: 1;
+}
+  .btn--clair {
+    right: 45%;
+  }
+}
+
+.relative-container {
+  position: relative;
+  max-width: 1600px;
+}
+
+.text-centered {
+    text-align: center;
+    display: inline-block;
+}
+
+.concept-image-container {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  &--1 {
+    top: -140px;
+    left: 10px;
+  }
+  &--2 {
+    bottom: 90px;
+    left: 160px;
+  }
+  &--3 {
+    top: 0px;
+    right: 0px;
+  }
+}
+
+
+@media screen and (max-width: 1299px){
+  .concept-image-container {
+    &--1 {
+      top: -100px;
+      left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .concept-image-container {
+    width: 100px;
+    height: 100px;
+    &--2 {
+    bottom: 60px;
+    }
+  }
+}
+
+//***PRODUCT SLIDER SECTION***//
+
+.product-slider-section {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding-left: 5em;
+  margin: 50px 0px;
+  &--beige {
+    background-color: $beige-clair;
+  }
+  &--pink {
+    background-color: $beige-rose;
+  }
+}
+
+.description-product-slider-section {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  padding-bottom: 2em;
+  padding-top: 2.5em;
+}
+
+.btn--product-slider {
+  margin-top: 2.5em;
+}
+
+.product-slider-wrapper {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding-top: 2.5em;
+}
+
+.product-slider {
+  margin-top: 10px;
+  padding: 0 0.5em;
+  .product-slider-img-wrapper {
+    overflow: hidden;
+    .product-slider-img {
+      width: 100%;
+      min-width: 300px;
+    }
+    .no-min-width {
+      min-width: 140px;
+    }
+  }
+  &:hover .title-product-slider {
+    font-style: italic;
+  }
+  &:hover .product-slider-img {
+    animation: img-zoom 1000ms forwards;
+  }
+}
+
+
+.content-product-slider {
+  margin-top: 20px;
+  color: $black;
+}
+
+.arrow-wrapper {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  display: flex;
+  .arrows {
+    padding: 0px 10px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 991px){
+  .product-slider-section {
+  flex-wrap: wrap;
+  padding-left: 30px;
+  padding-right: 30px;
+  }
+  .btn--product-slider {
+  margin-top: 2em;
+  }
+}
+
+//***TESTIMONIAL SECTION***//
+
+.testimonial-section {
+  background-color: $beige-rose;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 150px 0px;
+}
+
+.testimonial-split-img-container {
+  width: 50%;
+  overflow: hidden;
+  .testimonial-split-img {
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/img-accueil/testimonial-plants-917px.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.testimonial-split-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.testimonial-wrapper {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6.5em 5em;
+  .testimonial-paragraph {
+    text-align: center;
+    padding-top: 2em;
+  }
+  .testimonial-user {
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+  .slider-testimonial {
+    display: flex;
+    justify-content: space-between;
+    height: 12px;
+    margin-top: 20px;
+
+    .slider-dot {
+      border: 1px solid $black;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      margin: 0px 3px;
+      &--active {
+        background-color: $black;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .testimonial-split-img-container {
+    width: 100%;
+    height: 50vh;
+    padding-top: 2em;
+    padding-right: 2em;
+    padding-left: 2em;
+  }
+  .testimonial-split-content {
+    width: 100%;
+  }
+  .testimonial-wrapper {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .testimonial-section {
+    margin: 100px 0px;
+  }
+  .testimonial-wrapper {
+    padding: 2.5em 0em;
+  }
+}
+
+//***EXPLORE PRODUCTS SECTION***//
+
+.explore-products-section {
+  background-color: $beige-clair;
+  position: relative;
+  margin: 100px auto;
+  .explore-products-heading {
+    margin-bottom: 40px;
+    padding : 0em 5em;
+  }
+}
+
+.explore-products-wrapper {
+  display: flex;
+  justify-content: center;
+  padding : 0em 5em;
+}
+
+.category-image-wrapper {
+  height : 480px;
+  overflow: hidden;
+  .explore-product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.explore-product-category {
+  padding: 0em 0.5em;
+  .explore-product-category-title {
+    text-align: center;
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    &--plantes {
+      background-color: $plant-category-color;
+    }
+    &--cactus {
+      background-color: $cactus-category-color;
+    }
+    &--fleurs-sechees {
+      background-color: $flower-category-color;
+    }
+  }
+  &:hover .explore-product-category-title {
+    font-style: italic;
+  }
+  &:hover .explore-product-img{
+    animation: img-zoom 1000ms forwards;
+  }
+}
+
+
+@media screen and (max-width: 991px) {
+  .explore-products-section {
+    .explore-products-heading {
+      padding : 0em 2em;
+    }
+  }
+  .explore-products-wrapper {
+    padding : 0em 2em;
+  }
+  .category-image-wrapper {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .explore-products-wrapper {
+    flex-direction: column;
+  }
+  .explore-product-category {
+    padding: 1em 0.5em;
+  }
+}
+
+
+//***INSTAGRAM SECTION***//
+
+.instagram-section {
+  background-color: $beige-clair;
+}
+
+.divider-line {
+  width: 24px;
+  height: 2px;
+  margin: 2em auto;
+  background-color: #8e9373;
+}
+
+.instagram-grid {
+  position: relative;
+  height: 500px;
+  width: 80%;
+  margin: 100px auto;
+}
+
+.ig-image {
+  position: absolute;
+  &--01 {
+    left: 0;
+    top: -180px;
+    right: auto;
+    bottom: auto;
+    width: 7.5em;
+  }
+  &--02 {
+    left: 140px;
+    top: -140px;
+    right: auto;
+    bottom: auto;
+    z-index: 2;
+    width: 16em;
+  }
+  &--03 {
+    left: auto;
+    top: -32%;
+    right: 0;
+    bottom: auto;
+    width: 17em;
+  }
+  &--04 {
+    left: 0;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    width: 20em;
+  }
+  &--05 {
+    left: auto;
+    top: 0;
+    right: 21%;
+    bottom: auto;
+    z-index: 2;
+    width: 16em;
+  }
+  &--06 {
+    left: 32%;
+    top: auto;
+    right: auto;
+    bottom: 56px;
+    width: 23em;
+  }
+  &--07 {
+    left: auto;
+    top: auto;
+    right: 48px;
+    bottom: 0;
+    width: 21em;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .heading-wrapper-centered--insta {
+    width: 100%;
+    padding-bottom: 0em;
+  }
+  .instagram-grid {
+    height: 320px;
+  }
+  .ig-image {
+    &--01 {
+      top: -40px;
+      width: 10%;
+    }
+    &--02 {
+      left: 90px;
+      top: -20px;
+      width: 18%;
+    }
+    &--03 {
+      width: 20%;
+    }
+    &--04 {
+      width: 23%;
+    }
+    &--05 {
+      width: 16%;
+    }
+    &--06 {
+      width: 28%;
+    }
+    &--07 {
+      width: 25%;
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .instagram-grid {
+    height: 450px;
+    margin: 20px auto 50px auto;
+  }
+  .ig-image {
+    &--01 {
+      left: 0;
+      top: 5%;
+      right: auto;
+      bottom: auto;
+      width: 20%;
+    }
+    &--02 {
+      left: 7%;
+      top: 30%;
+      right: auto;
+      bottom: auto;
+      width: 30%;
+    }
+    &--03 {
+      left: auto;
+      top: 0;
+      right: 0;
+      bottom: auto;
+      width: 40%;
+    }
+    &--04 {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 90px;
+      height: 90px;
+    }
+    &--05 {
+      top: 17%;
+      right: 30%;
+      width: 30%;
+    }
+    &--06 {
+      left: 25%;
+      top: auto;
+      right: auto;
+      bottom: 0;
+      width: 50%;
+    }
+    &--07 {
+      left: auto;
+      top: auto;
+      right: 2%;
+      bottom: 25%;
+      overflow: hidden;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+    }
+  }
+}

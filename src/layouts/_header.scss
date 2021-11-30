@@ -1,0 +1,110 @@
+/**HERO SECTION**/
+
+.hero-section {
+  padding-top: 15em;
+  padding-bottom: 6.5em;
+}
+
+.full-width {
+  padding-right: 5em;
+  padding-left: 5em;
+}
+
+.hero-header-wrapper {
+  width: 100%;
+  padding-bottom: 3.5em;
+  border-bottom: 1px solid rgba(66, 73, 40, 0.5);
+}
+
+.width-70 {
+  width: 70%;
+}
+
+.feature-paragraph {
+  font-size: 1.25em;
+}
+
+.hero-mid-split-wrapper {
+  display: flex;
+  min-height: 70vh;
+  justify-content: center;
+}
+
+.hero-split-content {
+  padding-right: 3em;
+  padding-left: 5em;
+  padding-bottom: 3.5em;
+}
+
+.no-margin-bottom {
+  padding-bottom: 0;
+}
+
+.hero-split-left-column {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $beige-saumon;
+}
+
+.hero-split-right-column {
+  position: relative;
+  overflow: hidden;
+  width: 50%;
+}
+
+.split-image {
+  width: 100%;
+  height: 100%;
+  background-image: url('./img/img-produits/plantesCouv.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 991px) {
+    .width-70 {
+    width: 100%;
+    }
+    .feature-paragraph {
+    font-size: 1.25em;
+    }
+    .hero-mid-split-wrapper {
+    flex-wrap: wrap;
+}
+    .hero-split-left-column {
+    width: 100%;
+    padding-top: 12em;
+    padding-bottom: 3.5em;
+    }
+    .hero-split-right-column {
+    width: 100%;
+    min-height: 60vh;
+    }
+    .hero-split-content {
+        padding-right: 2em;
+        padding-bottom: 0;
+        padding-left: 2em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .hero-split-left-column {
+        width: 100%;
+        padding-top: 8em;
+        padding-bottom: 3.5em;
+    }
+    .hero-split-right-column {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .hero-split-right-column {
+        min-height: 50vh;
+    }
+    .hero-split-content {
+        padding-right: 1em;
+        padding-left: 1em;
+    }
+}

@@ -5,31 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenue à la maison jungle !</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
-    <link rel="stylesheet" href="../src/styles.css">
+    <meta name="author" content="Pauline Huby">
+    <link rel="stylesheet" href="./styles.css">
     <script src="https://kit.fontawesome.com/32150d741e.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!--NAVIGATEUR-->
     <nav>
         <div class="logo-container">
-            <a href="./index.html"><span class="logo">La Maison Jungle</span></a>
+            <a href="./index.html"><span class="logo ">La Maison Jungle</span></a>
         </div>
         <div class="menu">
             <ul class="menuPrincipal">
-                <a href=""><li class="menuPrincipalLi">Nos Produits <i class="fas fa-plus"></i></li></a>
+                <a href="./products-all.html"><li class="menuPrincipalLi">Nos Produits <i class="fas fa-plus"></i></li></a>
                 <!--<ul>
-                    <a href=""><li>Plantes</li></a>
-                    <a href=""><li>Cactus</li></a>
-                    <a href=""><li>Fleurs séchées</li></a>
+                    <a href="./products-plants.html"><li>Plantes</li></a>
+                    <a href="./products-cactus.html"><li>Cactus</li></a>
+                    <a href="./products-flowers.html"><li>Fleurs séchées</li></a>
                 </ul>-->
-                <a href=""><li class="menuPrincipalLi">A Propos <i class="fas fa-plus"></i></li></a>
+                <a href="./history.html"><li class="menuPrincipalLi">A Propos <i class="fas fa-plus"></i></li></a>
                 <!--<ul>
-                    <a href=""><li>Notre histoire</li></a>
-                    <a href=""><li>FAQ</li></a>
-                    <a href=""><li>Contact</li></a>
+                    <a href="./history.html"><li>Notre histoire</li></a>
+                    <a href="./faq.html"><li>FAQ</li></a>
+                    <a href="./contact.html"><li>Contact</li></a>
                 </ul>-->
             </ul>
         </div>
@@ -43,13 +41,15 @@
     <section class="main-hero-section">
         <div class="hero-bcg-wrapper"></div>
         <div class="titleContent">
-            <h1>Transformer votre maison en jungle</h1>
-            <button class="btn">
-                <div class="btn-text">Magasiner</div>  
-                <div class="btn-chevron">
-                    <i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i>
-                </div> 
-            </button>
+            <h1 class="main-hero-title">Transformer votre maison en jungle</h1>
+            <a href="./products-all.html">
+                <button class="btn">
+                    <div class="btn-text">Magasiner</div>  
+                    <div class="btn-chevron">
+                        <i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i>
+                    </div> 
+                </button>
+            </a>
         </div>
         <section class="review-ruban">
             <p>Retour Client <span class="stars-block"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span> basé sur plus de 150 revues</p>
@@ -58,13 +58,13 @@
     <!--CONCEPT SECTION-->
     <section class="concept-section">
         <div class="relative-container">
-            <img src="../src/img/img-accueil/cercle-femme.jpg" alt="" class="concept-image-container concept-image-container--1">
-            <img src="../src/img//img-accueil/cercle-home-jungle.jpg" alt="" class="concept-image-container concept-image-container--2">
-            <img src="../src/img/img-accueil/cercle-plante.jpg" alt="" class="concept-image-container concept-image-container--3">
+            <img src="./img/img-accueil/cercle-femme.jpg" alt="" class="concept-image-container concept-image-container--1">
+            <img src="./img//img-accueil/cercle-home-jungle.jpg" alt="" class="concept-image-container concept-image-container--2">
+            <img src="./img/img-accueil/cercle-plante.jpg" alt="" class="concept-image-container concept-image-container--3">
             <div class="heading-wrapper-centered">
                 <h2>Il suffit de quelques plantes pour se sentir chez soi.<br>Laissez-vous guider !</h2>
                 <div class="text-centered">
-                    <a href="">
+                    <a href="./history.html">
                         <button class="btn btn--clair">
                             <div class="btn-text">Le concept</div> 
                             <div class="btn-chevron">
@@ -77,12 +77,12 @@
         </div>
     </section>
     <!--BEST SELLER SECTION-->
-    <section class="best-sellers-section">
-        <div class="description-best-sellers-section">
+    <section class="product-slider-section">
+        <div class="description-product-slider-section">
             <h3>Nos meilleures ventes</h3>
             <p>Peuplez votre maison avec nos plantes les plus appréciées.</p>
-            <a href="">
-                <button class="btn btn--best-seller">
+            <a href="./products-all.html">
+                <button class="btn btn--product-slider">
                     <div class="btn-text">Magasiner</div>  
                     <div class="btn-chevron">
                         <i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i>
@@ -90,7 +90,7 @@
                 </button>
             </a>
         </div>
-        <div class="wrapper-best-sellers-selection">
+        <div class="product-slider-wrapper">
             <div class="arrow-wrapper">
                 <div class="arrows">
                     <i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>
@@ -99,45 +99,45 @@
                     <i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i>
                 </div>
             </div>
-            <a href="">
-                <div class="best-seller-product">
-                    <div class="best-seller-img-wrapper">
-                        <img src="../src/img/img-accueil/bestseller-test-430px.jpg" alt="" class="best-seller-img">
+            <a href="./product-item.html">
+                <div class="product-slider">
+                    <div class="product-slider-img-wrapper">
+                        <img src="./img/img-accueil/bestseller-test-430px.jpg" alt="" class="product-slider-img">
                     </div>
-                    <div class="content-best-seller">
-                        <div class="category-best-seller">PLANTES</div>
-                        <div class="title-best-seller">
+                    <div class="content-product-slider">
+                        <div class="category-product-slider">PLANTES</div>
+                        <div class="title-product-slider">
                             <h4>La forêt</h4>
                         </div>
-                        <div class="price-best-seller">50$</div>
+                        <div class="price-product-slider">50$</div>
                     </div>
                 </div>
             </a>
-            <a href="">
-                <div class="best-seller-product">
-                    <div class="best-seller-img-wrapper">
-                        <img src="../src/img/img-accueil/bestseller-test-430px.jpg" alt="" class="best-seller-img">
+            <a href="./product-item.html">
+                <div class="product-slider">
+                    <div class="product-slider-img-wrapper">
+                        <img src="./img/img-accueil/bestseller-test-430px.jpg" alt="" class="product-slider-img">
                     </div>
-                    <div class="content-best-seller">
-                        <div class="category-best-seller">PLANTES</div>
-                        <div class="title-best-seller">
+                    <div class="content-product-slider">
+                        <div class="category-product-slider">PLANTES</div>
+                        <div class="title-product-slider">
                             <h4>La forêt</h4>
                         </div>
-                        <div class="price-best-seller">50$</div>
+                        <div class="price-product-slider">50$</div>
                     </div>
                 </div>
             </a>
-            <a href="">
-                <div class="best-seller-product">
-                    <div class="best-seller-img-wrapper">
-                        <img src="../src/img/img-accueil/bestseller-test-430px.jpg" alt="" class="best-seller-img">
+            <a href="./product-item.html">
+                <div class="product-slider">
+                    <div class="product-slider-img-wrapper">
+                        <img src="./img/img-accueil/bestseller-test-430px.jpg" alt="" class="product-slider-img">
                     </div>
-                    <div class="content-best-seller">
-                        <div class="category-best-seller">PLANTES</div>
-                        <div class="title-best-seller">
+                    <div class="content-product-slider">
+                        <div class="category-product-slider">PLANTES</div>
+                        <div class="title-product-slider">
                             <h4>La forêt</h4>
                         </div>
-                        <div class="price-best-seller">50$</div>
+                        <div class="price-product-slider">50$</div>
                     </div>
                 </div>
             </a>
@@ -174,9 +174,9 @@
         </div>
         <div class="explore-products-wrapper">   
             <div class="explore-product-category">
-                <a href="">
+                <a href="./products-plants.html">
                     <div class="category-image-wrapper">
-                        <img src="../src/img/img-accueil/explore-plantes-470px.png" alt=""
+                        <img src="./img/img-accueil/explore-plantes-470px.png" alt=""
                             class="explore-product-img">
                     </div>
                     <div class="explore-product-category-title explore-product-category-title--plantes">
@@ -185,9 +185,9 @@
                 </a>
             </div>
             <div class="explore-product-category">
-                <a href="">
+                <a href="./products-cactus.html">
                     <div class="category-image-wrapper">
-                        <img src="../src/img/img-accueil/explore-cactus-470px.png" alt=""
+                        <img src="./img/img-accueil/explore-cactus-470px.png" alt=""
                         class="explore-product-img">
                     </div>
                     <div class="explore-product-category-title explore-product-category-title--cactus">
@@ -196,9 +196,9 @@
                 </a>
             </div>
             <div class="explore-product-category">
-                <a href="">
+                <a href="./products-flowers.html">
                     <div class="category-image-wrapper">
-                        <img src="../src/img/img-accueil/explore-fleurs-470px.png" alt="" class="explore-product-img">
+                        <img src="./img/img-accueil/explore-fleurs-470px.png" alt="" class="explore-product-img">
                     </div>
                     <div class="explore-product-category-title explore-product-category-title--fleurs-sechees">
                         <h4>Fleurs séchées</h4>
@@ -210,18 +210,18 @@
     <!--INSTAGRAM SECTION-->
     <section class="instagram-section">
         <div class="heading-wrapper-centered heading-wrapper-centered--insta">
-            <img src="../src/img/img-accueil/instagram-circle.svg" alt="Suis notre aventure">
+            <img src="./img/img-accueil/instagram-circle.svg" alt="Suis notre aventure">
             <div class="divider-line"></div>
             <h3>Viens nous faire un coucou et jeter un oeil à nos actualités @lamaisonjungle</h3>
         </div>
         <div class="instagram-grid">
-            <img src="../src/img/img-accueil/insta5-440px.jpg" alt="" class="image-cover ig-image ig-image--01">
-            <img src="../src/img/img-accueil/insta6-440px.jpg" alt="" class="image-cover ig-image ig-image--02">
-            <img src="../src/img/img-accueil/insta7-440px.jpg" alt="" class="image-cover ig-image ig-image--03">
-            <img src="../src/img/img-accueil/insta1-500px.jpg" alt="" class="image-cover ig-image ig-image--04">
-            <img src="../src/img/img-accueil/insta2-500px.jpg" alt="" class="image-cover ig-image ig-image--05">
-            <img src="../src/img/img-accueil/insta3-500px.jpg" alt="" class="image-cover ig-image ig-image--06">
-            <img src="../src/img/img-accueil/insta4-500px.jpg" alt="" class="image-cover ig-image ig-image--07">
+            <img src="./img/img-accueil/insta5-440px.jpg" alt="" class="image-cover ig-image ig-image--01">
+            <img src="./img/img-accueil/insta6-440px.jpg" alt="" class="image-cover ig-image ig-image--02">
+            <img src="./img/img-accueil/insta7-440px.jpg" alt="" class="image-cover ig-image ig-image--03">
+            <img src="./img/img-accueil/insta1-500px.jpg" alt="" class="image-cover ig-image ig-image--04">
+            <img src="./img/img-accueil/insta2-500px.jpg" alt="" class="image-cover ig-image ig-image--05">
+            <img src="./img/img-accueil/insta3-500px.jpg" alt="" class="image-cover ig-image ig-image--06">
+            <img src="./img/img-accueil/insta4-500px.jpg" alt="" class="image-cover ig-image ig-image--07">
         </div>
     </section>
     <!--FOOTER-->
@@ -232,8 +232,8 @@
                     <a href="./index.html"><span class="logo">La Maison Jungle</span></a>
                 </div>
                 <div class="footer-social-wrapper">
-                    <a href="" class="extra-padding-right">Instagram</a>   
-                    <a href="">Facebook</a>
+                    <a href="#" class="extra-padding-right">Instagram</a>   
+                    <a href="#">Facebook</a>
                 </div>
             </div>
             <div class="footer-mid-row layout-grid">
@@ -243,16 +243,16 @@
                     </div>
                     <div>
                         <ul>
-                            <a href="">
+                            <a href="./products-all.html">
                                 <li>Magasiner tout</li>
                             </a>
-                            <a href="">
+                            <a href="./products-plants.html">
                                 <li>Plantes</li>
                             </a>
-                            <a href="">
+                            <a href="./products-cactus.html">
                                 <li>Cactus</li>
                             </a>
-                            <a href="">
+                            <a href="./products-flowers.html">
                                 <li>Fleurs séchées</li>
                             </a>
                         </ul>
@@ -264,10 +264,10 @@
                     </div>
                     <div>
                         <ul>
-                            <a href="">
+                            <a href="./history.html">
                                 <li>Notre histoire</li>
                             </a>
-                            <a href="">
+                            <a href="#">
                                 <li>Nos valeurs</li>
                             </a>
                         </ul>
@@ -279,13 +279,13 @@
                     </div>
                     <div>
                         <ul>
-                            <a href="">
+                            <a href="./contact.html">
                                 <li>Contactez-nous</li>
                             </a>
-                            <a href="">
+                            <a href="./faq.html">
                                 <li>FAQs</li>
                             </a>
-                            <a href="">
+                            <a href="#">
                                 <li>Retours & Echanges</li>
                             </a>
                         </ul>
@@ -294,10 +294,10 @@
             </div>
             <div class="footer-end-row">
                 <div>
-                    <p>Ceci est un faux site d'e-commerce pour un projet en développement web.</p>
+                    <p class="footer-p">Ceci est un faux site d'e-commerce pour un projet en développement web.</p>
                 </div>
                 <div>
-                    <p>Design original du site <a href="https://www.twigspaper.com/">Twigs Paper</a></p>
+                    <p class="footer-p">Design original du site <a href="https://www.twigspaper.com/">Twigs Paper</a></p>
                 </div>
             </div>
         </div>

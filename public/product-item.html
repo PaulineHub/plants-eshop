@@ -46,13 +46,20 @@
     <!--ITEM SECTION-->
     <section class="section container ">
         <div class="go-back-wrapper">
-
+            <a href="">
+                <div class="btn-chevron">
+                    <i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>
+                </div>
+            <div class="go-back-text">Ajouter à mon panier</div>
+            </a>
         </div>
+        
         <div class="product-description-wrapper">
             <div class="product-description-img-wrapper">
                 <img src="img/img-accueil/bestseller-test-430px.jpg" alt="">
             </div>
             <div class="product-description-content-wrapper">
+                <!--PRODUCT DESCRIPTION CONTENT WRAPPER-->
                 <div>
                     <div class="all-caps">PLANTES</div>
                     <h3>La Forêt</h3>
@@ -62,17 +69,35 @@
                     </div>
                     <p>Le parfait pack pour commencer sa jungle à la maison. Le parfait pack pour commencer sa jungle à la maison.</p>
                 </div>
+                <!--PRODUCT SHOP WRAPPER-->
                 <div>
-                    <form action="">
-                        <div></div>
+                    <form action="#" method="GET">
+                        <div>
+                            <div role="group" class="option-btn-group">
+                                <label for="" class="option-label">Luminosité</label>
+                                <div role="radiogroup" class="radio-group-option">
+                                    <div class="option-button option-selected"><i class="fas fa-cloud"></i></div>
+                                    <div class="option-button"><i class="fas fa-cloud-sun"></i></div>
+                                    <div class="option-button"><i class="fas fa-sun"></i></div>
+                                </div>
+                            </div>
+                            <div role="group" class="option-btn-group">
+                                <label for="" class="option-label">Température</label>
+                                <div role="radiogroup" class="radio-group-option">
+                                    <div class="option-button option-selected"><i class="fas fa-thermometer-empty"></i></div>
+                                    <div class="option-button"><i class="fas fa-thermometer-half"></i></div>
+                                    <div class="option-button"><i class="fas fa-thermometer-full"></i></div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="product-addToCart-wrapper">
                             <div class="quantity-wrapper">
                                 <div class="quantity-decrement">-</div>
-                                <input type="number">
+                                <input type="number" value="1" min="1" name="add-to-cart-quantity-input" class="quantity-number">
                                 <div class="quantity-increment">+</div>
                             </div>
-                            <div class="button">
-                                <div class="button-text">Ajouter à mon panier</div>
+                            <div class="btn">
+                                <div class="button-text">Ajouter au panier</div>
                                 <div class="btn-chevron">
                                     <i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i>
                                 </div>
@@ -80,13 +105,55 @@
                         </div>
                     </form>
                 </div>
+                <!--ACCORDION WRAPPER-->
+                <div class="accordion-wrapper">
+                    <div class="accordion-item">
+                        <div class="accordion-title">
+                            <div>Détails</div>
+                            <div class="expand-accordion">
+                                <div class="bold">+</div>
+                                <div class="less">-</div>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <ul role="list">
+                                <li class="accordion-li">Nous adaptons la sélection selon les paramètres de luminosité et d'arosage choisis.</li>
+                                <li class="accordion-li">Nos sélections varient selon nos arrivages du moment.</li>
+                                <li class="accordion-li">Caches pot non-inclus.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-title">
+                            <div>Livraison</div>
+                            <div class="expand-accordion">
+                                <div class="bold">+</div>
+                                <div class="less">-</div>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <ul role="list">
+                                <li class="accordion-li">Cueillette en magasin</li>
+                                <li class="accordion-li">Livraison à domicile selon code postal</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-title">
+                            <div>Service Client</div>
+                            <div class="expand-accordion">
+                                <div class="bold">+</div>
+                                <div class="less">-</div>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <ul role="list">
+                                <li class="accordion-li">Veuillez nous contacter à l'adresse info@lamaisonjungle.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    <!--PRODUCT SLIDER SECTION-->
-    <section class="section product-slider-section--pink ">
-        <div class="product-slider-container">
-
         </div>
     </section>
     <!--FOOTER-->

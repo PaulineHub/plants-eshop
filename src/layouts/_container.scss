@@ -53,9 +53,12 @@
         grid-row-gap: 1.5em;
     }
     .no-padding-mobile {
-    padding-right: 0;
-    padding-left: 0;
-    padding-top: 3.5em;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .no-margin-tb-mobile {
+        padding-top: 0;
+        padding-bottom: 0;
     }
 }
 

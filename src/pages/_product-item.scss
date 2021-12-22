@@ -1,8 +1,71 @@
+/*PRODUCT BIG WRAPPER*/
+
 .product-description-wrapper {
     display: flex;
     position: relative;
     align-items: flex-start;
 }
+
+@media screen and (max-width: 479px) {
+    .product-description-wrapper {
+        flex-wrap: wrap;
+    }
+}
+
+/*GO BACK*/
+
+.go-back-wrapper-a {
+    display: flex;
+    padding: 0.5em 1.5em 0.6em;
+    font-size: 1em;
+    width: fit-content;
+}
+
+.go-back-text {
+    padding-left: 0.5em;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+.tiny-chevron {
+    font-size: 0.8em;
+}
+
+@media screen and (max-width: 479px) {
+    .go-back-wrapper {
+        display: none;
+    }
+}
+
+/*PRODUCT IMAGES*/
+
+.product-description-images-wrapper {
+    width: 50%;
+    max-width: 700px;
+}
+
+.product-image-description {
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+.image-gallery-collection-list.mobile {
+    display: none;
+}
+
+@media screen and (max-width: 479px) {
+    .product-description-images-wrapper {
+        width: 100%;
+    }
+    .image-gallery-collection-list {
+        display: none;
+    }
+    .image-gallery-collection-list.mobile {
+        display: block;
+    }
+}
+
+/*PRODUCT CONTENT DESCRIPTION AND SHOP*/
 
 .product-description-content-wrapper {
     position: sticky;
@@ -74,7 +137,7 @@ label {
 }
 
 .quantity-wrapper {
-    display: flex;
+    display: flex;        padding-right: 1em;
     min-height: 38px;
     margin-right: 2em;
     padding-right: .5em;
@@ -88,8 +151,6 @@ label {
     display: flex;
     width: 2em;
     justify-content: center;
-    align-items: center;
-    cursor: pointer;
 }
 
 .quantity-number {
@@ -124,10 +185,20 @@ input[type=number] {
 
 @media screen and (max-width: 991px) {
     .product-description-content-wrapper {
-    padding-left: 1em;
+        padding-left: 1em;
     }
     .quantity-wrapper {
-    margin-right: 1em;
+        margin-right: 1em;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .product-description-content-wrapper {
+        width: 100%;
+        padding-right: 1em;
+    }
+    .product-addToCart-wrapper {
+        flex-wrap: wrap;
 }
 }
 
@@ -174,9 +245,15 @@ input[type=number] {
     display: block;
     overflow: hidden;
     transform-origin: 50% 0%;
-    padding-bottom: 1em;
 }
 
-.accordion-li {
-    
+.accordion-ul {
+    list-style-type: circle;
+    padding-left: 2em;
+    padding-bottom: 1em;
+    display: none;
+}
+
+.accordion-ul-showed {
+    display: block;
 }

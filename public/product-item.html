@@ -44,22 +44,33 @@
         </div>
     </nav>
     <!--ITEM SECTION-->
-    <section class="section container ">
+    <section class="section container no-padding-mobile no-margin-tb-mobile">
         <div class="go-back-wrapper">
-            <a href="">
-                <div class="btn-chevron">
+            <a href="" class="black go-back-wrapper-a">
+                <div class="btn-chevron tiny-chevron">
                     <i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>
                 </div>
-            <div class="go-back-text">Ajouter à mon panier</div>
+            <div class="go-back-text">Retour</div>
             </a>
         </div>
-        
         <div class="product-description-wrapper">
-            <div class="product-description-img-wrapper">
-                <img src="img/img-accueil/bestseller-test-430px.jpg" alt="">
+            <!--PRODUCT IMAGES WRAPPER-->
+            <div class="product-description-images-wrapper">
+                <img src="img/img-accueil/bestseller-test-430px.jpg" alt="" class="product-image-description">
+                <div class="image-gallery-collection-list">
+                    <div role="list">
+                        <div role="listitem" class="image-gallery-item">
+                            <img src="img/img-accueil/bestseller-test-430px.jpg" alt="" class="product-image-description">
+                        </div>
+                        <div role="listitem" class="image-gallery-item">
+                            <img src="img/img-accueil/bestseller-test-430px.jpg" alt="" class="product-image-description">
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!--PRODUCT CONTENT WRAPPER-->
             <div class="product-description-content-wrapper">
-                <!--PRODUCT DESCRIPTION CONTENT WRAPPER-->
+                <!--PRODUCT DESCRIPTION WRAPPER-->
                 <div>
                     <div class="all-caps">PLANTES</div>
                     <h3>La Forêt</h3>
@@ -116,7 +127,7 @@
                             </div>
                         </div>
                         <div class="accordion-content">
-                            <ul role="list">
+                            <ul role="list" class="accordion-ul">
                                 <li class="accordion-li">Nous adaptons la sélection selon les paramètres de luminosité et d'arosage choisis.</li>
                                 <li class="accordion-li">Nos sélections varient selon nos arrivages du moment.</li>
                                 <li class="accordion-li">Caches pot non-inclus.</li>
@@ -132,7 +143,7 @@
                             </div>
                         </div>
                         <div class="accordion-content">
-                            <ul role="list">
+                            <ul role="list" class="accordion-ul">
                                 <li class="accordion-li">Cueillette en magasin</li>
                                 <li class="accordion-li">Livraison à domicile selon code postal</li>
                             </ul>
@@ -147,12 +158,24 @@
                             </div>
                         </div>
                         <div class="accordion-content">
-                            <ul role="list">
+                            <ul role="list" class="accordion-ul">
                                 <li class="accordion-li">Veuillez nous contacter à l'adresse info@lamaisonjungle.com</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                <!--IMAGES GALLERY MOBILE-->
+                <div class="image-gallery-collection-list mobile">
+                    <div role="list">
+                        <div role="listitem" class="image-gallery-item">
+                            <img src="img/img-accueil/bestseller-test-430px.jpg" alt="" class="product-image-description">
+                        </div>
+                        <div role="listitem" class="image-gallery-item">
+                            <img src="img/img-accueil/bestseller-test-430px.jpg" alt="" class="product-image-description">
+                        </div>
+                    </div>
+                </div>
+                <!--END IMAGES GALLERY MOBILE-->
             </div>
         </div>
     </section>

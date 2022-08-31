@@ -203,21 +203,24 @@ nav {
   flex-direction: row;
   align-items: center;
   z-index: 2; }
-  nav .menu {
-    flex-grow: 2; }
-  nav .menuPrincipal {
-    margin: 0;
-    line-height: 40px;
-    display: flex;
-    flex-direction: row; }
-    nav .menuPrincipal .menuPrincipalLi {
-      padding: 0px 15px;
-      font-size: 1.25em;
-      font-family: 'Playfair Display', serif; }
-      nav .menuPrincipal .menuPrincipalLi:hover {
-        font-style: italic; }
-      nav .menuPrincipal .menuPrincipalLi:hover .fa-plus {
-        animation: rotate-45deg 1000ms forwards; }
+
+.menu {
+  flex-grow: 2; }
+
+.nav-menu {
+  margin: 0;
+  line-height: 40px;
+  display: flex;
+  flex-direction: row; }
+
+.dropdown-title {
+  padding: 0px 15px;
+  font-size: 1.25em;
+  font-family: 'Playfair Display', serif; }
+  .dropdown-title:hover {
+    font-style: italic; }
+  .dropdown-title:hover .fa-plus {
+    animation: rotate-45deg 1000ms forwards; }
 
 .logo-container {
   margin: 5px 60px 5px 40px; }

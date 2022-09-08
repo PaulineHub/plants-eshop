@@ -1,0 +1,34 @@
+[
+  {
+    "name": "la forêt",
+    "price": 250,
+    "featured": true,
+    "category": "plantes",
+    "description": "Envie de verdure à la maison pour renouer avec la nature ? Ce lot de plantes va faire votre bonheur ! Il contient une plante de grande taille, et quatre plantes de petite taille.",
+    "light": 1,
+    "temperature": 1
+  },
+  {
+    "name": "la jungle",
+    "price": 350,
+    "featured": true,
+    "category": "plantes",
+    "description": "Vous souhaitez vous entourer d'une véritable jungle ? Ce lot de plantes  contient une plante de grande taille, et quatre plantes de petite taille de type tropical.",
+    "light": 2,
+    "temperature": 2
+  },
+  {
+    "name": "qui s'y frotte s'y pique",
+    "price": 25,
+    "category": "cactus",
+    "description": "Vous tuez toutes vos plantes et vous désespérez de profiter d'un peu de verdure à la maison ? Essayez ces deux petits cactus. Si vous les tuez, noune pouvons plus rien pour vous.",
+    "light": 2,
+    "temperature": 3
+  },
+  {
+    "name": "souris des champs",
+    "price": 25,
+    "category": "fleurs",
+    "description": "Envie de liberté, de courir dans les champs les cheveux aux vents ? Ce bouquet de blé devrait répondre à vos rêves les plus fous."
+  }
+]

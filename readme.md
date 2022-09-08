@@ -1,3 +1,6 @@
 # Site web E-commerce de plantes
 
-### Langage : Javascript
+### Front-end : Javascript, Sass
+### Back-end : Node.js, Express, Mongo DB
+
+

@@ -331,7 +331,7 @@ nav {
 .split-image {
   width: 100%;
   height: 100%;
-  background-image: url("./img/img-produits/plantesCouv.jpg");
+  background-image: url("assets/images/img-produits/plantesCouv.jpg");
   background-size: cover;
   background-repeat: no-repeat; }
 
@@ -453,7 +453,7 @@ footer {
   height: 1000px; }
   .main-hero-section .hero-bcg-wrapper {
     position: absolute;
-    background: url("./img/img-accueil/boutique-plantes.jpg") no-repeat;
+    background: url("assets/images/img-accueil/boutique-plantes.jpg") no-repeat;
     background-size: cover;
     overflow: hidden;
     height: 1000px;
@@ -628,7 +628,7 @@ footer {
   .testimonial-split-img-container .testimonial-split-img {
     width: 100%;
     height: 100%;
-    background-image: url(./img/img-accueil/testimonial-plants-917px.png);
+    background-image: url(assets/images/img-accueil/testimonial-plants-917px.png);
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat; }

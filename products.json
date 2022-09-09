@@ -5,7 +5,8 @@
     "category": "plantes",
     "description": "Besoin de quelques plantes pour habiller des étagères ou un rebord de fenêtre ? Composé de quatres espèces différentes de taille moyenne, cet assortiment de plantes va vous ravire. Parfait pour un ou une débutante, nous vous proposons une sélection robuste, facile d'entretien.",
     "light": 1,
-    "temperature": 1
+    "temperature": 1,
+    "image": "image/"
   },
   {
     "name": "de bein belles plantes",
@@ -14,7 +15,8 @@
     "category": "plantes",
     "description": "De belle taille moyenne, ces plantes aux feuilles déjà fort développées vont faire des envieux.ses ! Nous vous proposons une sélection de trois plantes dans l'air du temps, belles et vigoureuses, à entretenir avec amour.",
     "light": 1,
-    "temperature": 2
+    "temperature": 2,
+    "image": "image/"
   },
   {
     "name": "la forêt",
@@ -23,7 +25,8 @@
     "category": "plantes",
     "description": "Envie de verdure à la maison pour renouer avec la nature ? Ce lot de plantes va faire votre bonheur ! Il contient une plante de grande taille, et quatre plantes de petite taille. Une valeur sûre pour apporter cette touche cocooning à votre intérieur en vous laissant guider par notre sélection du moment.",
     "light": 1,
-    "temperature": 1
+    "temperature": 1,
+    "image": "image/"
   },
   {
     "name": "cascade de chlorophile",
@@ -31,7 +34,8 @@
     "category": "plantes",
     "description": "Vous rêvez de vous balancer de liane en liane tel Jane et Tarzan en pleine jungle ? Bon, nous ne sommes pas magiciennes, mais ces deux plantes cascade, de moyenne et de petite taille, devraient vous mettre dans l'ambiance. A vous de faire des boutures, pour créer une véritable jungle !",
     "light": 1,
-    "temperature": 2
+    "temperature": 2,
+    "image": "image/"
   },
   {
     "name": "la jungle",
@@ -40,7 +44,8 @@
     "category": "plantes",
     "description": "Vous souhaitez vous entourer d'une véritable jungle ? Il est temps de passer à la commande best seller de la Maison Jungle ! Ce lot de plantes contient une plante de grande taille, et quatre plantes de moyenne taille de type tropical. Avec une telle population, vou ne devriez pas tarder à entendre les singes se balancer de liane en liane. Attention aux jaguars !",
     "light": 2,
-    "temperature": 2
+    "temperature": 2,
+    "image": "image/"
   },
   {
     "name": "mon Amazonie de poche",
@@ -48,7 +53,8 @@
     "category": "plantes",
     "description": "Envie d'une jungle exotique qui tiendrait sur deux étagères ? Tout est possible à la Maison Jungle ! Avec ce lot de six plantes tropicales de petites tailles, il ne tient qu'à vous de les entretenir avec amour pour qu'elles s'épanouissent dans votre appartement.",
     "light": 2,
-    "temperature": 2
+    "temperature": 2,
+    "image": "image/"
   },
   {
     "name": "les cactus de la dernière chance",
@@ -56,7 +62,8 @@
     "category": "cactus",
     "description": "Vous tuez toutes vos plantes et vous désespérez de profiter d'un peu de verdure à la maison ? Essayez cet assortiment de trois cactus de taille moyenne et petite. Il devrait bien y en avoir un qui survit sur les trois. Avec un peu de chance.",
     "light": 2,
-    "temperature": 3
+    "temperature": 3,
+    "image": "image/"
   },
   {
     "name": "qui s'y frotte s'y pique",
@@ -64,7 +71,8 @@
     "category": "cactus",
     "description": "Avec ce lot de quatre cactus de petite taille, vous tenez le cadeau idéal pour une pandaison de crémaillère. Ou une promotion. Un anniversaire. Toute occasion est bonne pour offrir des cactus, non ? Aiguilles vendues séparément. Non, on plaisante.",
     "light": 2,
-    "temperature": 2
+    "temperature": 2,
+    "image": "image/"
   },
   {
     "name": "le monde entier est un cactus",
@@ -72,7 +80,8 @@
     "category": "cactus",
     "description": "Vous êtes prêt.e à faire de votre appartement désertique un VRAI désert saharien ? Il est temps d'adopter ces six cactus de taille moyenne et de variétés diverses. Véritables durs à cuire, ces plantes vous demanderons peu d'entretien, pour un effet garanti !",
     "light": 2,
-    "temperature": 3
+    "temperature": 3,
+    "image": "image/"
   },
   {
     "name": "cascade végétale",
@@ -80,7 +89,8 @@
     "category": "cactus",
     "description": "Avec ses feuilles hors du commun, nos plantes grasses tombantes vont vous charmer. Dans une suspension en macramé ou un pot en terre cuite, elles ne manqueront pas d'ajouter une touche d'originalité à votre intérieur. Accompagnée de deux cactus de taille moyenne.",
     "light": 2,
-    "temperature": 2
+    "temperature": 2,
+    "image": "image/"
   },
   {
     "name": "mercerie de plantes grasse",
@@ -88,7 +98,8 @@
     "category": "cactus",
     "description": "Envie de vous constituer un désert de cactus à moindre coût ? La mercerie est faite pour vous ! Avec ces six cactus de petites tailles, regardez vos bébés plantes pousser à vue d'oeil. Promis, ils font déjà leurs nuits. Pour la plupart.",
     "light": 2,
-    "temperature": 2
+    "temperature": 2,
+    "image": "image/"
   },
   {
     "name": "un Sahara de cactus",
@@ -97,42 +108,49 @@
     "category": "cactus",
     "description": "Vous souhaitez transformer votre salon en Sahara ? Vous voulez apportez un peu de verdure à une pièce très ensoleillée ? N'en dites point plus. Avec cette sélection de 5 cactus de taille moyenne, un cobra ne retrouverait pas ses petits. Attention où vous mettez les pieds, ça pique !",
     "light": 3,
-    "temperature": 3
+    "temperature": 3,
+    "image": ""
   },
   {
     "name": "souris des champs",
     "price": 25,
     "category": "fleurs",
-    "description": "Envie de liberté, de courir dans les champs les cheveux aux vents ? Ce bouquet de blé devrait répondre à vos rêves les plus fous. Il fait également très bien dans un vase. Emballé avec soin pour être reçu en parfait état."
+    "description": "Envie de liberté, de courir dans les champs les cheveux aux vents ? Ce bouquet de blé devrait répondre à vos rêves les plus fous. Il fait également très bien dans un vase. Emballé avec soin pour être reçu en parfait état.",
+    "image": "image/"
   },
   {
     "name": "une oeuvre d'art",
     "price": 50,
     "category": "fleurs",
-    "description": "Votre buffet manque d'un je ne sais quoi ? Mais de fleurs séchées bein sûr ! Avec ce bouquet de fleurs séchées de taille moyenne, accueillez une véritable oeuvre d'art dans votre intérieur. Parce qu'on a toujours besoin d'un peu de douceur dans ce monde de brutes."
+    "description": "Votre buffet manque d'un je ne sais quoi ? Mais de fleurs séchées bein sûr ! Avec ce bouquet de fleurs séchées de taille moyenne, accueillez une véritable oeuvre d'art dans votre intérieur. Parce qu'on a toujours besoin d'un peu de douceur dans ce monde de brutes.",
+    "image": "image/"
   },
   {
     "name": "bouquet nomade",
     "price": 60,
     "category": "fleurs",
-    "description": "Besoin d'une grande composition pour ajouter une touche bohème à votre décoration ? Avec ce large bouquet mêlant cotton et blés, filez tout droit dans une tente nomade à la lueur des lanternes. Ou allumez quelques bougies devant une tisane fumante. c'est bien, aussi."
+    "description": "Besoin d'une grande composition pour ajouter une touche bohème à votre décoration ? Avec ce large bouquet mêlant cotton et blés, filez tout droit dans une tente nomade à la lueur des lanternes. Ou allumez quelques bougies devant une tisane fumante. c'est bien, aussi.",
+    "image": "image/"
   },
   {
     "name": "l'insoutenable légèreté de l'être",
     "price": 50,
     "category": "fleurs",
-    "description": "."
+    "description": ".",
+    "image": "image/"
   },
   {
     "name": "feu d'artifice des prairies",
     "price": 45,
     "category": "fleurs",
-    "description": "."
+    "description": ".",
+    "image": "image/"
   },
   {
     "name": "grelots d'or",
     "price": 35,
     "category": "fleurs",
-    "description": "."
+    "description": ".",
+    "image": "image/"
   }
 ]

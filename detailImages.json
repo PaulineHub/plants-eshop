@@ -1,0 +1,14 @@
+[
+  {
+    "category": "plantes",
+    "src": ["assets/images/img-produits/plante7.jpg", "assets/images/img-produits/plante8.jpg"]
+  },
+  {
+    "category": "cactus",
+    "src": ["assets/images/img-produits/plante7.jpg", "assets/images/img-produits/plante8.jpg"]
+  },
+  {
+    "category": "fleurs",
+    "src": ["assets/images/img-produits/plante7.jpg", "assets/images/img-produits/plante8.jpg"]
+  }
+]

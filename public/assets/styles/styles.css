@@ -331,7 +331,7 @@ nav {
 .split-image {
   width: 100%;
   height: 100%;
-  background-image: url("assets/images/img-produits/plantesCouv.jpg");
+  background-image: url("../images/img-produits/plantesCouv.jpg");
   background-size: cover;
   background-repeat: no-repeat; }
 
@@ -453,7 +453,7 @@ footer {
   height: 1000px; }
   .main-hero-section .hero-bcg-wrapper {
     position: absolute;
-    background: url("assets/images/img-accueil/boutique-plantes.jpg") no-repeat;
+    background: url("../images/img-accueil/boutique-plantes.jpg") no-repeat;
     background-size: cover;
     overflow: hidden;
     height: 1000px;
@@ -628,7 +628,7 @@ footer {
   .testimonial-split-img-container .testimonial-split-img {
     width: 100%;
     height: 100%;
-    background-image: url(assets/images/img-accueil/testimonial-plants-917px.png);
+    background-image: url(../images/img-accueil/testimonial-plants-917px.png);
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat; }
@@ -1081,5 +1081,82 @@ input[type=number] {
 
 .accordion-ul-showed {
   display: block; }
+
+/* FILTER SECTION */
+.filter-section {
+  background-color: #f8f0e7;
+  width: 81%;
+  padding: 1em;
+  margin: 6.5em auto 0 auto;
+  display: flex;
+  justify-content: space-between; }
+
+.filter-section ~ .section {
+  padding-top: 2.5em; }
+
+.filter-section button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px; }
+
+.filter-section button:nth-child(2) {
+  background-color: #ced4ad; }
+
+.filter-section button:nth-child(3) {
+  background-color: #e4d0ba; }
+
+.filter-section button:nth-child(4) {
+  background-color: #bfc9c4; }
+
+.filter-section button:nth-child(5) {
+  background-color: #d4b9b9; }
+
+.filter-section button:nth-child(6) {
+  background-color: #e4cf99; }
+
+.filter-section select {
+  height: 2.5rem;
+  font-size: 1.2rem;
+  padding-left: 5px; }
+
+.filter-section span {
+  padding-right: 5px; }
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 60px;
+  font-size: 1.4rem; }
+
+.pagination button {
+  color: black;
+  display: contents; }
+
+.pagination a {
+  color: #212806;
+  padding: 5px 10px;
+  transition: background-color .3s; }
+
+.pagination a.active {
+  background-color: #212806;
+  color: white; }
+
+.pagination a:hover:not(.active) {
+  background-color: #8e9373;
+  color: white; }
+
+.pagination i {
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer; }
+
+.pagination span {
+  padding-left: 5px;
+  padding-right: 5px; }
 
 /*# sourceMappingURL=styles.css.map */

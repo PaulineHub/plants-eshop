@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magasinez nos Plantes</title>
     <meta name="author" content="Pauline Huby">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <!-- scripts -->
+    <script type="module" src="./assets/scripts/main.js" defer></script>
     <script src="https://kit.fontawesome.com/32150d741e.js" crossorigin="anonymous"></script>
 </head>
 
@@ -47,82 +49,62 @@
     <section class=" hero-mid-split-wrapper ">
         <div class="hero-split-left-column">
             <div class="hero-split-content no-margin-bottom">
-                <h1>Nos Plantes</h1>
-                <p class="feature-paragraph width-70">Transformer votre intérieur en jungle avec nos assortiments de plantes.</p>
+                <h1>Nos Produits</h1>
+                <p class="feature-paragraph width-70">Transformer votre intérieur en jungle avec nos assortiments de plantes, cactus et fleurs séchées.</p>
             </div>
         </div>
         <div class="hero-split-right-column">
             <div class="split-image"></div>
         </div>
     </section>
-
+    <!--FILTER SECTION-->
+    <section data-js-catalogue-filter class="filter-section">
+        <div>
+            <span>Sélection</span>
+            <button type="button" name="all" value="all" class="filter-button">Tout</button>
+            <button type="button" name="plants" value="plants" class="filter-button">Plantes</button>
+            <button type="button" name="cactus" value="cactus" class="filter-button">Cactus</button>
+            <button type="button" name="flower" value="flower" class="filter-button">Fleurs</button>
+            <button type="button" name="featured" value="featured" class="filter-button">Populaire</button>
+        </div>
+        <div>
+            <select name="sort" id="sort">
+                <option value="recent" selected>Plus récent</option>
+                <option value="price-up">Prix croissants</option>
+                <option value="price-down">Prix décroissants</option>
+            </select>
+        </div>
+    </section>
     <!--PLANT PRODUCTS-->
-   <div class="container section no-padding-mobile">
+    <div class="container section no-padding-mobile">
         <div role="list" class="products-list">
-            <div role="listitem">
-                <a href="./product-item.html">
-                    <div class="product-slider">
-                        <div class="product-slider-img-wrapper">
-                            <img src="assets/images/img-accueil/bestseller-test-430px.jpg" alt="" class="product-slider-img no-min-width">
-                        </div>
-                        <div class="content-product-slider">
-                            <div class="category-product-slider">PLANTES</div>
-                            <div class="title-product-slider">
-                                <h4>La forêt</h4>
+            <!--PRODUCT TEMPLATE-->
+            <template data-js-item-template>
+                <div role="listitem" id="{{id}}">
+                    <a href="./product-item.html/{{id}}">
+                        <div class="product-slider">
+                            <div class="product-slider-img-wrapper">
+                                <img src="{{image}}" alt="" class="product-slider-img no-min-width">
                             </div>
-                            <div class="price-product-slider">50$</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div role="listitem">
-                <a href="./product-item.html">
-                    <div class="product-slider">
-                        <div class="product-slider-img-wrapper">
-                            <img src="assets/images/img-accueil/bestseller-test-430px.jpg" alt="" class="product-slider-img no-min-width">
-                        </div>
-                        <div class="content-product-slider">
-                            <div class="category-product-slider">PLANTES</div>
-                            <div class="title-product-slider">
-                                <h4>La forêt</h4>
+                            <div class="content-product-slider">
+                                <div class="category-product-slider">{{category}}</div>
+                                <div class="title-product-slider">
+                                    <h4>{{title}}</h4>
+                                </div>
+                                <div class="price-product-slider">{{price}}$</div>
                             </div>
-                            <div class="price-product-slider">50$</div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div role="listitem">
-                <a href="./product-item.html">
-                    <div class="product-slider">
-                        <div class="product-slider-img-wrapper">
-                            <img src="assets/images/img-accueil/bestseller-test-430px.jpg" alt="" class="product-slider-img no-min-width">
-                        </div>
-                        <div class="content-product-slider">
-                            <div class="category-product-slider">PLANTES</div>
-                            <div class="title-product-slider">
-                                <h4>La forêt</h4>
-                            </div>
-                            <div class="price-product-slider">50$</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div role="listitem">
-                <a href="./product-item.html">
-                    <div class="product-slider">
-                        <div class="product-slider-img-wrapper">
-                            <img src="assets/images/img-accueil/bestseller-test-430px.jpg" alt="" class="product-slider-img no-min-width">
-                        </div>
-                        <div class="content-product-slider">
-                            <div class="category-product-slider">PLANTES</div>
-                            <div class="title-product-slider">
-                                <h4>La forêt</h4>
-                            </div>
-                            <div class="price-product-slider">50$</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
+            </template>
+        </div>
+        <!--PAGINATION-->
+        <div class="pagination">
+            <a href=""><i class="fas fa-chevron-left"></i></a>
+                <a class="active" href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+            <a href=""><i class="fas fa-chevron-right"></i></a>
         </div>
    </div>
     <!--FOOTER-->
@@ -204,6 +186,10 @@
             </div>
         </div>
     </footer>
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>

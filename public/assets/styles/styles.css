@@ -1094,7 +1094,7 @@ input[type=number] {
 .filter-section ~ .section {
   padding-top: 2.5em; }
 
-.filter-section button {
+.filter-section label {
   padding: 10px 20px;
   font-size: 1.2rem;
   border-radius: 5px;
@@ -1102,19 +1102,19 @@ input[type=number] {
   cursor: pointer;
   margin-right: 5px; }
 
-.filter-section button:nth-child(2) {
+ul label:nth-child(2) {
   background-color: #ced4ad; }
 
-.filter-section button:nth-child(3) {
+ul label:nth-child(2) {
   background-color: #e4d0ba; }
 
-.filter-section button:nth-child(4) {
+ul label:nth-child(4) {
   background-color: #bfc9c4; }
 
-.filter-section button:nth-child(5) {
+ul label:nth-child(5) {
   background-color: #d4b9b9; }
 
-.filter-section button:nth-child(6) {
+ul label:nth-child(6) {
   background-color: #e4cf99; }
 
 .filter-section select {
@@ -1125,6 +1125,15 @@ input[type=number] {
 .filter-section span {
   padding-right: 5px; }
 
+.filter-section li {
+  display: inline-block; }
+
+input {
+  visibility: hidden; }
+
+input:checked + label {
+  background: #d4b9b9; }
+
 /* PAGINATION */
 .pagination {
   display: flex;
@@ -1133,28 +1142,32 @@ input[type=number] {
   margin-top: 60px;
   font-size: 1.4rem; }
 
-.pagination button {
+/* .pagination button {
   color: black;
-  display: contents; }
-
-.pagination a {
+  display: contents;
+} */
+.pagination button {
   color: #212806;
   padding: 5px 10px;
-  transition: background-color .3s; }
+  transition: background-color .3s;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  background-color: #fcf8f3; }
 
-.pagination a.active {
+.pagination button.active {
   background-color: #212806;
   color: white; }
 
-.pagination a:hover:not(.active) {
+.pagination button:hover:not(.active) {
   background-color: #8e9373;
   color: white; }
 
-.pagination i {
+/* .pagination i {
   padding-left: 10px;
   padding-right: 10px;
-  cursor: pointer; }
-
+  cursor: pointer;
+} */
 .pagination span {
   padding-left: 5px;
   padding-right: 5px; }

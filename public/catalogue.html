@@ -59,19 +59,34 @@
     </section>
     <!--FILTER SECTION-->
     <section data-js-catalogue-filter class="filter-section">
-        <div>
+        <ul>
             <span>Sélection</span>
-            <button type="button" name="all" value="all" class="filter-button">Tout</button>
-            <button type="button" name="plants" value="plants" class="filter-button">Plantes</button>
-            <button type="button" name="cactus" value="cactus" class="filter-button">Cactus</button>
-            <button type="button" name="flower" value="flower" class="filter-button">Fleurs</button>
-            <button type="button" name="featured" value="featured" class="filter-button">Populaire</button>
-        </div>
+            <li>
+                <input type='radio' value='all' name='filter' id='all' />
+                <label for='all'>Tout</label>
+            </li>
+            <li>
+                <input type='radio' value='plantes' name='filter' id='plants' />
+                <label for='plants'>Plantes</label>
+            </li>
+            <li>
+                <input type='radio' value='cactus' name='filter' id='cactus' />
+                <label for='cactus'>Cactus</label>
+            </li>
+            <li>
+                <input type='radio' value='fleurs' name='filter' id='flower' />
+                <label for='flower'>Fleurs</label>
+            </li>
+            <li>
+                <input type='radio' value='featured' name='filter' id='featured' />
+                <label for='featured'>Populaire</label>
+            </li>
+        </ul>
         <div>
             <select name="sort" id="sort">
-                <option value="recent" selected>Plus récent</option>
-                <option value="price-up">Prix croissants</option>
-                <option value="price-down">Prix décroissants</option>
+                <option value="createdAt" selected>Plus récent</option>
+                <option value="price">Prix croissants</option>
+                <option value="-price">Prix décroissants</option>
             </select>
         </div>
     </section>
@@ -99,12 +114,10 @@
             </template>
         </div>
         <!--PAGINATION-->
-        <div class="pagination">
-            <a href=""><i class="fas fa-chevron-left"></i></a>
-                <a class="active" href="">1</a>
-                <a href="">2</a>
-                <a href="">3</a>
-            <a href=""><i class="fas fa-chevron-right"></i></a>
+        <div class="pagination" data-js-pagination>
+            <template data-js-page-button-template>
+                <button type="button">{{number}}</button> 
+            </template>
         </div>
    </div>
     <!--FOOTER-->

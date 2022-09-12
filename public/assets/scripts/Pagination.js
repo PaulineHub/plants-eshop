@@ -1,9 +1,13 @@
+import Products from './Products.js';
+
 export default class Pagination {
 
-    constructor(el, numPage) {
+    constructor(el, numPage, params) {
         this._el = el;
         this.numPage = numPage;
-        this._elPageButtonTemplate = this._el.querySelector('[data-js-page-button-template]');
+        this._elPageButtonTemplate = document.querySelector('[data-js-page-button-template]');
+        this._elPageButtons = '';
+        this.params = params;
 
         this.init(this.numPage);
     }
@@ -14,17 +18,36 @@ export default class Pagination {
 
 
     createPagination(nb) {
-        let elButtonTemplateClone = this._elPageButtonTemplate.cloneNode(true);
-        let regExp = new RegExp(`{{number}}`, 'g');
-        elButtonTemplateClone.innerHTML = elButtonTemplateClone.innerHTML.replace(regExp, nb)
-        let newElItem = document.importNode(elButtonTemplateClone.content, true);
-        this._el.append(newElItem);
-        newElItem.addEventListener('click', this.getPage.bind(this));
+        for (let i = 1; i <= nb; i++) {
+            let elButtonTemplateClone = this._elPageButtonTemplate.cloneNode(true);
+            let regExp = new RegExp(`{{number}}`, 'g');
+            elButtonTemplateClone.innerHTML = elButtonTemplateClone.innerHTML.replace(regExp, i)
+            let newElItem = document.importNode(elButtonTemplateClone.content, true);
+            this._el.append(newElItem);
+        }
+        // listen events
+        this._elPageButtons = this._el.querySelectorAll('button');
+        this._elPageButtons.forEach(elPageButton => {
+            elPageButton.addEventListener('click', this.getPage.bind(this));
+        })
     }
 
-    getPage(e) {
-        console.log(e.innerText)
+    async getPage(e) {
+        const button = e.target;
+        let numPage = button.innerText;
+        this.params.page = numPage;
+        this.addClassActive(button) 
+        new Products(this.params);
+        
     }
-    // ajout class="active"
+
+    // ameliorable avec cette ressource
+    //https://www.w3schools.com/howto/howto_js_active_element.asp
+    addClassActive(buttonClicked) {
+        this._elPageButtons.forEach(elPageButton => {
+            elPageButton.classList.remove('active');
+        });
+        buttonClicked.classList.add('active');
+    }
 
 }

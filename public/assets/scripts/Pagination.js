@@ -1,8 +1,10 @@
 import Products from './Products.js';
+import Router from './Router.js';
 
-export default class Pagination {
+export default class Pagination extends Router {
 
     constructor(el, numPage, params) {
+        super();
         this._el = el;
         this.numPage = numPage;
         this._elPageButtonTemplate = document.querySelector('[data-js-page-button-template]');
@@ -36,7 +38,7 @@ export default class Pagination {
         const button = e.target;
         let numPage = button.innerText;
         this.params.page = numPage;
-        this.addClassActive(button) 
+        this.addClassActive(button); 
         new Products(this.params);
         
     }

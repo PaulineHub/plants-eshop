@@ -1,10 +1,11 @@
 import Pagination from './Pagination.js';
 import Products from './Products.js';
+import Router from './Router.js';
 
-export default class Catalogue {
+export default class Catalogue extends Router {
 
-    constructor(idFilter) {
-        this._idFilter = idFilter;
+    constructor() {
+        super();
         this.catalogueFields = '_id, createdAt, featured, category, image, name, price';
         this.productsPerPage = 8;
         this.maxNbOfProducts = 40;
@@ -14,12 +15,15 @@ export default class Catalogue {
         this._elFilterSelect = this._elFiltersContainer.querySelector('select');
         this._elPaginationContainer = document.querySelector('[data-js-pagination]');
 
-        this.init(this._idFilter);
+        this.init();
     }
 
-    init(filter) {
-        this.checkRadioFilter(filter);
-        this.displayItems(filter);
+    init() {
+        let params = this.getParamsInHash('products');
+        if (params.category) this.checkRadioFilter(params.category);
+        else this.checkRadioFilter('all')
+
+        this.displayItems();
 
         this._elFilterRadioButtons.forEach( elFilterRadioButton => {
             elFilterRadioButton.addEventListener('click', this.getRadioFilter.bind(this))
@@ -34,8 +38,10 @@ export default class Catalogue {
 
     getRadioFilter(e) {
         const radioFilter = e.target.value;
+        console.log(radioFilter);
         const selectFilter = this._elFilterSelect.value;
-        this.displayItems(radioFilter, selectFilter);
+        this.addQueriesInUrl(radioFilter, selectFilter);
+        this.displayItems();
     }
 
     getSelectFilter() {
@@ -46,19 +52,24 @@ export default class Catalogue {
             }
         }) 
         const selectFilter = this._elFilterSelect.value;
-        this.displayItems(radioFilter, selectFilter);
+        this.addQueriesInUrl(radioFilter, selectFilter);
+        this.displayItems();
     }
     
-    async displayItems(filterQuery='all', sortQuery='createdAt') {
+    async displayItems() {
+        let filterQuery;
+        let sortQuery;
+        const urlParams = this.getParamsInHash('products');
+        if (urlParams) {
+            filterQuery = urlParams.category;
+            sortQuery = urlParams.sort;
+        }
         // set the params of the query
         let params = {};
         params.fields = '_id';
-        if (filterQuery == 'all') {
-            params = {};
-        } else if (filterQuery == 'plantes' || filterQuery == 'fleurs' || filterQuery == 'cactus') {
-            params.category = filterQuery;
-        } else if (filterQuery == 'featured') {
-            params.featured = 'true';
+        if (filterQuery) {
+            if (filterQuery == 'all') params = {};
+            else params.category = filterQuery;
         }
         // get the total of products for pagination
         params.limit = this.maxNbOfProducts;
@@ -75,14 +86,13 @@ export default class Catalogue {
                     productsQuantity -= this.productsPerPage;
                 }
             }
-            
         } catch (error) {
             console.log(error);
         }
         // get the products
         params.limit = this.productsPerPage;
         params.fields = this.catalogueFields;
-        params.sort = sortQuery;
+        if (sortQuery) params.sort = sortQuery;
         new Products(params);
         // display pagination
         this._elPaginationContainer.innerHTML = '';
@@ -90,6 +100,28 @@ export default class Catalogue {
             new Pagination(this._elPaginationContainer, nbPages, params);
         }
     }
+
+    // getParamsInHash(slug) {
+    //     let params = {};
+    //     let url = window.location.hash;
+    //     if (url) {
+    //         let hashInArray = url.split(`#!/${slug}?`)[1].split('&');
+    //         hashInArray.forEach(hash => {
+    //             let infos = hash.split('=');
+    //             params[infos[0]] = infos[1];
+    //         })   
+    //         return params;
+    //     } else return false;
+    // }
+
+    // addQueriesInUrl(categoryFilter, sortFilter, pageFilter=false) {
+    //     if (pageFilter) {
+    //         window.location = `#!/products?category=${categoryFilter}&sort=${sortFilter}&page=${pageFilter}`;
+    //     } else {
+    //         window.location = `#!/products?category=${categoryFilter}&sort=${sortFilter}`;
+    //     }
+        
+    // }
     
 
     

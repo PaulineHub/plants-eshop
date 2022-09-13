@@ -5,10 +5,10 @@
   },
   {
     "category": "cactus",
-    "src": ["assets/images/img-produits/plante7.jpg", "assets/images/img-produits/plante8.jpg"]
+    "src": ["assets/images/img-produits/cactus7.jpg", "assets/images/img-produits/cactus8.jpg"]
   },
   {
     "category": "fleurs",
-    "src": ["assets/images/img-produits/plante7.jpg", "assets/images/img-produits/plante8.jpg"]
+    "src": ["assets/images/img-produits/fleur7.jpg", "assets/images/img-produits/fleur8.jpg"]
   }
 ]

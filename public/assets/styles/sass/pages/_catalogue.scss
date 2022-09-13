@@ -2,7 +2,7 @@
 
 .filter-section {
     background-color: #f8f0e7;
-    width: 81%;
+    max-width: 1550px;
     padding: 1em;
     margin: 6.5em auto 0 auto;
     display: flex;
@@ -11,6 +11,16 @@
 
 .filter-section ~ .section {
     padding-top: 2.5em;
+}
+
+.filter-section ul {
+    display: flex;
+    padding-bottom: 1em;
+    padding-top: 0.2em;
+}
+
+.filter-section div {
+    margin-top: 1.2em;
 }
 
 .filter-section label {
@@ -23,23 +33,7 @@
 }
 
 ul label:nth-child(2) {
-    background-color: #ced4ad;
-}
-
-ul label:nth-child(2) {
     background-color: #e4d0ba;
-}
-
-ul label:nth-child(4) {
-    background-color: #bfc9c4;
-}
-
-ul label:nth-child(5) {
-    background-color: #d4b9b9;
-}
-
-ul label:nth-child(6) {
-    background-color: #e4cf99;
 }
 
 .filter-section select {
@@ -49,7 +43,8 @@ ul label:nth-child(6) {
 }
 
 .filter-section span {
-    padding-right: 5px;
+    padding-right: 10px;
+    padding-top: 1.4em;
 }
 
 .filter-section li {
@@ -74,11 +69,6 @@ input:checked + label {
   margin-top: 60px;
   font-size: 1.4rem;
 }
-
-/* .pagination button {
-  color: black;
-  display: contents;
-} */
 
 .pagination button {
     color: $black;

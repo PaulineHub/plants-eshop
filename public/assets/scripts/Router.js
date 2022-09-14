@@ -1,26 +1,27 @@
 
 export default class Router {
 
-    getParamsInHash(slug) {
+    getSearchParamsFromUrl(hash) {
+        const url = new URL(`${window.location.href}`);
         let params = {};
-        let url = window.location.hash;
-        if (url) {
-            let hashInArray = url.split(`#!/${slug}?`)[1].split('&');
-            hashInArray.forEach(hash => {
-                let infos = hash.split('=');
-                params[infos[0]] = infos[1];
-            })   
+        if (url.hash) {
+            let urlSearch = url.hash.split(`#!/${hash}?`)[1];
+            let searchParams = new URLSearchParams(urlSearch);
+            for (let key of searchParams.keys()) {
+                params[key] = searchParams.get(key);
+            }
             return params;
         } else return false;
     }
 
-    addQueriesInUrl(categoryFilter, sortFilter, pageFilter=false) {
-        if (pageFilter) {
-            window.location = `#!/products?category=${categoryFilter}&sort=${sortFilter}&page=${pageFilter}`;
-        } else {
-            window.location = `#!/products?category=${categoryFilter}&sort=${sortFilter}`;
+    updateSearchParamsInUrl(hashTerm, paramsObject) {
+        const url = new URL(`${window.location.href}`);
+        url.hash = `#!/${hashTerm}?`;
+        let params = new URLSearchParams(url.search);
+        for (let paramName in paramsObject) {
+            params.append(paramName, paramsObject[paramName]);
         }
-        
+         window.location = `${url}${params}`;
     }
     
 

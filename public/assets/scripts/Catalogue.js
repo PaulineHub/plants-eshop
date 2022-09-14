@@ -9,6 +9,7 @@ export default class Catalogue extends Router {
         this.catalogueFields = '_id, createdAt, featured, category, image, name, price';
         this.productsPerPage = 8;
         this.maxNbOfProducts = 40;
+        this.hash = 'products';
         this._elProductsContainer = document.querySelector('.products-list');
         this._elFiltersContainer = document.querySelector('[data-js-catalogue-filter]');
         this._elFilterRadioButtons = this._elFiltersContainer.querySelectorAll('input[name="filter"');
@@ -19,16 +20,20 @@ export default class Catalogue extends Router {
     }
 
     init() {
-        let params = this.getParamsInHash('products');
+        let params = this.getSearchParamsFromUrl(this.hash);
+
+        //initial setting
         if (params.category) this.checkRadioFilter(params.category);
         else this.checkRadioFilter('all')
+        if (params.select) this.selectSortFilter(params.select);
+        else this.selectSortFilter('createdAt')
 
         this.displayItems();
 
         this._elFilterRadioButtons.forEach( elFilterRadioButton => {
             elFilterRadioButton.addEventListener('click', this.getRadioFilter.bind(this))
         })
-        this._elFilterSelect.addEventListener('change',this.getSelectFilter.bind(this))
+        this._elFilterSelect.addEventListener('change',this.getSortFilter.bind(this))
     }
 
     checkRadioFilter(id) {
@@ -36,15 +41,21 @@ export default class Catalogue extends Router {
         radioButton.checked = true;
     }
 
+    selectSortFilter(optionToselect){
+        let options = Array.from(this._elFilterSelect.options)
+        for (let n in options){
+            if (options[n].value == optionToselect) options[n].selected = true;
+        }
+    }
+
     getRadioFilter(e) {
         const radioFilter = e.target.value;
-        console.log(radioFilter);
         const selectFilter = this._elFilterSelect.value;
-        this.addQueriesInUrl(radioFilter, selectFilter);
+        this.updateSearchParamsInUrl(this.hash, {'category':radioFilter, 'sort':selectFilter});
         this.displayItems();
     }
 
-    getSelectFilter() {
+    getSortFilter() {
         let radioFilter = '';
         this._elFilterRadioButtons.forEach( elFilterRadioButton => {
             if (elFilterRadioButton.checked) {
@@ -52,25 +63,21 @@ export default class Catalogue extends Router {
             }
         }) 
         const selectFilter = this._elFilterSelect.value;
-        this.addQueriesInUrl(radioFilter, selectFilter);
+        this.updateSearchParamsInUrl(this.hash, {'category':radioFilter, 'sort':selectFilter});
         this.displayItems();
     }
     
     async displayItems() {
-        let filterQuery;
-        let sortQuery;
-        const urlParams = this.getParamsInHash('products');
-        if (urlParams) {
-            filterQuery = urlParams.category;
-            sortQuery = urlParams.sort;
-        }
+        const urlParams = this.getSearchParamsFromUrl(this.hash);
         // set the params of the query
         let params = {};
-        params.fields = '_id';
-        if (filterQuery) {
-            if (filterQuery == 'all') params = {};
-            else params.category = filterQuery;
-        }
+        if (urlParams.category) {
+            if (urlParams.category == 'all') {
+                params = {}; // we don't send any category filter
+                if (!urlParams.page) params.page = '1';
+            }
+            else params.category = urlParams.category;
+        } 
         // get the total of products for pagination
         params.limit = this.maxNbOfProducts;
         params.fields = '_id';
@@ -92,36 +99,17 @@ export default class Catalogue extends Router {
         // get the products
         params.limit = this.productsPerPage;
         params.fields = this.catalogueFields;
-        if (sortQuery) params.sort = sortQuery;
+        if (urlParams.sort) params.sort = urlParams.sort;
+        else params.sort = 'createdAt';
+        if (urlParams.page) params.page = urlParams.page;
+        else params.page = '1';
         new Products(params);
         // display pagination
         this._elPaginationContainer.innerHTML = '';
         if (isPaginationRequired) {
-            new Pagination(this._elPaginationContainer, nbPages, params);
+            new Pagination(this._elPaginationContainer, nbPages, params, this.hash);
         }
     }
-
-    // getParamsInHash(slug) {
-    //     let params = {};
-    //     let url = window.location.hash;
-    //     if (url) {
-    //         let hashInArray = url.split(`#!/${slug}?`)[1].split('&');
-    //         hashInArray.forEach(hash => {
-    //             let infos = hash.split('=');
-    //             params[infos[0]] = infos[1];
-    //         })   
-    //         return params;
-    //     } else return false;
-    // }
-
-    // addQueriesInUrl(categoryFilter, sortFilter, pageFilter=false) {
-    //     if (pageFilter) {
-    //         window.location = `#!/products?category=${categoryFilter}&sort=${sortFilter}&page=${pageFilter}`;
-    //     } else {
-    //         window.location = `#!/products?category=${categoryFilter}&sort=${sortFilter}`;
-    //     }
-        
-    // }
     
 
     

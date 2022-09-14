@@ -3,19 +3,28 @@ import Router from './Router.js';
 
 export default class Pagination extends Router {
 
-    constructor(el, numPage, params) {
+    constructor(el, pageTotal, params, hash) {
         super();
         this._el = el;
-        this.numPage = numPage;
+        this.pageTotal = pageTotal;
+        this.params = params;
+        this.activePage = this.params.page;
         this._elPageButtonTemplate = document.querySelector('[data-js-page-button-template]');
         this._elPageButtons = '';
-        this.params = params;
-
-        this.init(this.numPage);
+        this.hash = hash;
+        this.init(this.pageTotal);
     }
 
     init(nb) {
-        this.createPagination(nb);
+        this.createPagination(nb); 
+        // listen events
+        this._elPageButtons = this._el.querySelectorAll('button');
+        this._elPageButtons.forEach(elPageButton => {
+            elPageButton.addEventListener('click', this.getPage.bind(this));
+        })
+        // add style to current page button
+        const activeButton = document.querySelector(`[data-js-page-id='${this.activePage}']`);
+        this.addClassActive(activeButton);
     }
 
 
@@ -27,11 +36,6 @@ export default class Pagination extends Router {
             let newElItem = document.importNode(elButtonTemplateClone.content, true);
             this._el.append(newElItem);
         }
-        // listen events
-        this._elPageButtons = this._el.querySelectorAll('button');
-        this._elPageButtons.forEach(elPageButton => {
-            elPageButton.addEventListener('click', this.getPage.bind(this));
-        })
     }
 
     async getPage(e) {
@@ -39,6 +43,7 @@ export default class Pagination extends Router {
         let numPage = button.innerText;
         this.params.page = numPage;
         this.addClassActive(button); 
+        this.updateSearchParamsInUrl(this.hash, { 'sort':this.params.sort, 'page':this.params.page });
         new Products(this.params);
         
     }

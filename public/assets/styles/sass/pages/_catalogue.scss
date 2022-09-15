@@ -7,6 +7,11 @@
     margin: 6.5em auto 0 auto;
     display: flex;
     justify-content: space-between;
+    .fa-xmark {
+        display: none;
+        font-size: 1.8rem;
+        margin-left: auto;
+    }
 }
 
 .filter-section ~ .section {
@@ -45,6 +50,7 @@ ul label:nth-child(2) {
 .filter-section span {
     padding-right: 10px;
     padding-top: 1.4em;
+    font-size: 1.2rem;
 }
 
 .filter-section li {
@@ -58,6 +64,15 @@ input {
 input:checked + label {
     background: #d4b9b9;
 }
+
+#fa-bars-filter {
+    display: none;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top:2.5em;
+    width: fit-content;
+}
+
 
 
 /* PAGINATION */
@@ -101,3 +116,49 @@ input:checked + label {
   padding-right: 5px;
 }
 
+@media screen and (max-width: 1260px){
+
+    .filter-section select {
+        font-size: 1rem;
+    }
+
+    .filter-section label {
+        font-size: 1rem;
+    }
+
+    .filter-section span {
+        font-size: 1rem;
+    }
+  
+}
+
+@media screen and (max-width: 990px){
+    .filter-section span {
+        padding-top: 2em;
+    }
+
+    .filter-section div {
+        margin-top: 1.7em;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .filter-section {
+        flex-direction: column;
+        display: none;
+        .fa-xmark {
+            display: block;
+        }
+    }
+
+    
+
+    .filter-section ul {
+        flex-direction: column;
+    }
+
+    #fa-bars-filter {
+        display: block;
+    }
+
+}

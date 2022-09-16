@@ -1100,7 +1100,8 @@ input[type=number] {
   .filter-section .fa-xmark {
     display: none;
     font-size: 1.8rem;
-    margin-left: auto; }
+    margin-left: auto;
+    cursor: pointer; }
 
 .filter-section ~ .section {
   padding-top: 2.5em; }
@@ -1149,6 +1150,10 @@ input:checked + label {
   margin-right: 20px;
   margin-top: 2.5em;
   width: fit-content; }
+
+.show-filter-mobile {
+  width: 70% !important;
+  transform: translateX(0%) !important; }
 
 /* PAGINATION */
 .pagination {
@@ -1202,7 +1207,20 @@ input:checked + label {
 @media screen and (max-width: 650px) {
   .filter-section {
     flex-direction: column;
-    display: none; }
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    flex-direction: column;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    /* background-color: white; /* Black fallback color */
+    background-color: white(0, 0, 0, 0.9);
+    /* Black w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    transform: translateX(-100%); }
     .filter-section .fa-xmark {
       display: block; }
 

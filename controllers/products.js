@@ -42,6 +42,18 @@ const getAllProducts = async (req,res) => {
     res.status(200).json({products})
 }
 
+/** GET ONE PRODUCT
+ */
+const getProduct = async (req,res) => {
+        const {id:productID} = await req.params;
+        const product = await Product.findOne({_id:productID}); 
+        if(!product) {
+            return next(createCustomError(`No product with id : ${productID}`,404))
+        }
+        res.status(200).json({product})
+}
+
 module.exports = {
-    getAllProducts
+    getAllProducts,
+    getProduct
 }

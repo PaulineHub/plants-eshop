@@ -1,6 +1,7 @@
 import Pagination from './Pagination.js';
 import Products from './Products.js';
 import Router from './Router.js';
+import MobileFilters from './MobileFilters.js';
 
 export default class Catalogue extends Router {
 
@@ -20,16 +21,19 @@ export default class Catalogue extends Router {
     }
 
     init() {
-        let params = this.getSearchParamsFromUrl(this.hash);
+        new MobileFilters(this._elFiltersContainer);
 
         //initial setting
+        let params = this.getSearchParamsFromUrl(this.hash);
         if (params.category) this.checkRadioFilter(params.category);
         else this.checkRadioFilter('all')
         if (params.select) this.selectSortFilter(params.select);
         else this.selectSortFilter('createdAt')
 
+        // display products
         this.displayItems();
 
+        //listen event on filter buttons
         this._elFilterRadioButtons.forEach( elFilterRadioButton => {
             elFilterRadioButton.addEventListener('click', this.getRadioFilter.bind(this))
         })

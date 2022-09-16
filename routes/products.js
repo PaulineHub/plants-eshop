@@ -4,7 +4,6 @@ const router = express.Router();
 const {
     getAllProducts,
     getProduct
-
 } = require('../controllers/products');
 
 router.route('/').get(getAllProducts);

@@ -1,17 +1,22 @@
 
 export default class Router {
 
-    getSearchParamsFromUrl(hash) {
+    getSearchParamsFromUrl(hashWord='') {
         const url = new URL(`${window.location.href}`);
         let params = {};
-        if (url.hash) {
-            let urlSearch = url.hash.split(`#!/${hash}?`)[1];
+        let urlSearch;
+        if (url.hash || url.search) {
+            
+            if (url.hash) urlSearch = url.hash.split(`#!/${hashWord}?`)[1];
+            else if (url.search) urlSearch = url.search;
+
             let searchParams = new URLSearchParams(urlSearch);
             for (let key of searchParams.keys()) {
                 params[key] = searchParams.get(key);
             }
             return params;
-        } else return false;
+        }
+         else return false;
     }
 
     updateSearchParamsInUrl(hashTerm, paramsObject) {

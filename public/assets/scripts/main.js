@@ -9,7 +9,6 @@ import Product from './Product.js';
     // http://localhost:3000/product.html?id=631fd044f02dc28ec8c4b1f6
     else if (pathname == "/product.html") {
         new Product();
-        console.log(pathname)
     }
     
 })();

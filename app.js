@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const connectDB = require("./db/connect");
 const productsRouter = require("./routes/products");
+const imagesRouter = require("./routes/images");
 const notFoundMiddleware = require('./middleware/not-found');
 const errorMiddleware = require('./middleware/error-handler');
 
@@ -14,7 +15,8 @@ app.use(express.static('./public'))
 app.use(express.json())
 
 // ROUTES
-app.use('/api/v1/products', productsRouter)
+app.use('/api/v1/products', productsRouter);
+app.use('/api/v1/images', imagesRouter);
 
 // Manage errors
 app.use(notFoundMiddleware)

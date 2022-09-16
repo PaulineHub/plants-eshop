@@ -14,7 +14,7 @@ export default class Products {
             // display products
             this.clearProducts(this._elProductsContainer);
             data.products.forEach(product => {
-                this.createProduct(product);;
+                this.createProduct(product);
             })
         } catch (error) {
             console.log(error);

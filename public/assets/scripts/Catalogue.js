@@ -21,6 +21,7 @@ export default class Catalogue extends Router {
     }
 
     init() {
+        // display filters in mobile vue
         new MobileFilters(this._elFiltersContainer);
 
         //initial setting

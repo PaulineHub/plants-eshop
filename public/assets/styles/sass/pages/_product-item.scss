@@ -137,7 +137,8 @@ label {
 }
 
 .quantity-wrapper {
-    display: flex;        padding-right: 1em;
+    display: flex;        
+    padding-right: 1em;
     min-height: 38px;
     margin-right: 2em;
     padding-right: .5em;
@@ -151,6 +152,7 @@ label {
     display: flex;
     width: 2em;
     justify-content: center;
+    cursor: pointer;
 }
 
 .quantity-number {
@@ -160,6 +162,7 @@ label {
     border-style: none;
     background-color: transparent;
     text-align: center;
+    font-size: 1rem;
 }
 
 /*Cacher  arrow quantity number*/

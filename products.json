@@ -21,7 +21,6 @@
   {
     "name": "la forêt",
     "price": 250,
-    "featured": true,
     "category": "plantes",
     "description": "Envie de verdure à la maison pour renouer avec la nature ? Ce lot de plantes va faire votre bonheur ! Il contient une plante de grande taille, et quatre plantes de petite taille. Une valeur sûre pour apporter cette touche cocooning à votre intérieur en vous laissant guider par notre sélection du moment.",
     "light": 1,
@@ -40,7 +39,6 @@
   {
     "name": "la jungle",
     "price": 350,
-    "featured": true,
     "category": "plantes",
     "description": "Vous souhaitez vous entourer d'une véritable jungle ? Il est temps de passer à la commande best seller de la Maison Jungle ! Ce lot de plantes contient une plante de grande taille, et quatre plantes de moyenne taille de type tropical. Avec une telle population, vou ne devriez pas tarder à entendre les singes se balancer de liane en liane. Attention aux jaguars !",
     "light": 2,
@@ -128,7 +126,8 @@
   {
     "name": "bouquet nomade",
     "price": 60,
-    "category": "fleurs",
+    "category": "fleurs",   
+    "featured": true,
     "description": "Besoin d'une grande composition pour ajouter une touche bohème à votre décoration ? Avec ce large bouquet mêlant cotton et blés, filez tout droit dans une tente nomade à la lueur des lanternes. Ou allumez quelques bougies devant une tisane fumante. c'est bien, aussi.",
     "image": "assets/images/img-produits/fleur3.jpg"
   },

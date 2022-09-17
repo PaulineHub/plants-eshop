@@ -600,6 +600,10 @@ footer {
   .product-slider:hover .product-slider-img {
     animation: img-zoom 1000ms forwards; }
 
+.category-product-slider {
+  text-transform: uppercase;
+  font-size: 1rem; }
+
 .content-product-slider {
   margin-top: 20px;
   color: #212806; }
@@ -1002,7 +1006,8 @@ label {
 .quantity-decrement, .quantity-increment {
   display: flex;
   width: 2em;
-  justify-content: center; }
+  justify-content: center;
+  cursor: pointer; }
 
 .quantity-number {
   width: 38px;
@@ -1010,7 +1015,8 @@ label {
   padding: .5em 0;
   border-style: none;
   background-color: transparent;
-  text-align: center; }
+  text-align: center;
+  font-size: 1rem; }
 
 /*Cacher  arrow quantity number*/
 /* Chrome, Safari, Edge, Opera */
@@ -1138,10 +1144,10 @@ ul label:nth-child(2) {
 .filter-section li {
   display: inline-block; }
 
-input {
+.filter-section input {
   visibility: hidden; }
 
-input:checked + label {
+.filter-section input:checked + label {
   background: #d4b9b9; }
 
 #fa-bars-filter {

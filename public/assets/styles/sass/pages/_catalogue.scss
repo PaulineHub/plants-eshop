@@ -58,11 +58,11 @@ ul label:nth-child(2) {
     display: inline-block;
 }
 
-input {
+.filter-section input {
     visibility:hidden;
 }
 
-input:checked + label {
+.filter-section input:checked + label {
     background: #d4b9b9;
 }
 

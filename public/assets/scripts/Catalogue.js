@@ -20,6 +20,9 @@ export default class Catalogue extends Router {
         this.init();
     }
 
+    /**
+     * Set the initial behaviors.
+     */
     init() {
         // display filters in mobile vue
         new MobileFilters(this._elFiltersContainer);
@@ -41,11 +44,19 @@ export default class Catalogue extends Router {
         this._elFilterSelect.addEventListener('change',this.getSortFilter.bind(this))
     }
 
+    /**
+     * Check a radio button of the filters.
+     * @param {string} id - The id of the button to check.
+     */
     checkRadioFilter(id) {
         const radioButton = document.querySelector(`#${id}`);
         radioButton.checked = true;
     }
 
+    /**
+     * Select an option of the sort filter.
+     * @param {string} optionToselect - The option to select.
+     */
     selectSortFilter(optionToselect){
         let options = Array.from(this._elFilterSelect.options)
         for (let n in options){
@@ -53,6 +64,10 @@ export default class Catalogue extends Router {
         }
     }
 
+    /**
+     * Get the filter value clicked, the current sort value, update the search params in the url and display the product items.
+     * @param {string} e - Event
+     */
     getRadioFilter(e) {
         const radioFilter = e.target.value;
         const selectFilter = this._elFilterSelect.value;
@@ -60,6 +75,9 @@ export default class Catalogue extends Router {
         this.displayItems();
     }
 
+    /**
+     * Get the sort value changed, the current filter value, update the search params in the url and display the product items.
+     */
     getSortFilter() {
         let radioFilter = '';
         this._elFilterRadioButtons.forEach( elFilterRadioButton => {
@@ -72,7 +90,10 @@ export default class Catalogue extends Router {
         this.displayItems();
     }
     
-    async displayItems() {
+    /**
+     * Display the products and the pagination.
+     */
+    displayItems() {
         const urlParams = this.getSearchParamsFromUrl(this.hash);
         // set the params of the query
         let params = {};
@@ -84,15 +105,37 @@ export default class Catalogue extends Router {
             else params.category = urlParams.category;
         } 
         // get the total of products for pagination
+        this.calculateNbPages(params)
+        .then(nbPages => {
+            // get the products
+            params.limit = this.productsPerPage;
+            params.fields = this.catalogueFields;
+            if (urlParams.sort) params.sort = urlParams.sort;
+            else params.sort = 'createdAt';
+            if (urlParams.page) params.page = urlParams.page;
+            else params.page = '1';
+            new Products(params);
+            // display pagination
+            this._elPaginationContainer.innerHTML = '';
+            if (nbPages > 1) {
+                new Pagination(this._elPaginationContainer, nbPages, params, this.hash);
+            }
+        })
+    }
+
+    /**
+     * Calculate the number of pages needed to display the products.
+     * @param {object} params - The parameters to pass to the request.
+     * @return {number} - The number of pages.
+     */
+    async calculateNbPages(params) {
         params.limit = this.maxNbOfProducts;
         params.fields = '_id';
         let nbPages = 1;
-        let isPaginationRequired = false;
         try {
             const {data} = await axios.get(`/api/v1/products`, { params });
             let productsQuantity = data.products.length;
             if (productsQuantity > this.productsPerPage) {
-                isPaginationRequired = true;
                 while (productsQuantity > this.productsPerPage) {
                     nbPages++;
                     productsQuantity -= this.productsPerPage;
@@ -101,19 +144,7 @@ export default class Catalogue extends Router {
         } catch (error) {
             console.log(error);
         }
-        // get the products
-        params.limit = this.productsPerPage;
-        params.fields = this.catalogueFields;
-        if (urlParams.sort) params.sort = urlParams.sort;
-        else params.sort = 'createdAt';
-        if (urlParams.page) params.page = urlParams.page;
-        else params.page = '1';
-        new Products(params);
-        // display pagination
-        this._elPaginationContainer.innerHTML = '';
-        if (isPaginationRequired) {
-            new Pagination(this._elPaginationContainer, nbPages, params, this.hash);
-        }
+        return nbPages;
     }
     
 

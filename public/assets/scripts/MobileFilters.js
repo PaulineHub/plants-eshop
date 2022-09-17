@@ -8,6 +8,9 @@ export default class MobileFilters {
         this.init();
     }
 
+    /**
+     * Set the initial behaviors.
+     */
     init() {
         /* Open when someone clicks on the span element */
         this._elOpenFilterBtn.addEventListener('click', () => {

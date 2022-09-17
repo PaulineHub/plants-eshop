@@ -1,6 +1,10 @@
 
 export default class Router {
 
+    /**
+     * Get the search params from the url.
+     * @return {object} or {boolean} - The params for the request or false.
+     */
     getSearchParamsFromUrl(hashWord='') {
         const url = new URL(`${window.location.href}`);
         let params = {};
@@ -19,6 +23,11 @@ export default class Router {
          else return false;
     }
 
+    /**
+     * Get the infos of a product and insert the product into the DOM.
+     * @param {string} hashTerm - The hash term in the url.
+     * @param {object} paramsObject - The params to update in the url.
+     */
     updateSearchParamsInUrl(hashTerm, paramsObject) {
         const url = new URL(`${window.location.href}`);
         url.hash = `#!/${hashTerm}?`;

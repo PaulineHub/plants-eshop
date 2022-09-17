@@ -49,7 +49,7 @@
             <!--PRODUCT IMAGES WRAPPER-->
             <div class="product-description-images-wrapper" data-js-description-images-wrapper>
                 <template data-js-description-images-template>
-                    <img src="{{main-image}}" alt="" class="product-image-description">
+                    <img src="{{image1}}" alt="" class="product-image-description">
                     <div class="image-gallery-collection-list">
                         <div role="list">
                             <div role="listitem" class="image-gallery-item">
@@ -63,18 +63,19 @@
                 </template>
             </div>
             <!--PRODUCT CONTENT WRAPPER-->
-            <div class="product-description-content-wrapper" data-js-product-description-wrapper>
+            <div class="product-description-content-wrapper">
                 <!--PRODUCT DESCRIPTION WRAPPER-->
+                <div data-js-product-description-wrapper>
+                
+                </div>
                 <template data-js-description-product-template>
-                    <div>
-                        <div class="all-caps">{{category}}</div>
-                        <h3>{{name}}</h3>
-                        <div class="product-price-wrapper">
-                            <div>{{price}}$</div>
-                            <div></div>
-                        </div>
-                        <p>{{description}}</p>
+                    <div class="all-caps">{{category}}</div>
+                    <h3>{{name}}</h3>
+                    <div class="product-price-wrapper">
+                        <div>{{price}}$</div>
+                        <div></div>
                     </div>
+                    <p>{{description}}</p>
                 </template>
                 <!--PRODUCT SHOP WRAPPER-->
                 <div>
@@ -82,25 +83,25 @@
                         <div role="group" class="option-btn-group">
                             <span class="option-label">Luminosité</span>
                             <div role="radiogroup" class="radio-group-option">
-                                <div class="option-button option-selected" data-js-light = '1'><i class="fas fa-cloud"></i></div>
-                                <div class="option-button" data-js-light = '2'><i class="fas fa-cloud-sun"></i></div>
-                                <div class="option-button" data-js-light = '3'><i class="fas fa-sun"></i></div>
+                                <div class="option-button" data-js-light data-js-option = '1'><i class="fas fa-cloud"></i></div>
+                                <div class="option-button" data-js-light data-js-option = '2'><i class="fas fa-cloud-sun"></i></div>
+                                <div class="option-button" data-js-light data-js-option = '3'><i class="fas fa-sun"></i></div>
                             </div>
                         </div>
                         <div role="group" class="option-btn-group">
                             <span class="option-label">Température</span>
                             <div role="radiogroup" class="radio-group-option">
-                                <div class="option-button option-selected" data-js-temperature = '1'><i class="fas fa-thermometer-empty"></i></div>
-                                <div class="option-button" data-js-temperature = '2'><i class="fas fa-thermometer-half"></i></div>
-                                <div class="option-button" data-js-temperature = '3'><i class="fas fa-thermometer-full"></i></div>
+                                <div class="option-button" data-js-temperature data-js-option = '1'><i class="fas fa-thermometer-empty"></i></div>
+                                <div class="option-button" data-js-temperature data-js-option = '2'><i class="fas fa-thermometer-half"></i></div>
+                                <div class="option-button" data-js-temperature data-js-option = '3'><i class="fas fa-thermometer-full"></i></div>
                             </div>
                         </div>
                     </div>
                     <div class="product-addToCart-wrapper">
                         <div class="quantity-wrapper">
-                            <div class="quantity-decrement">-</div>
-                            <input type="number" value="1" min="1" name="add-to-cart-quantity-input" class="quantity-number">
-                            <div class="quantity-increment">+</div>
+                            <div class="quantity-decrement" data-js-quantity-decrement>-</div>
+                            <input type="number" value="1" min="1" name="add-to-cart-quantity-input" class="quantity-number" data-js-quantity-value>
+                            <div class="quantity-increment" data-js-quantity-increment>+</div>
                         </div>
                         <div class="btn">
                             <div class="button-text">Ajouter au panier</div>

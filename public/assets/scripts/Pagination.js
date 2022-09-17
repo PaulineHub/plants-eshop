@@ -1,5 +1,6 @@
 import Products from './Products.js';
 import Router from './Router.js';
+import CloneItem from './CloneItem.js';
 
 export default class Pagination extends Router {
 
@@ -15,8 +16,16 @@ export default class Pagination extends Router {
         this.init(this.pageTotal);
     }
 
+    /**
+     * Set the initial behaviors.
+     * @param {number} nb - The number of pages button to create.
+     */
     init(nb) {
-        this.createPagination(nb); 
+        // create pagination
+        for (let i = 1; i <= nb; i++) {
+            let infos = {number: i};
+            new CloneItem(infos, this._elPageButtonTemplate, this._el);
+        } 
         // listen events
         this._elPageButtons = this._el.querySelectorAll('button');
         this._elPageButtons.forEach(elPageButton => {
@@ -27,17 +36,10 @@ export default class Pagination extends Router {
         this.addClassActive(activeButton);
     }
 
-
-    createPagination(nb) {
-        for (let i = 1; i <= nb; i++) {
-            let elButtonTemplateClone = this._elPageButtonTemplate.cloneNode(true);
-            let regExp = new RegExp(`{{number}}`, 'g');
-            elButtonTemplateClone.innerHTML = elButtonTemplateClone.innerHTML.replace(regExp, i)
-            let newElItem = document.importNode(elButtonTemplateClone.content, true);
-            this._el.append(newElItem);
-        }
-    }
-
+    /**
+     * Get the page clicked, update the url, display the products and add the class active on the page button.
+     * @param {string} e - Event.
+     */
     async getPage(e) {
         const button = e.target;
         let numPage = button.innerText;
@@ -45,11 +47,12 @@ export default class Pagination extends Router {
         this.addClassActive(button); 
         this.updateSearchParamsInUrl(this.hash, { 'sort':this.params.sort, 'page':this.params.page });
         new Products(this.params);
-        
     }
 
-    // ameliorable avec cette ressource
-    //https://www.w3schools.com/howto/howto_js_active_element.asp
+    /**
+     * Add the class active on the page button clicked.
+     * @param {string} buttonClicked - The button clicked.
+     */
     addClassActive(buttonClicked) {
         this._elPageButtons.forEach(elPageButton => {
             elPageButton.classList.remove('active');

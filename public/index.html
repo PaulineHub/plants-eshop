@@ -86,57 +86,31 @@
                 </button>
             </a>
         </div>
-        <div class="product-slider-wrapper">
-            <div class="arrow-wrapper">
+        <div class="product-slider-wrapper" data-js-products-wrapper>
+            <!--<div class="arrow-wrapper">
                 <div class="arrows">
                     <i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>
                 </div>
                 <div class="arrows">
                     <i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i>
                 </div>
-            </div>
-            <a href="./product-item.html">
-                <div class="product-slider">
-                    <div class="product-slider-img-wrapper">
-                        <img src="assets/images/img-accueil/bestseller-test-430px.jpg" alt="" class="product-slider-img">
-                    </div>
-                    <div class="content-product-slider">
-                        <div class="category-product-slider">PLANTES</div>
-                        <div class="title-product-slider">
-                            <h4>La forêt</h4>
+            </div>-->
+            <template data-js-item-template>
+                <a href="./product.html?id={{id}}">
+                    <div class="product-slider">
+                        <div class="product-slider-img-wrapper">
+                            <img src="{{image}}" alt="" class="product-slider-img">
                         </div>
-                        <div class="price-product-slider">50$</div>
-                    </div>
-                </div>
-            </a>
-            <a href="./product-item.html">
-                <div class="product-slider">
-                    <div class="product-slider-img-wrapper">
-                        <img src="assets/images/img-accueil/bestseller-test-430px.jpg" alt="" class="product-slider-img">
-                    </div>
-                    <div class="content-product-slider">
-                        <div class="category-product-slider">PLANTES</div>
-                        <div class="title-product-slider">
-                            <h4>La forêt</h4>
+                        <div class="content-product-slider">
+                            <div class="category-product-slider">{{category}}</div>
+                            <div class="title-product-slider">
+                                <h4>{{title}}</h4>
+                            </div>
+                            <div class="price-product-slider">{{price}}$</div>
                         </div>
-                        <div class="price-product-slider">50$</div>
                     </div>
-                </div>
-            </a>
-            <a href="./product-item.html">
-                <div class="product-slider">
-                    <div class="product-slider-img-wrapper">
-                        <img src="assets/images/img-accueil/bestseller-test-430px.jpg" alt="" class="product-slider-img">
-                    </div>
-                    <div class="content-product-slider">
-                        <div class="category-product-slider">PLANTES</div>
-                        <div class="title-product-slider">
-                            <h4>La forêt</h4>
-                        </div>
-                        <div class="price-product-slider">50$</div>
-                    </div>
-                </div>
-            </a>
+                </a>
+            </template>
         </div>
     </section>
     <!--TESTIMONIAL SECTION-->
@@ -170,7 +144,7 @@
         </div>
         <div class="explore-products-wrapper">   
             <div class="explore-product-category">
-                <a href="./products-plants.html">
+                <a href="./catalogue.html?#!category=plantes">
                     <div class="category-image-wrapper">
                         <img src="assets/images/img-accueil/explore-plantes-470px.png" alt=""
                             class="explore-product-img">
@@ -181,7 +155,7 @@
                 </a>
             </div>
             <div class="explore-product-category">
-                <a href="./products-cactus.html">
+                <a href="./catalogue.html#!/products?category=cactus">
                     <div class="category-image-wrapper">
                         <img src="assets/images/img-accueil/explore-cactus-470px.png" alt=""
                         class="explore-product-img">
@@ -192,7 +166,7 @@
                 </a>
             </div>
             <div class="explore-product-category">
-                <a href="./products-flowers.html">
+                <a href="././catalogue.html#!/products?category=fleurs">
                     <div class="category-image-wrapper">
                         <img src="assets/images/img-accueil/explore-fleurs-470px.png" alt="" class="explore-product-img">
                     </div>

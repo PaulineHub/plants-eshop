@@ -13,57 +13,49 @@
         margin-left: auto;
         cursor: pointer;
     }
+    ul {
+        display: flex;
+        padding-bottom: 1em;
+        padding-top: 0.2em;
+    }
+    div {
+        margin-top: 1.2em;
+    }
+    label {
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+    select {
+        height: 2.5rem;
+        font-size: 1.2rem;
+        padding-left: 5px;
+    }
+    span {
+        padding-right: 10px;
+        padding-top: 1.4em;
+        font-size: 1.2rem;
+    }
+    li {
+        display: inline-block;
+    }
+    input {
+        visibility:hidden;
+    }
+    input:checked + label {
+        background: #d4b9b9;
+    }
 }
 
 .filter-section ~ .section {
     padding-top: 2.5em;
 }
 
-.filter-section ul {
-    display: flex;
-    padding-bottom: 1em;
-    padding-top: 0.2em;
-}
-
-.filter-section div {
-    margin-top: 1.2em;
-}
-
-.filter-section label {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin-right: 5px;
-}
-
 ul label:nth-child(2) {
     background-color: #e4d0ba;
-}
-
-.filter-section select {
-    height: 2.5rem;
-    font-size: 1.2rem;
-    padding-left: 5px;
-}
-
-.filter-section span {
-    padding-right: 10px;
-    padding-top: 1.4em;
-    font-size: 1.2rem;
-}
-
-.filter-section li {
-    display: inline-block;
-}
-
-.filter-section input {
-    visibility:hidden;
-}
-
-.filter-section input:checked + label {
-    background: #d4b9b9;
 }
 
 #fa-bars-filter {
@@ -82,99 +74,30 @@ ul label:nth-child(2) {
 /* PAGINATION */
 
 .pagination {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  margin-top: 60px;
-  font-size: 1.4rem;
-}
-
-.pagination button {
-    color: $black;
-    padding: 5px 10px;
-    transition: background-color .3s;
-    border: none;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 60px;
     font-size: 1.4rem;
-    background-color: $beige-clair;
-}
-
-.pagination button.active {
-  background-color: $green;
-  color: white;
-}
-
-.pagination button:hover:not(.active) {
-    background-color: $kaki;
-    color: white;
-}
-
-/* .pagination i {
-  padding-left: 10px;
-  padding-right: 10px;
-  cursor: pointer;
-} */
-
-.pagination span {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-@media screen and (max-width: 1260px){
-
-    .filter-section select {
-        font-size: 1rem;
+    button {
+        color: $black;
+        padding: 5px 10px;
+        transition: background-color .3s;
+        border: none;
+        cursor: pointer;
+        font-size: 1.4rem;
+        background-color: $beige-clair;
     }
-
-    .filter-section label {
-        font-size: 1rem;
+    button.active {
+        background-color: $green;
+        color: white;
     }
-
-    .filter-section span {
-        font-size: 1rem;
+    button:hover:not(.active) {
+        background-color: $kaki;
+        color: white;
     }
-  
-}
-
-@media screen and (max-width: 990px){
-    .filter-section span {
-        padding-top: 2em;
+    span {
+        padding-left: 5px;
+        padding-right: 5px;
     }
-
-    .filter-section div {
-        margin-top: 1.7em;
-    }
-}
-
-@media screen and (max-width: 650px){
-    .filter-section {
-        flex-direction: column;
-        height: 100%;
-        width: 0%;
-        position: fixed;
-        flex-direction: column;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        /* background-color: white; /* Black fallback color */
-        background-color: white(0, 0, 0, 0.9); /* Black w/opacity */
-        overflow-x: hidden; /* Disable horizontal scroll */
-        transition: 0.5s;
-        transform: translateX(-100%);
-        //box-shadow: 0 4px 15px rgb(0 0 0 / 20%);
-        .fa-xmark {
-            display: block;
-        }
-    }
-
-    
-
-    .filter-section ul {
-        flex-direction: column;
-    }
-
-    #fa-bars-filter {
-        display: block;
-    }
-
 }

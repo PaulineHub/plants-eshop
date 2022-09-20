@@ -70,25 +70,3 @@ footer {
     color: $taupe-clair;
   }
 }
-
-@media screen and (max-width: 479px) {
-  .footer-social-wrapper {
-    display: flex;
-  }
-  .layout-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-  .footer-menu-heading {
-    padding-bottom: 0em;
-  }
-  .footer-mid-row {
-    padding: 2em 0 0 0;
-  }
-  .footer-mid-row li {
-    line-height: 1em;
-  }
-  .footer-end-row {
-    flex-direction: column;
-  }
-}

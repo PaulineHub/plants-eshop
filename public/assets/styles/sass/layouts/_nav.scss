@@ -86,44 +86,13 @@ nav {
   text-align: center;
 }
 
-@media screen and (max-width: 991px){
-  nav {
-   height: 60px;
-   justify-content: space-between;
-   .menu {
-    display: none;
-    }
-  }
-  .logo-container {
-    .logo {
-      font-size: 1.75em;
-    }
-  }
-  
-  .fas-wrapper {
-    .fa-bars {
-      display: inline-block;
-    }
-    .fa-search {
-      display: none;
-    }
-  }
-}
-
 .dark-color {
   color: $black;
   font-weight: 500;
 }
 
-@media screen and (max-width: 479px){
-  .logo-container {
-    width: 150px;
-    margin : 15px 5px 5px 30px;
-  }
-  .logo {
-    font-size: 1.5em;
-  }
-  .fa-search, .fa-shopping-bag, .fa-bars {
-    padding: 0px 10px;
-  }
+.menuPrincipalLi:hover {
+  font-style: italic;
 }
+
+

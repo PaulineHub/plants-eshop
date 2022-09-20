@@ -26,30 +26,6 @@
   }
 }
 
-@media screen and (max-width: 991px){
-  .main-hero-section {
-    .titleContent {
-    width: 500px;
-    }
-  }
-}
-
-@media screen and (max-width: 768px){
-  .main-hero-section {
-    .titleContent {
-    width: 80%;
-    }
-  }
-}
-
-@media screen and (max-width: 425px){
-  .main-hero-section {
-    .titleContent {
-    padding-left: 30px;
-    }
-  }
-}
-
 //***REVIEW-RUBAN***//
 
 .review-ruban {
@@ -66,23 +42,10 @@
 .stars-block {
   margin: 0px 10px;
 }
+
 .fa-star {
   color: $star;
   font-size: 24px;
-}
-
-@media screen and (max-width: 479px) {
-  .review-ruban {
-    width: 100%;
-    left: 0px;
-    p {
-      margin-top: 0px;
-      display: block;
-    }
-    span {
-      display: block;
-    }
-  }
 }
 
 //***CONCEPT SECTION***//
@@ -108,8 +71,8 @@
 }
 
 .text-centered {
-    text-align: center;
-    display: inline-block;
+  text-align: center;
+  display: inline-block;
 }
 
 .concept-image-container {
@@ -128,26 +91,6 @@
   &--3 {
     top: 0px;
     right: 0px;
-  }
-}
-
-
-@media screen and (max-width: 1299px){
-  .concept-image-container {
-    &--1 {
-      top: -100px;
-      left: 10px;
-    }
-  }
-}
-
-@media screen and (max-width: 479px) {
-  .concept-image-container {
-    width: 100px;
-    height: 100px;
-    &--2 {
-    bottom: 60px;
-    }
   }
 }
 
@@ -232,17 +175,6 @@
   }
 }
 
-@media screen and (max-width: 991px){
-  .product-slider-section {
-  flex-wrap: wrap;
-  padding-left: 30px;
-  padding-right: 30px;
-  }
-  .btn--product-slider {
-  margin-top: 2em;
-  }
-}
-
 //***TESTIMONIAL SECTION***//
 
 .testimonial-section {
@@ -309,31 +241,6 @@
   }
 }
 
-@media screen and (max-width: 991px) {
-  .testimonial-split-img-container {
-    width: 100%;
-    height: 50vh;
-    padding-top: 2em;
-    padding-right: 2em;
-    padding-left: 2em;
-  }
-  .testimonial-split-content {
-    width: 100%;
-  }
-  .testimonial-wrapper {
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 479px) {
-  .testimonial-section {
-    margin: 100px 0px;
-  }
-  .testimonial-wrapper {
-    padding: 2.5em 0em;
-  }
-}
-
 //***EXPLORE PRODUCTS SECTION***//
 
 .explore-products-section {
@@ -386,31 +293,6 @@
     animation: img-zoom 1000ms forwards;
   }
 }
-
-
-@media screen and (max-width: 991px) {
-  .explore-products-section {
-    .explore-products-heading {
-      padding : 0em 2em;
-    }
-  }
-  .explore-products-wrapper {
-    padding : 0em 2em;
-  }
-  .category-image-wrapper {
-    height: 300px;
-  }
-}
-
-@media screen and (max-width: 479px) {
-  .explore-products-wrapper {
-    flex-direction: column;
-  }
-  .explore-product-category {
-    padding: 1em 0.5em;
-  }
-}
-
 
 //***INSTAGRAM SECTION***//
 
@@ -487,96 +369,3 @@
   }
 }
 
-@media screen and (max-width: 991px) {
-  .heading-wrapper-centered--insta {
-    width: 100%;
-    padding-bottom: 0em;
-  }
-  .instagram-grid {
-    height: 320px;
-  }
-  .ig-image {
-    &--01 {
-      top: -40px;
-      width: 10%;
-    }
-    &--02 {
-      left: 90px;
-      top: -20px;
-      width: 18%;
-    }
-    &--03 {
-      width: 20%;
-    }
-    &--04 {
-      width: 23%;
-    }
-    &--05 {
-      width: 16%;
-    }
-    &--06 {
-      width: 28%;
-    }
-    &--07 {
-      width: 25%;
-    }
-  }
-}
-
-@media screen and (max-width: 479px) {
-  .instagram-grid {
-    height: 450px;
-    margin: 20px auto 50px auto;
-  }
-  .ig-image {
-    &--01 {
-      left: 0;
-      top: 5%;
-      right: auto;
-      bottom: auto;
-      width: 20%;
-    }
-    &--02 {
-      left: 7%;
-      top: 30%;
-      right: auto;
-      bottom: auto;
-      width: 30%;
-    }
-    &--03 {
-      left: auto;
-      top: 0;
-      right: 0;
-      bottom: auto;
-      width: 40%;
-    }
-    &--04 {
-      border-radius: 50%;
-      overflow: hidden;
-      width: 90px;
-      height: 90px;
-    }
-    &--05 {
-      top: 17%;
-      right: 30%;
-      width: 30%;
-    }
-    &--06 {
-      left: 25%;
-      top: auto;
-      right: auto;
-      bottom: 0;
-      width: 50%;
-    }
-    &--07 {
-      left: auto;
-      top: auto;
-      right: 2%;
-      bottom: 25%;
-      overflow: hidden;
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-    }
-  }
-}

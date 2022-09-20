@@ -9,7 +9,6 @@
     padding-top: 0;
 }
 
-
 .margin-bottom-9-5 {
   padding-bottom: 9.5em;
 }
@@ -30,35 +29,7 @@
     text-align: center;
 }
 
-@media screen and (max-width: 991px) {
-    .container {
-        padding-right: 2em;
-        padding-left: 2em;
-    }
-    .products-list {
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    }
-}
 
-@media screen and (max-width: 767px) {
-    .products-list {
-    grid-row-gap: 3.5em;
-    }
-}
 
-@media screen and (max-width: 479px) {
-    .products-list {
-        grid-column-gap: 0.5em;
-        grid-row-gap: 1.5em;
-    }
-    .no-padding-mobile {
-        padding-right: 0;
-        padding-left: 0;
-    }
-    .no-margin-tb-mobile {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-}
+
 

@@ -4,7 +4,6 @@ const ImagesPack = require('../models/detailImage');
 const getPackDetailImages = async (req,res) => {
     const { category } = await req.query;
     const imagesPack = await ImagesPack.findOne({ category });
-    console.log(imagesPack);
     /* if(!imagesPack) {
             //return next(createCustomError(`No imagesPack with category : ${category}`,404))
             res.status(404).json(`Images not founded with ${category}`);

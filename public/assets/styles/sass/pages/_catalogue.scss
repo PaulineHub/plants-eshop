@@ -12,6 +12,9 @@
         font-size: 1.8rem;
         margin-left: auto;
         cursor: pointer;
+        &:hover {
+            animation: rotate-45deg 300ms forwards;
+        }
     }
     ul {
         display: flex;

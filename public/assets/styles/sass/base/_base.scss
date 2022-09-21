@@ -152,3 +152,12 @@ ul {
       transform: rotateZ(45deg);
    }
 }
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

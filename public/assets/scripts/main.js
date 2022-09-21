@@ -8,7 +8,7 @@ import Products from './Products.js';
     
     if (pathname == "/catalogue.html") new Catalogue();
     else if (pathname == "/product.html") new Product();
-    else if (pathname == "/index.html") {
+    else {
         let params = {featured:'true'}
         new Products(params);
     }

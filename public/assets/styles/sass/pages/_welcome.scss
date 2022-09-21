@@ -80,6 +80,9 @@
   width: 160px;
   height: 160px;
   border-radius: 50%;
+  &:hover {
+    animation: img-zoom 1000ms forwards;
+  }
   &--1 {
     top: -140px;
     left: 10px;
@@ -300,6 +303,10 @@
   background-color: $beige-clair;
 }
 
+.rotate {
+  animation: rotation 30s infinite linear;
+}
+
 .divider-line {
   width: 24px;
   height: 2px;
@@ -316,6 +323,9 @@
 
 .ig-image {
   position: absolute;
+  &:hover {
+    animation: img-zoom 1000ms forwards;
+  }
   &--01 {
     left: 0;
     top: -180px;

@@ -4,21 +4,21 @@
 
 .main-hero-section {
   position: relative;
-  height: 1000px;
+  height: 110vh;
   .hero-bcg-wrapper {
     position: absolute;
     background: url('../images/img-accueil/boutique-plantes.jpg') no-repeat;
     background-size: cover;
     overflow: hidden;
-    height: 1000px;
+    height: 110vh;
     left: 0;
     right: 0;
-    bottom: 0;
+    top: 0;
   }
   .titleContent {
     position: absolute;
     width: 790px;
-    top: 500px;
+    top: 250px;
     padding-left: 60px;
   }
   .main-hero-title {
@@ -34,7 +34,7 @@
   z-index: 1;
   position: absolute;
   left: 15%;
-  bottom: -30px;
+  bottom: -40px;
   text-align: center;
   padding: 1em 0;
 }
@@ -55,7 +55,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 12.5em;
+  padding-top: 16.5em;
   .heading-wrapper-centered {
     position: relative;
     z-index: 1;
@@ -104,7 +104,7 @@
   display: flex;
   flex-direction: row;
   padding-left: 5em;
-  margin: 50px 0px;
+  margin: 0px 0px 50px 0px;
   &--beige {
     background-color: $beige-clair;
   }

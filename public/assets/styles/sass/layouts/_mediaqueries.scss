@@ -184,18 +184,10 @@
         width: 100%;
     }
 
-    .testimonial-wrapper {
-        width: 80%;
-    }
-
     .explore-products-section {
         .explore-products-heading {
             padding : 0em 2em;
         }
-    }
-
-    .explore-products-wrapper {
-        padding : 0em 2em;
     }
 
     .category-image-wrapper {
@@ -296,6 +288,15 @@
         .titleContent {
             width: 80%;
         }
+    }
+
+    .explore-products-wrapper {
+        padding: 0em 2em;
+        flex-direction: column;
+    }
+
+    .explore-product-category {
+        padding-bottom: 20px;
     }
 
 }

@@ -1,4 +1,5 @@
 import CloneItem from "./CloneItem.js";
+import Carousel from './Carousel.js';
 
 export default class Products {
 
@@ -7,7 +8,13 @@ export default class Products {
         this._elProductsContainer = document.querySelector('[data-js-products-wrapper]');
         this._elItemTemplate = document.querySelector('[data-js-item-template]');
 
-        this.requestGetApi(this.params)
+        this.init();
+    }
+
+    async init() {
+
+        await this.requestGetApi(this.params)
+        new Carousel();
     }
 
     /**

@@ -236,10 +236,6 @@
     .product-slider-wrapper {
             width: 60vw;
     }
-
-    .product-slider-section {
-        padding-left: 1em;
-    }
         
 }
 
@@ -262,7 +258,28 @@
         width: 100%;
     }
 
-    /* WELCOM INSTA */
+    /* WELCOME CONCEPT */
+
+    .concept-section {
+        h2 {
+            margin-bottom: 36px;
+        }
+    }
+
+    .concept-image-container--1 {
+        top: -197px;
+    }
+
+    .concept-image-container--3 {
+        top: -160px;
+    }
+
+    .concept-image-container--2 {
+        bottom:-12px;
+        left: 165px;
+    }
+
+    /* WELCOME INSTA */
 
         .ig-image {
             &--01 {
@@ -358,10 +375,16 @@
 
     .product-slider-section {
         flex-direction: column;
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-top: 5em;
     }
 
+    .btn--product-slider {
+        margin-top: 1em;
+    }
 
-    .product-slider-wrapper {
+    #carousel-ctn {
         width: auto;
     }
 }

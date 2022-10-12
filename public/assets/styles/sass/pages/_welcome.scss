@@ -103,8 +103,8 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  padding-left: 5em;
-  margin: 0px 0px 50px 0px;
+  margin-left: 5em;
+  margin-right: 5em;
   &--beige {
     background-color: $beige-clair;
   }
@@ -125,12 +125,15 @@
   margin-top: 2.5em;
 }
 
-.product-slider-wrapper {
-  display: flex;
-  gap: 0.5em;
+#carousel-ctn {
   width: 70vw;
   overflow: hidden;
-  align-items: center;
+}
+
+.product-slider-wrapper {
+  display: flex;
+  gap: 0.5em; 
+  align-items: baseline;
   text-align: center;
   position: relative;
   a {
@@ -142,6 +145,7 @@
   margin-top: 10px;
   .product-slider-img-wrapper {
     overflow: hidden;
+    width: 440px;
     .product-slider-img {
       width: 100%;
       min-width: 300px;
@@ -181,6 +185,7 @@
     cursor: pointer;
   }
 }
+
 
 //***TESTIMONIAL SECTION***//
 

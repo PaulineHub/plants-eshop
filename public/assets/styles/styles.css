@@ -400,8 +400,8 @@ footer {
   position: relative;
   display: flex;
   flex-direction: row;
-  padding-left: 5em;
-  margin: 0px 0px 50px 0px; }
+  margin-left: 5em;
+  margin-right: 5em; }
   .product-slider-section--beige {
     background-color: #fcf8f3; }
   .product-slider-section--pink {
@@ -417,12 +417,14 @@ footer {
 .btn--product-slider {
   margin-top: 2.5em; }
 
+#carousel-ctn {
+  width: 70vw;
+  overflow: hidden; }
+
 .product-slider-wrapper {
   display: flex;
   gap: 0.5em;
-  width: 70vw;
-  overflow: hidden;
-  align-items: center;
+  align-items: baseline;
   text-align: center;
   position: relative; }
   .product-slider-wrapper a {
@@ -431,7 +433,8 @@ footer {
 .product-slider {
   margin-top: 10px; }
   .product-slider .product-slider-img-wrapper {
-    overflow: hidden; }
+    overflow: hidden;
+    width: 440px; }
     .product-slider .product-slider-img-wrapper .product-slider-img {
       width: 100%;
       min-width: 300px; }
@@ -1037,10 +1040,7 @@ ul label:nth-child(2) {
     width: 25%; } }
 @media screen and (max-width: 900px) {
   .product-slider-wrapper {
-    width: 60vw; }
-
-  .product-slider-section {
-    padding-left: 1em; } }
+    width: 60vw; } }
 @media screen and (max-width: 767px) {
   /* CONTAINER */
   .products-list {
@@ -1055,7 +1055,21 @@ ul label:nth-child(2) {
   .hero-split-right-column {
     width: 100%; }
 
-  /* WELCOM INSTA */
+  /* WELCOME CONCEPT */
+  .concept-section h2 {
+    margin-bottom: 36px; }
+
+  .concept-image-container--1 {
+    top: -197px; }
+
+  .concept-image-container--3 {
+    top: -160px; }
+
+  .concept-image-container--2 {
+    bottom: -12px;
+    left: 165px; }
+
+  /* WELCOME INSTA */
   .ig-image--01 {
     width: 15%; }
   .ig-image--02 {
@@ -1113,9 +1127,15 @@ ul label:nth-child(2) {
     padding-bottom: 20px; } }
 @media screen and (max-width: 600px) {
   .product-slider-section {
-    flex-direction: column; }
+    flex-direction: column;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 5em; }
 
-  .product-slider-wrapper {
+  .btn--product-slider {
+    margin-top: 1em; }
+
+  #carousel-ctn {
     width: auto; } }
 @media screen and (max-width: 479px) {
   /* BASE */

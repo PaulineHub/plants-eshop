@@ -18,7 +18,7 @@
   .titleContent {
     position: absolute;
     width: 790px;
-    top: 250px;
+    top: 41%;
     padding-left: 60px;
   }
   .main-hero-title {
@@ -127,17 +127,19 @@
 
 .product-slider-wrapper {
   display: flex;
-  width: 100%;
+  gap: 0.5em;
+  width: 70vw;
   overflow: hidden;
   align-items: center;
   text-align: center;
   position: relative;
-  padding-top: 2.5em;
+  a {
+      transition: all 1s ease-in-out;
+    }
 }
 
 .product-slider {
   margin-top: 10px;
-  padding: 0 0.5em;
   .product-slider-img-wrapper {
     overflow: hidden;
     .product-slider-img {
@@ -168,12 +170,14 @@
 }
 
 .arrow-wrapper {
-  position: absolute;
-  top: 10px;
-  right: 0px;
+  margin-right: 0;
+  margin-left: auto;
+  width: fit-content;
   display: flex;
   .arrows {
     padding: 0px 10px;
+  }
+  .fa-chevron-left, .fa-chevron-right {
     cursor: pointer;
   }
 }

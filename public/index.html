@@ -86,32 +86,33 @@
                 </button>
             </a>
         </div>
-        <div class="product-slider-wrapper" data-js-products-wrapper>
-            <!--<div class="arrow-wrapper">
+        <div >
+            <div class="arrow-wrapper">
                 <div class="arrows">
-                    <i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>
+                    <i class="fas fa-chevron-left" data-js-left></i><i class="fas fa-chevron-left" data-js-left></i>
                 </div>
                 <div class="arrows">
-                    <i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-right" data-js-right></i><i class="fas fa-chevron-right" data-js-right></i>
                 </div>
-            </div>-->
-            <template data-js-item-template>
-                <a href="./product.html?id={{id}}">
-                    <div class="product-slider">
-                        <div class="product-slider-img-wrapper">
-                            <img src="{{image}}" alt="" class="product-slider-img">
-                        </div>
-                        <div class="content-product-slider">
-                            <div class="category-product-slider">{{category}}</div>
-                            <div class="title-product-slider">
-                                <h4>{{title}}</h4>
-                            </div>
-                            <div class="price-product-slider">{{price}}$</div>
-                        </div>
-                    </div>
-                </a>
-            </template>
+            </div>
+            <div class="product-slider-wrapper" data-js-products-wrapper></div>
         </div>
+        <template data-js-item-template>
+            <a href="./product.html?id={{id}}" data-js-product>
+                <div class="product-slider">
+                    <div class="product-slider-img-wrapper">
+                        <img src="{{image}}" alt="" class="product-slider-img">
+                    </div>
+                    <div class="content-product-slider">
+                        <div class="category-product-slider">{{category}}</div>
+                        <div class="title-product-slider">
+                            <h4>{{title}}</h4>
+                        </div>
+                        <div class="price-product-slider">{{price}}$</div>
+                    </div>
+                </div>
+            </a>
+        </template>
     </section>
     <!--TESTIMONIAL SECTION-->
     <section class="testimonial-section">

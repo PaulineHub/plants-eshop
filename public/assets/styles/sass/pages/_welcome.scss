@@ -105,6 +105,7 @@
   flex-direction: row;
   margin-left: 5em;
   margin-right: 5em;
+  margin-top: 2em;
   &--beige {
     background-color: $beige-clair;
   }
@@ -145,7 +146,9 @@
   margin-top: 10px;
   .product-slider-img-wrapper {
     overflow: hidden;
-    width: 440px;
+    .img-wrapper-width {
+      width: 440px;
+    }
     .product-slider-img {
       width: 100%;
       min-width: 300px;

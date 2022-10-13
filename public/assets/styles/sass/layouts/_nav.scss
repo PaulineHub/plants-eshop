@@ -11,8 +11,9 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  z-index: 2;
-  background-color: #f9e9e0
+  z-index: 10;
+  background-color: #f9e9e0;
+  transition: 0.5s all;
 }
 
 .menu {
@@ -21,7 +22,7 @@ nav {
 
 .menuPrincipal {
   display: flex;
-  font-size: 1rem;
+  font-size: 1.2rem;
   a {
     margin-right: 30px;
   }
@@ -44,10 +45,11 @@ nav {
   &:hover .fa-plus{
     animation: rotate-45deg 1000ms forwards;
   }
-  }
+}
 
 .logo-container {
-  margin : 5px 60px 5px 40px;
+  margin-left : 40px;
+  margin-right: 40px;
 }
 
 .logo {
@@ -60,8 +62,10 @@ nav {
 .fas-wrapper {
   height: 32px;
   margin-right: 30px;
+  display: flex;
+  align-items: flex-end;
   .fa-bars {
-  display: none;
+    display: none;
   }
 }
 
@@ -71,6 +75,10 @@ nav {
   font-family: 'FontAwesome';
   color: $beige-clair;
   cursor: pointer;
+}
+
+.fa-shopping-bag {
+  padding-bottom: 2px;
 }
 
 .fa-plus {
@@ -95,4 +103,6 @@ nav {
   font-style: italic;
 }
 
-
+.show-nav {
+  height: 100px !important;
+}

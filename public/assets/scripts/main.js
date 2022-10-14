@@ -12,8 +12,8 @@ import Carousel from './Carousel.js';
     
     if (pathname == "/catalogue.html") new Catalogue();
     else if (pathname == "/product.html") new Product();
-    else {
-        let params = {featured:'true'}
+    else if (pathname == "/index.html" || pathname == "/" ) {
+        let params = {featured:'true'};
         displayProducts(params);
         new Carousel();
     }

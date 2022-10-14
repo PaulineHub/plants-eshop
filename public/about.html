@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magasinez nos Plantes</title>
+    <title>Bienvenue à la maison jungle !</title>
     <meta name="author" content="Pauline Huby">
-    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <!-- scripts -->
     <script type="module" src="./assets/scripts/main.js" defer></script>
 </head>
-
 <body>
     <!--NAVIGATEUR-->
     <nav>
@@ -30,84 +28,37 @@
             </ul>
         </div>
         <div class="fas-wrapper">
-            <i class="fas fa-bars fa-bars dark-color"></i>
+            <i class="fas fa-bars dark-color"></i>
             <i class="fas fa-search dark-color"></i>
             <i class="fas fa-shopping-bag dark-color"></i>
         </div>
     </nav>
-    <!--HERO SECTION-->
-    <section class=" hero-mid-split-wrapper ">
-        <div class="hero-split-left-column">
-            <div class="hero-split-content no-margin-bottom">
-                <h1>Nos Produits</h1>
-                <p class="feature-paragraph width-70">Transformer votre intérieur en jungle avec nos assortiments de plantes, cactus et fleurs séchées.</p>
-            </div>
+    <!--ABOUT SECTION-->
+    <main>
+        <div class="big-img-ctn">
+            <img src="assets/images/aPropos.jpg" alt="">
         </div>
-        <div class="hero-split-right-column">
-            <div class="split-image"></div>
-        </div>
-    </section>
-    <!--FILTER SECTION-->
-    <i class="fas fa-bars dark-color" id="fa-bars-filter"></i>
-    <section data-js-catalogue-filter class="filter-section">
-        <i class="fa-solid fa-xmark dark-color" id="closeFilterBtn"></i>
-        <ul>
-            <span>Sélection</span>
-            <li>
-                <input type='radio' value='all' name='filter' id='all' />
-                <label for='all'>Tout</label>
-            </li>
-            <li>
-                <input type='radio' value='plantes' name='filter' id='plantes' />
-                <label for='plantes'>Plantes</label>
-            </li>
-            <li>
-                <input type='radio' value='cactus' name='filter' id='cactus' />
-                <label for='cactus'>Cactus</label>
-            </li>
-            <li>
-                <input type='radio' value='fleurs' name='filter' id='fleurs' />
-                <label for='fleurs'>Fleurs</label>
-            </li>
-        </ul>
+        <section class="about-section">
+        <h1>Notre histoire</h1>
+        <h2>Comment tout a commencé</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum quidem recusandae debitis maxime dolorum, ea at cumque unde, nobis laudantium odit earum porro saepe laborum tenetur consequuntur commodi repellat facilis!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, error perspiciatis ad delectus numquam officia voluptatibus. Rem ducimus numquam quas aperiam minima dolorem voluptas, deleniti asperiores, assumenda nulla veniam
+        officiis?</p>
+        <h2>Notre concept</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum quidem recusandae debitis maxime dolorum, ea at cumque unde, nobis laudantium odit earum porro saepe laborum tenetur consequuntur commodi repellat facilis!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, error perspiciatis ad delectus numquam officia voluptatibus. Rem ducimus numquam quas aperiam minima dolorem voluptas, deleniti asperiores, assumenda nulla veniam  officiis?</p>
+        </section>
         <div>
-            <select name="sort" id="sort">
-                <option value="createdAt" selected>Plus récent</option>
-                <option value="price">Prix croissants</option>
-                <option value="-price">Prix décroissants</option>
-            </select>
-        </div>
-    </section>
-    <!--PLANT PRODUCTS-->
-    <div class="container section no-padding-mobile">
-        <div role="list" class="products-list" data-js-products-wrapper>     
-        </div>
-        <!--PRODUCT TEMPLATE-->
-        <template data-js-item-template>
-            <div role="listitem" id="{{id}}">
-                <a href="./product.html?id={{id}}">
-                    <div class="product-slider">
-                        <div class="product-slider-img-wrapper">
-                            <img src="{{image}}" alt="" class="product-slider-img no-min-width">
-                        </div>
-                        <div class="content-product-slider">
-                            <div class="category-product-slider">{{category}}</div>
-                            <div class="title-product-slider">
-                                <h4>{{title}}</h4>
-                            </div>
-                            <div class="price-product-slider">{{price}}$</div>
-                        </div>
+            <a href="./catalogue.html">
+                <button class="btn btn--clair">
+                    <div class="btn-text">Magasiner</div>
+                    <div class="btn-chevron">
+                        <i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i>
                     </div>
-                </a>
-            </div>
-        </template>
-        <!--PAGINATION-->
-        <div class="pagination" data-js-pagination>
+                </button>
+            </a>
         </div>
-        <template data-js-page-button-template>
-            <button type="button" data-js-page-id = {{number}}>{{number}}</button>
-        </template>
-   </div>
+    </main>
     <!--FOOTER-->
     <footer>
         <div class="footer-container">
@@ -116,7 +67,7 @@
                     <a href="./index.html"><span class="logo">La Maison Jungle</span></a>
                 </div>
                 <div class="footer-social-wrapper">
-                    <a href="#" class="extra-padding-right">Instagram</a>
+                    <a href="#" class="extra-padding-right">Instagram</a>   
                     <a href="#">Facebook</a>
                 </div>
             </div>
@@ -174,15 +125,14 @@
                             </a>
                         </ul>
                     </div>
-                </div>
+                </div> 
             </div>
             <div class="footer-end-row">
                 <div>
                     <p class="footer-p">Ceci est un faux site d'e-commerce pour un projet en développement web.</p>
                 </div>
                 <div>
-                    <p class="footer-p">Design original du site <a href="https://www.twigspaper.com/" target="_blank">Twigs Paper</a>
-                    </p>
+                    <p class="footer-p">Design original du site <a href="https://www.twigspaper.com/" target="_blank">Twigs Paper</a></p>
                 </div>
             </div>
         </div>
@@ -192,5 +142,4 @@
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
-
 </html>

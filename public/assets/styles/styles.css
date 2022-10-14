@@ -901,6 +901,29 @@ ul label:nth-child(2) {
     padding-left: 5px;
     padding-right: 5px; }
 
+.big-img-ctn {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 60px;
+  background-color: #f9e9e0; }
+
+.big-img-ctn img {
+  width: 100%; }
+
+.about-section {
+  margin: 40px 20px; }
+  .about-section h1 {
+    margin-bottom: 0px; }
+  .about-section h2 {
+    margin-bottom: 40px;
+    margin-top: 60px; }
+
+.about-section ~ div {
+  margin: auto;
+  width: fit-content;
+  margin-bottom: 60px;
+  margin-top: 60px; }
+
 @media screen and (max-width: 1299px) {
   /* WELCOME PAGE */
   .concept-image-container--1 {

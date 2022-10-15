@@ -177,7 +177,10 @@ nav {
 
 .logo-container {
   margin-left: 40px;
-  margin-right: 40px; }
+  margin-right: 40px;
+  width: 240px; }
+  .logo-container img {
+    width: 100%; }
 
 .logo {
   font-size: 2em;
@@ -189,7 +192,7 @@ nav {
   height: 32px;
   margin-right: 30px;
   display: flex;
-  align-items: flex-end; }
+  align-items: center; }
   .fas-wrapper .fa-bars {
     display: none; }
 
@@ -1376,7 +1379,8 @@ ul label:nth-child(2) {
   /* NAVIGATION */
   .logo-container {
     margin-left: 10px;
-    margin-right: 10px; } }
+    margin-right: 10px;
+    width: 210px; } }
 @media screen and (max-width: 400px) {
   /* NAVIGATION */
   .fas-wrapper {

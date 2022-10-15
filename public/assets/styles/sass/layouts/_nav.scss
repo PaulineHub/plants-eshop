@@ -50,6 +50,10 @@ nav {
 .logo-container {
   margin-left : 40px;
   margin-right: 40px;
+  width: 240px;
+  img {
+    width: 100%;
+  }
 }
 
 .logo {
@@ -63,7 +67,7 @@ nav {
   height: 32px;
   margin-right: 30px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   .fa-bars {
     display: none;
   }

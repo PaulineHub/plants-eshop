@@ -20,9 +20,10 @@ export default class Carousel {
      * Initiate behaviors by default (event listeners when click on buttons next and previous)
      */
     init() {
-
         this._elNextBtns.forEach(elNextBtn => {
             elNextBtn.addEventListener('click', () => {    
+                console.log(this.counter);
+                console.log(this._elProducts);
                 if (this.counter < this._elProducts.length - 1) { 
                     this.counter++;
                     this.moveCarousel();

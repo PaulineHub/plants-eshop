@@ -7,19 +7,15 @@ import Carousel from './Carousel.js';
 (function() {
 
     let pathname = window.location.pathname;
-
     new Navigation();
     
     if (pathname == "/catalogue.html") new Catalogue();
     else if (pathname == "/product.html") new Product();
     else if (pathname == "/index.html" || pathname == "/" ) {
         let params = {featured:'true'};
-        displayProducts(params);
-        new Carousel();
+        new Products(params);
+        
     }
     
 })();
 
-async function displayProducts(params) {
-    await new Products(params);
-}

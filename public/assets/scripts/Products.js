@@ -1,4 +1,5 @@
 import CloneItem from "./CloneItem.js";
+import Carousel from "./Carousel.js";
 
 export default class Products {
 
@@ -13,6 +14,8 @@ export default class Products {
     async init() {
 
         await this.requestGetApi(this.params)
+        let pathname = window.location.pathname;
+        if (pathname == "/index.html" || pathname == "/" ) new Carousel();
     }
 
     /**

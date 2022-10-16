@@ -35,7 +35,22 @@
             <i class="fas fa-bars fa-bars dark-color"></i>
             <i class="fas fa-shopping-bag dark-color"></i>
         </div>
-    </nav>
+        <div class="shopping-list" data-js-shop-list-big-ctn>
+            <h3></h3>
+            <div data-js-shop-list-ctn></div>
+        </div>
+        </nav>
+        <template data-js-shop-list-item-template>
+            <div class="shopping-list-item-wrapper">
+                <div class="shop-img-ctn">
+                    <img src="{{image}}" alt="">
+                </div>
+                <div>
+                    <h4 data-js-item-id="{{_id}}">{{name}}</h4>
+                    <span>Quantité : </span><span>{{quant}}</span>
+                </div>
+            </div>
+        </template>
     <!--HERO SECTION-->
     <section class=" hero-mid-split-wrapper ">
         <div class="hero-split-left-column">

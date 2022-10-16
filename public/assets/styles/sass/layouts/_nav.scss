@@ -124,7 +124,7 @@ nav {
 }
 
 .shopping-list h3 {
-  font-size: 2em;
+  font-size: 22px;
   padding-left: 10px;
 }
 
@@ -146,6 +146,11 @@ nav {
 
 .shopping-list-item-wrapper h4 {
   margin-left: 0;
+  font-size: 18px;
+}
+
+.shopping-list-item-wrapper span {
+  font-size: 14px;
 }
 
 .show-shop-list {

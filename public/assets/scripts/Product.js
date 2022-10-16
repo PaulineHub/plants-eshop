@@ -1,5 +1,6 @@
 import Router from './Router.js';
 import CloneItem from './CloneItem.js';
+import LocalStorage from './LocalStorage.js';
 
 export default class Product extends Router {
 
@@ -15,6 +16,7 @@ export default class Product extends Router {
         this._elQuantityUpButton = document.querySelector('[data-js-quantity-increment]');
         this._elQuantityDownButton = document.querySelector('[data-js-quantity-decrement]');
         this._elQuantityValue = document.querySelector('[data-js-quantity-value]');
+        this._elBtnAddToBasket = document.querySelector('[data-js-btn-add-basket]');
 
         this.init();
     }
@@ -28,6 +30,8 @@ export default class Product extends Router {
 
        this._elQuantityUpButton.addEventListener('click', this.updateQuantity.bind(this));
        this._elQuantityDownButton.addEventListener('click', this.updateQuantity.bind(this));
+
+       this._elBtnAddToBasket.addEventListener('click', this.addProductToBasket.bind(this));
    }
 
    /**
@@ -63,6 +67,7 @@ export default class Product extends Router {
             const {data} = await axios.get(`/api/v1/products/${params.id}`, { params });
             const {product} = data;
             let infos = {
+                id: product._id,
                 name: product.name,
                 category: product.category,
                 price: product.price,
@@ -114,6 +119,13 @@ export default class Product extends Router {
         if (action == '-' && value > 1) value--;
         else if (action == '+') value++;
         this._elQuantityValue.value = value.toString();
+    }
+
+    addProductToBasket() {
+        let productQuant = this._elQuantityValue.value;
+        let productId = document.querySelector('[data-js-product-id]').dataset.jsProductId;
+        const localStorage = new LocalStorage();
+        localStorage.addToLocalStorage({id: productId, quant: productQuant});
     }
 
 }

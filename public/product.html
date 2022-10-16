@@ -35,7 +35,22 @@
             <i class="fas fa-bars dark-color"></i>
             <i class="fas fa-shopping-bag dark-color"></i>
         </div>
+        <div class="shopping-list" data-js-shop-list-big-ctn>
+            <h3></h3>
+            <div data-js-shop-list-ctn></div>
+        </div>
     </nav>
+    <template data-js-shop-list-item-template>
+        <div class="shopping-list-item-wrapper">
+            <div class="shop-img-ctn">
+                <img src="{{image}}" alt="">
+            </div>
+            <div>
+                <h4 data-js-item-id="{{_id}}">{{name}}</h4>
+                <span>Quantité : </span><span>{{quant}}</span>
+            </div>
+        </div>
+    </template>
     <!--ITEM SECTION-->
     <section class="section container no-padding-mobile no-margin-tb-mobile">
         <div class="go-back-wrapper">
@@ -66,12 +81,10 @@
             <!--PRODUCT CONTENT WRAPPER-->
             <div class="product-description-content-wrapper">
                 <!--PRODUCT DESCRIPTION WRAPPER-->
-                <div data-js-product-description-wrapper>
-                
-                </div>
+                <div data-js-product-description-wrapper></div>
                 <template data-js-description-product-template>
                     <div class="all-caps">{{category}}</div>
-                    <h3>{{name}}</h3>
+                    <h3 data-js-product-id="{{id}}">{{name}}</h3>
                     <div class="product-price-wrapper">
                         <div>{{price}}$</div>
                         <div></div>
@@ -105,9 +118,9 @@
                             <div class="quantity-increment" data-js-quantity-increment>+</div>
                         </div>
                         <div class="btn" data-js-btn-add-basket>
-                            <div class="button-text" data-js-btn-add-basket>Ajouter au panier</div>
+                            <div class="button-text">Ajouter au panier</div>
                             <div class="btn-chevron">
-                                <i class="fas fa-chevron-right" data-js-btn-add-basket></i><i class="fas fa-chevron-right" data-js-btn-add-basket></i>
+                                <i class="fas fa-chevron-right" ></i><i class="fas fa-chevron-right" ></i>
                             </div>
                         </div>
                     </div>

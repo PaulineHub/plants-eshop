@@ -110,3 +110,44 @@ nav {
 .show-nav {
   height: 100px !important;
 }
+
+/* SHOPPING LIST */
+
+.shopping-list {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  background-color: #f9e9e0;
+  height: 0;
+  overflow: hidden;
+  width: 320px;
+}
+
+.shopping-list h3 {
+  font-size: 2em;
+  padding-left: 10px;
+}
+
+.shopping-list-item-wrapper {
+  display: flex;
+  gap: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.shop-img-ctn {
+  width: 80px;
+}
+
+.shop-img-ctn img {
+  width: 100%;
+}
+
+.shopping-list-item-wrapper h4 {
+  margin-left: 0;
+}
+
+.show-shop-list {
+  height: fit-content !important;
+}

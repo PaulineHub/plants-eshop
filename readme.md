@@ -10,7 +10,7 @@ Discover a beautiful eshop of plants to transform your home into a jungle !
 https://la-maison-jungle.onrender.com
 
 ## Technologies
-Front-end : Sass, Javascript Vanilla OOP, Axios 
+Front-end : Sass, Javascript, Axios 
 Back-end : Node.js, Express, Mongo DB
 
 

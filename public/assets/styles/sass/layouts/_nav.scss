@@ -13,7 +13,8 @@ nav {
   align-items: center;
   z-index: 10;
   background-color: #f9e9e0;
-  transition: 0.5s all;
+  transition: 0.4s all;
+  will-change: transform;
 }
 
 .menu {
@@ -124,10 +125,6 @@ nav {
 
 .menuPrincipalLi:hover {
   font-style: italic;
-}
-
-.show-nav {
-  height: 100px !important;
 }
 
 /* SHOPPING LIST */

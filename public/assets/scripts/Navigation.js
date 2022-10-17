@@ -55,11 +55,11 @@ export default class Navigation {
         let currentScrollPos = window.pageYOffset;
         //si on scroll vers le haut
         if (this.prevScrollPos > currentScrollPos || currentScrollPos < 200) {
-            this._elNav.style.top = "0";
+            this._elNav.style.transform = "translateY(0)";
         } 
         //si on scroll vers le bas
         else {
-            this._elNav.style.top = "-80px";
+            this._elNav.style.transform = "translateY(-100%)";
         }
         this.prevScrollPos = currentScrollPos;
     }

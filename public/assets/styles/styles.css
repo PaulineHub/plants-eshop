@@ -149,7 +149,8 @@ nav {
   align-items: center;
   z-index: 10;
   background-color: #f9e9e0;
-  transition: 0.5s all; }
+  transition: 0.4s all;
+  will-change: transform; }
 
 .menu {
   flex-grow: 2; }
@@ -239,9 +240,6 @@ nav {
 
 .menuPrincipalLi:hover {
   font-style: italic; }
-
-.show-nav {
-  height: 100px !important; }
 
 /* SHOPPING LIST */
 .shopping-list {
@@ -352,7 +350,16 @@ footer {
     padding-right: 10px; }
 
 .logo-container--footer {
-  margin: 0; }
+  margin: 0;
+  width: 300px;
+  height: 50px;
+  position: relative;
+  overflow: hidden; }
+
+.logo-container--footer img {
+  position: absolute;
+  top: -123px;
+  left: -6px; }
 
 .footer-social-wrapper a {
   color: rgba(252, 248, 243, 0.8); }
@@ -971,10 +978,12 @@ ul label:nth-child(2) {
 .about-section {
   margin: 40px 20px; }
   .about-section h1 {
-    margin-bottom: 0px; }
+    margin-bottom: 0px;
+    font-size: 3.5em; }
   .about-section h2 {
     margin-bottom: 40px;
-    margin-top: 60px; }
+    margin-top: 60px;
+    font-size: 3em; }
 
 .about-section ~ div {
   margin: auto;

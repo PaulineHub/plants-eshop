@@ -133,7 +133,7 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 1em;
-  grid-row-gap: 3.5em;
+  grid-row-gap: 1.5em;
   text-align: center; }
 
 nav {

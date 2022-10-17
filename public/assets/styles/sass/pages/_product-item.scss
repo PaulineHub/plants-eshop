@@ -195,27 +195,27 @@ input[type=number] {
 
 .less {
     position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    left: -11px;
+    top: -25px;
     display: none;
     font-weight: 500;
+    font-size: 30px;
 }
 
 .accordion-content {
-    display: block;
-    overflow: hidden;
-    transform-origin: 50% 0%;
+    display: none;
 }
 
 .accordion-ul {
     list-style-type: circle;
     padding-left: 2em;
     padding-bottom: 1em;
+}
+
+.more {
     display: none;
 }
 
-.accordion-ul-showed {
-    display: block;
+.show-content {
+    display: block !important;
 }

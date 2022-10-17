@@ -18,6 +18,7 @@ export default class Product extends Router {
         this._elQuantityValue = document.querySelector('[data-js-quantity-value]');
         this._elBtnAddToBasket = document.querySelector('[data-js-btn-add-basket]');
         this._elCircle = document.querySelector('.circle');
+        this._elDevelopSectionBtns = document.querySelectorAll('[data-js-develop-section]');
 
         this.init();
     }
@@ -33,6 +34,10 @@ export default class Product extends Router {
        this._elQuantityDownButton.addEventListener('click', this.updateQuantity.bind(this));
 
        this._elBtnAddToBasket.addEventListener('click', this.addProductToBasket.bind(this));
+
+       this._elDevelopSectionBtns.forEach(elDevelopSectionBtn => {
+            elDevelopSectionBtn.addEventListener('click', this.developSection.bind(this));
+       })
    }
 
    /**
@@ -143,6 +148,23 @@ export default class Product extends Router {
         let localStorage = new LocalStorage();
         let itemsStored = localStorage.getLocalStorage();
         return itemsStored;
+    }
+
+    developSection(e) {
+        e.target.classList.remove('show-content');
+        const elContentCtn = e.target.parentElement.parentElement.nextElementSibling;
+        elContentCtn.classList.add('show-content');
+        const elBtnMinus = e.target.nextElementSibling;
+        elBtnMinus.classList.add('show-content');
+        elBtnMinus.addEventListener('click', this.hideSection.bind(this));
+    }
+
+    hideSection(e) {
+        e.target.classList.remove('show-content');
+        const elContentCtn = e.target.parentElement.parentElement.nextElementSibling;
+        elContentCtn.classList.remove('show-content');
+        const elBtnPlus = e.target.previousElementSibling;
+        elBtnPlus.classList.add('show-content');
     }
 
 }

@@ -17,6 +17,7 @@ export default class Product extends Router {
         this._elQuantityDownButton = document.querySelector('[data-js-quantity-decrement]');
         this._elQuantityValue = document.querySelector('[data-js-quantity-value]');
         this._elBtnAddToBasket = document.querySelector('[data-js-btn-add-basket]');
+        this._elCircle = document.querySelector('.circle');
 
         this.init();
     }
@@ -126,6 +127,22 @@ export default class Product extends Router {
         let productId = document.querySelector('[data-js-product-id]').dataset.jsProductId;
         const localStorage = new LocalStorage();
         localStorage.addToLocalStorage({id: productId, quant: productQuant});
+        this.displayShopBasketNotif();
+    }
+
+    displayShopBasketNotif() {
+        let itemsStored = this.getContentShoppingBasket();
+        if (itemsStored.length === 0 ) {
+            this._elCircle.classList.remove('show-circle');
+        } else {
+            this._elCircle.classList.add('show-circle');
+        }
+    }
+
+    getContentShoppingBasket() {
+        let localStorage = new LocalStorage();
+        let itemsStored = localStorage.getLocalStorage();
+        return itemsStored;
     }
 
 }

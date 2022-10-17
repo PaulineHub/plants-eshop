@@ -11,6 +11,7 @@ export default class Navigation {
         this._elShopBigCtn = this._elNav.querySelector('[data-js-shop-list-big-ctn]');
         this._elShopCtn = this._elNav.querySelector('[data-js-shop-list-ctn]');
         this._elItemShopListTemplate = document.querySelector('[data-js-shop-list-item-template]');
+        this._elCircle = document.querySelector('.circle');
 
         this.prevScrollPos = window.pageYOffset;
         
@@ -20,10 +21,23 @@ export default class Navigation {
     init() {
 
         this._elNavBtn.addEventListener('click', this.displayMobileNav.bind(this));
-        this._elShopBtn.addEventListener('click', this.displayShoppingList.bind(this));
+        this._elShopBtn.addEventListener('mouseover', this.displayShoppingList.bind(this));
+        this._elShopBtn.addEventListener('mouseout', this.removeShoppingList.bind(this));
 
         window.onscroll = () => {
             this.hideNavBar();
+        }
+
+        this.displayShopBasketNotif();
+        
+    }
+
+    displayShopBasketNotif() {
+        let itemsStored = this.getContentShoppingBasket();
+        if (itemsStored.length === 0 ) {
+            this._elCircle.classList.remove('show-circle');
+        } else {
+            this._elCircle.classList.add('show-circle');
         }
     }
 
@@ -54,41 +68,40 @@ export default class Navigation {
      * Display and remove the shopping list from the navigation bar.
      */
     async displayShoppingList() {
-        if (this._elShopBigCtn.classList.contains('show-shop-list')) {
-            this._elShopBigCtn.classList.remove('show-shop-list');
-            this._elShopCtn.innerHTML = '';
+        this._elShopBigCtn.classList.add('show-shop-list');
+        let itemsStored = this.getContentShoppingBasket()
+        if (itemsStored.length === 0) {
+            this._elShopBigCtn.querySelector('h3').innerHTML = 'Votre panier est vide.';
         } else {
-            this._elShopBigCtn.classList.add('show-shop-list');
-            let localStorage = new LocalStorage();
-            let itemsStored = localStorage.getLocalStorage();
-            console.log(itemsStored.length);
-            if (itemsStored.length === 0) {
-                this._elShopBigCtn.querySelector('h3').innerHTML = 'Votre panier est vide.';
-            } else {
-                this._elShopBigCtn.querySelector('h3').innerHTML = 'Votre panier';
-                let params = {limit:40}; // to get all products and not 8 by default
-                const {data:{products}} = await axios.get(`/api/v1/products`, {params});
-                let productsToDisplay = [];
-                itemsStored.forEach(item => {
-                    for (let product in products) {
-                        if (products[product]._id === item.id) {
-                            productsToDisplay.push(products[product]);
-                            products[product].quant = item.quant;
-                        }
+            this._elShopBigCtn.querySelector('h3').innerHTML = 'Votre panier';
+            let params = {limit:40}; // to get all products and not 8 by default
+            const {data:{products}} = await axios.get(`/api/v1/products`, {params});
+            let productsToDisplay = [];
+            itemsStored.forEach(item => {
+                for (let product in products) {
+                    if (products[product]._id === item.id) {
+                        productsToDisplay.push(products[product]);
+                        products[product].quant = item.quant;
                     }
-                })
-                productsToDisplay.forEach(product => {
-                    const { _id, name, image, quant } = product;
-                    let infos = { _id, name, image, quant };
-                    new CloneItem(infos, this._elItemShopListTemplate, this._elShopCtn);
-                })
-            }
+                }
+            })
+            productsToDisplay.forEach(product => {
+                const { _id, name, image, quant } = product;
+                let infos = { _id, name, image, quant };
+                new CloneItem(infos, this._elItemShopListTemplate, this._elShopCtn);
+            })
         }
-        
-
-        
     }
 
+    getContentShoppingBasket() {
+        let localStorage = new LocalStorage();
+        let itemsStored = localStorage.getLocalStorage();
+        return itemsStored;
+    }
 
+    removeShoppingList() {
+        this._elShopBigCtn.classList.remove('show-shop-list');
+        this._elShopCtn.innerHTML = '';
+    }
 
 }

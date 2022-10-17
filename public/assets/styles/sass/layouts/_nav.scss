@@ -85,6 +85,25 @@ nav {
   padding-bottom: 2px;
 }
 
+.shop-icon-ctn {
+  position: relative;
+}
+
+.circle {
+  background-color: black;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  position: absolute;
+  top: -3px;
+  right: 8px;
+  display: none;
+}
+
+.show-circle {
+  display: block;
+}
+
 .fa-plus {
   padding-left: 5px;
 }
@@ -117,23 +136,23 @@ nav {
   position: absolute;
   right: 0;
   top: 70px;
-  background-color: #f9e9e0;
+  background-color: white;
   height: 0;
   overflow: hidden;
   width: 320px;
+  padding-left: 15px;
 }
 
 .shopping-list h3 {
   font-size: 22px;
-  padding-left: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 
 .shopping-list-item-wrapper {
   display: flex;
   gap: 10px;
-  padding-left: 10px;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 .shop-img-ctn {

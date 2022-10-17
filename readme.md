@@ -1,4 +1,4 @@
-<p align="center">
+<p align="center" padding-top='20px' padding-bottom='20px'>
   <img src="public/assets/images/logo-light.png">
 </p>
 

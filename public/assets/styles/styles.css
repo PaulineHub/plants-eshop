@@ -510,13 +510,13 @@ footer {
   margin-top: 10px; }
   .product-slider .product-slider-img-wrapper {
     overflow: hidden; }
-    .product-slider .product-slider-img-wrapper .img-wrapper-width {
-      width: 440px; }
     .product-slider .product-slider-img-wrapper .product-slider-img {
       width: 100%;
       min-width: 300px; }
     .product-slider .product-slider-img-wrapper .no-min-width {
       min-width: 140px; }
+  .product-slider .img-wrapper-width {
+    width: 440px; }
   .product-slider:hover .title-product-slider {
     font-style: italic; }
   .product-slider:hover .product-slider-img {

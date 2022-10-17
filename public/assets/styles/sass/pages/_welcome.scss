@@ -146,9 +146,6 @@
   margin-top: 10px;
   .product-slider-img-wrapper {
     overflow: hidden;
-    .img-wrapper-width {
-      width: 440px;
-    }
     .product-slider-img {
       width: 100%;
       min-width: 300px;
@@ -156,6 +153,9 @@
     .no-min-width {
       min-width: 140px;
     }
+  }
+  .img-wrapper-width {
+    width: 440px;
   }
   &:hover .title-product-slider {
     font-style: italic;

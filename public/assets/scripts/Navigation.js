@@ -32,6 +32,9 @@ export default class Navigation {
         
     }
 
+    /**
+     * Display a circle element to notify that there is items in the shopping basket.
+     */
     displayShopBasketNotif() {
         let itemsStored = this.getContentShoppingBasket();
         if (itemsStored.length === 0 ) {
@@ -69,11 +72,11 @@ export default class Navigation {
      */
     async displayShoppingList() {
         this._elShopBigCtn.classList.add('show-shop-list');
+        this._elShopCtn.innerHTML = '';
         let itemsStored = this.getContentShoppingBasket()
         if (itemsStored.length === 0) {
             this._elShopBigCtn.querySelector('h3').innerHTML = 'Votre panier est vide.';
         } else {
-            this._elShopBigCtn.querySelector('h3').innerHTML = 'Votre panier';
             let params = {limit:40}; // to get all products and not 8 by default
             const {data:{products}} = await axios.get(`/api/v1/products`, {params});
             let productsToDisplay = [];
@@ -90,15 +93,23 @@ export default class Navigation {
                 let infos = { _id, name, image, quant };
                 new CloneItem(infos, this._elItemShopListTemplate, this._elShopCtn);
             })
+            this._elShopBigCtn.querySelector('h3').innerHTML = 'Votre panier';
         }
     }
 
+    /**
+     * Get the content of the array shopping list in the local storage.
+     * @return array - Returns the items stored.
+     */
     getContentShoppingBasket() {
         let localStorage = new LocalStorage();
         let itemsStored = localStorage.getLocalStorage();
         return itemsStored;
     }
 
+    /**
+     * Hide the shopping list element and clear the html inside.
+     */
     removeShoppingList() {
         this._elShopBigCtn.classList.remove('show-shop-list');
         this._elShopCtn.innerHTML = '';

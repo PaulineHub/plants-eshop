@@ -127,6 +127,9 @@ export default class Product extends Router {
         this._elQuantityValue.value = value.toString();
     }
 
+    /**
+     * Add an item in the shopping basket.
+     */
     addProductToBasket() {
         let productQuant = this._elQuantityValue.value;
         let productId = document.querySelector('[data-js-product-id]').dataset.jsProductId;
@@ -135,6 +138,9 @@ export default class Product extends Router {
         this.displayShopBasketNotif();
     }
 
+    /**
+     * Display a circle element to notify that there is items in the shopping basket.
+     */
     displayShopBasketNotif() {
         let itemsStored = this.getContentShoppingBasket();
         if (itemsStored.length === 0 ) {
@@ -144,12 +150,19 @@ export default class Product extends Router {
         }
     }
 
+    /**
+     * Get the content of the array shopping list in the local storage.
+     * @return array - Returns the items stored.
+     */
     getContentShoppingBasket() {
         let localStorage = new LocalStorage();
         let itemsStored = localStorage.getLocalStorage();
         return itemsStored;
     }
 
+    /**
+     * Show a section of text.
+     */
     developSection(e) {
         e.target.classList.remove('show-content');
         const elContentCtn = e.target.parentElement.parentElement.nextElementSibling;
@@ -159,6 +172,9 @@ export default class Product extends Router {
         elBtnMinus.addEventListener('click', this.hideSection.bind(this));
     }
 
+    /**
+     * Hide a section of text.
+     */
     hideSection(e) {
         e.target.classList.remove('show-content');
         const elContentCtn = e.target.parentElement.parentElement.nextElementSibling;

@@ -17,6 +17,10 @@ nav {
   will-change: transform;
 }
 
+.show-nav {
+  height: 100px !important;
+}
+
 .menu {
   flex-grow: 2;
 }

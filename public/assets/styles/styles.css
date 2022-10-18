@@ -152,6 +152,9 @@ nav {
   transition: 0.4s all;
   will-change: transform; }
 
+.show-nav {
+  height: 100px !important; }
+
 .menu {
   flex-grow: 2; }
 
@@ -977,7 +980,7 @@ ul label:nth-child(2) {
   height: 100%; }
 
 .nav-hider {
-  height: 70px;
+  height: 60px;
   width: 100%;
   background-color: #f9e9e0; }
 

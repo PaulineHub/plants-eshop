@@ -1,12 +1,22 @@
 .big-img-ctn {
     width: 100%;
     overflow: hidden;
-    padding-top: 60px;
-    background-color: #f9e9e0;
+    // padding-top: 60px;
+    // background-color: #f9e9e0;
+    height: 100vh;
 }
 
 .big-img-ctn img {
     width: 100%;
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+}
+
+.nav-hider {
+    height: 70px;
+    width: 100%;
+    background-color: #f9e9e0;
 }
 
 .about-section {

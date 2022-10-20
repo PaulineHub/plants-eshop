@@ -5,7 +5,6 @@ import Home from './pages/Home';
 // import About from './pages/About';
 // import Products from './pages/Products';
 // import Error from './pages/Error';
-
 // import SingleProduct from './pages/SingleProduct';
 // import SharedProductLayout from './pages/SharedProductLayout';
 

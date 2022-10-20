@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.png'
 
-const Navbar = () => {
+const Footer = () => {
   return (
     <nav>
         <Link to="./">

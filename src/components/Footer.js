@@ -3,35 +3,96 @@ import logo from '../assets/images/logo.png'
 
 const Footer = () => {
   return (
-    <nav>
-        <Link to="./">
-            <div className="logo-container">
-                <img src={logo} alt=""/>
+    <footer>
+      <div className='footer-container'>
+        <div className='footer-top-row'>
+          <Link to='/'>
+            <div className='logo-container logo-container--footer'>
+              <img src={logo} alt='' />
             </div>
-        </Link>
-        <div className="menu">
-            <ul className="menuPrincipal">
-                <Link to="./catalogue">
-                    <li className="menuPrincipalLi dark-color">Nos Produits</li>
-                </Link>
-                <Link to="./about">
-                    <li className="menuPrincipalLi dark-color">A Propos</li>
-                </Link>
-            </ul>
+          </Link>
+          <div className='footer-social-wrapper'>
+            <Link to='#' className='extra-padding-right'>
+              Instagram
+            </Link>
+            <Link to='#'>Facebook</Link>
+          </div>
         </div>
-        <div className="fas-wrapper">
-            <i className="fas fa-bars dark-color"></i>
-            <div className="shop-icon-ctn">
-                <i className="fas fa-shopping-bag dark-color"></i>
-                <div className="circle"></div>
+        <div className='footer-mid-row layout-grid'>
+          <div className='footer-menu-wrapper'>
+            <div className='footer-menu-heading'>
+              <h5>Magasiner</h5>
             </div>
+            <div>
+              <ul>
+                <Link to='./catalogue'>
+                  <li>Magasiner tout</li>
+                </Link>
+                <Link to='./catalogue?#!category=plantes'>
+                  <li>Plantes</li>
+                </Link>
+                <Link to='./catalogue?#!category=cactus'>
+                  <li>Cactus</li>
+                </Link>
+                <Link to='./catalogue?#!category=fleurs'>
+                  <li>Fleurs séchées</li>
+                </Link>
+              </ul>
+            </div>
+          </div>
+          <div className='footer-menu-wrapper'>
+            <div className='footer-menu-heading'>
+              <h5>A Propos</h5>
+            </div>
+            <div>
+              <ul>
+                <Link to='/about'>
+                  <li>Notre histoire</li>
+                </Link>
+                <Link to='#'>
+                  <li>Nos valeurs</li>
+                </Link>
+              </ul>
+            </div>
+          </div>
+          <div className='footer-menu-wrapper'>
+            <div className='footer-menu-heading'>
+              <h5>Service Client</h5>
+            </div>
+            <div>
+              <ul>
+                <Link to='#'>
+                  <li>Contactez-nous</li>
+                </Link>
+                <Link to='./faq.html'>
+                  <li>FAQs</li>
+                </Link>
+                <Link to='#'>
+                  <li>Retours & Echanges</li>
+                </Link>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className="shopping-list" data-js-shop-list-big-ctn>
-            <h3></h3>
-            <div data-js-shop-list-ctn></div>
+        <div className='footer-end-row'>
+          <div>
+            <p className='footer-p'>
+              Ceci est un faux site d'e-commerce pour un projet en développement
+              web.
+            </p>
+          </div>
+          <div>
+            <p className='footer-p'>
+              Design original du site{' '}
+              <Link to='https://www.twigspaper.com/' target='_blank'>
+                Twigs Paper
+              </Link>
+            </p>
+          </div>
         </div>
-        </nav>
-  );
+      </div>
+    </footer>
+  )
 };
 
-export default Navbar;
+export default Footer;

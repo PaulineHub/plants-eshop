@@ -1,8 +1,21 @@
+import { Link } from 'react-router-dom';
+import HomeHero from '../components/HomeHero'
+import ConceptSection from '../components/ConceptSection'
+import BestSellerSection from '../components/BestSellerSection'
+import TestimonialSection from '../components/TestimonialSection'
+import ExploreProductsSection from '../components/ExploreProductsSection'
+import InstagramSection from '../components/InstagramSection'
+
 const Home = () => {
   return (
-    <section className='section'>
-      <h2>home page</h2>
-    </section>
-  );
-};
-export default Home;
+    <>
+      <HomeHero />
+      <ConceptSection />
+      <BestSellerSection />
+      <TestimonialSection />
+      <ExploreProductsSection />
+      <InstagramSection />
+    </>
+  )
+}
+export default Home

@@ -1,9 +1,26 @@
+import React, { useState } from 'react'
+
 const Filters = () => {
+  const [isActive, setActive] = useState(false);
+  const displayMobileFilters = () => {
+    setActive(!isActive);
+  }
   return (
     <>
-      <i className='fas fa-bars dark-color' id='fa-bars-filter'></i>
-      <section data-js-catalogue-filter className='filter-section'>
-        <i className='fa-solid fa-xmark dark-color' id='closeFilterBtn'></i>
+      <i
+        className='fas fa-bars dark-color'
+        id='fa-bars-filter'
+        onClick={displayMobileFilters}
+      ></i>
+      <section
+        data-js-catalogue-filter
+        className={`filter-section ${isActive ? 'show-filter-mobile' : ''}`}
+      >
+        <i
+          className='fa-solid fa-xmark dark-color'
+          id='closeFilterBtn'
+          onClick={displayMobileFilters}
+        ></i>
         <ul>
           <span>Sélection</span>
           <li>
@@ -35,6 +52,6 @@ const Filters = () => {
       </section>
     </>
   )
-};
+}
 
-export default Filters;
+export default Filters

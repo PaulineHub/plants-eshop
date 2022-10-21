@@ -1,8 +1,15 @@
+import Hero from '../components/Hero'
+import Filters from '../components/Filters'
+import ProductsGrid from '../components/ProductsGrid'
+
 const Products = () => {
+  // ajouter productsGrid
   return (
-    <section className='section'>
-      <h2>Products page</h2>
-    </section>
-  );
-};
-export default Products;
+    <>
+      <Hero />
+      <Filters />
+      
+    </>
+  )
+}
+export default Products

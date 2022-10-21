@@ -11,7 +11,7 @@ const Navbar = () => {
         </Link>
         <div className="menu">
             <ul className="menuPrincipal">
-                <Link to="./catalogue">
+                <Link to="./products">
                     <li className="menuPrincipalLi dark-color">Nos Produits</li>
                 </Link>
                 <Link to="./about">

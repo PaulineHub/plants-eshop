@@ -1,13 +1,16 @@
-import { Link } from 'react-router-dom';
-import logo from '../assets/images/logo.png'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import logo from '../assets/images/logo.png'
+import ShoppingList from './ShoppingList'
 
 const Navbar = () => {
-    const [isActive, setActive] = useState(false)
-    const displayMobileNav = () => {
-        setActive(!isActive)
-    }
-    return (
+  const [isActive, setActive] = useState(false);
+  const [showShoppingList, setShowShoppingList] = useState(false);
+  const displayMobileNav = () => {
+    setActive(!isActive)
+  }
+  return (
+    <>
       <nav>
         <Link to='./'>
           <div className='logo-container'>
@@ -36,7 +39,9 @@ const Navbar = () => {
           <div data-js-shop-list-ctn></div>
         </div>
       </nav>
-    )
-};
+      {showShoppingList && <ShoppingList/>}
+    </>
+  )
+}
 
-export default Navbar;
+export default Navbar

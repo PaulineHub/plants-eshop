@@ -5,8 +5,8 @@ const connectDB = require('./db/connect');
 const Product = require('./models/product');
 const detailImages = require('./models/detailImage');
 
-const jsonProducts = require('./products.json');
-const jsonDetailImages = require('./detailImages.json');
+const jsonProducts = require('../products.json');
+const jsonDetailImages = require('../detailImages.json');
 
 const start = async () => {
     try {

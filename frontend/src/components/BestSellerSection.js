@@ -1,8 +1,10 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 // import ProductItem from './ProductItem'
 
 const BestSellerSection = () => {
   // <ProductItem/> a linker dans le carousel
+
   return (
     <>
       <section class='product-slider-section'>

@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const Filters = () => {
+
   const [isActive, setActive] = useState(false);
   const displayMobileFilters = () => {
     setActive(!isActive);
   }
+
   return (
     <>
       <i
@@ -41,10 +43,13 @@ const Filters = () => {
           </li>
         </ul>
         <div>
-          <select name='sort' id='sort'>
-            <option value='createdAt' selected>
-              Plus récent
-            </option>
+          <select
+            name='sort'
+            id='sort'
+            defaultValue='createdAt'
+            /* onChange={updateSort} */
+          >
+            <option value='createdAt'>Plus récent</option>
             <option value='price'>Prix croissants</option>
             <option value='-price'>Prix décroissants</option>
           </select>

@@ -3,27 +3,57 @@ import ProductDescription from "../components/ProductDescription";
 import ProductImages from "../components/ProductImages";
 import ProductShoppingInfos from "../components/ProductShoppingInfos";
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { api } from '../api'
 
 const SingleProduct = () => {
+    const [product, setProduct] = useState()
+    const [detailImages, setDetailImages] = useState()
+    const [error, setError] = useState()
+    const url = window.location.pathname;
+    const id = url.split('/')[2];
+
+    // get infos of the product
+    useEffect(() => {
+      api
+        .getSingleProduct(id)
+        .then((product) => {
+          setProduct(product)
+          let category = product.category;
+          return api.getProductDetailImages({ category })
+        })
+        .then((images) => {
+          setDetailImages(images)
+        })
+        .catch((e) => {
+          setError(e)
+        })
+    }, [])
+
+    if (!product || !detailImages) {
+      return 'loading'
+    }
+    
   return (
-    <section class="section container no-padding-mobile no-margin-tb-mobile">
-        <div class="go-back-wrapper">
-            <Link to="/products" class="black go-back-wrapper-a">
-                <div class="btn-chevron tiny-chevron">
-                    <i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>
-                </div>
-            <div class="go-back-text">Retour</div>
-            </Link>
+    <section className='section container no-padding-mobile no-margin-tb-mobile'>
+      <div className='go-back-wrapper'>
+        <Link to='/products' className='black go-back-wrapper-a'>
+          <div className='btn-chevron tiny-chevron'>
+            <i className='fas fa-chevron-left'></i>
+            <i className='fas fa-chevron-left'></i>
+          </div>
+          <div className='go-back-text'>Retour</div>
+        </Link>
+      </div>
+      <div className='product-description-wrapper'>
+        <ProductImages image={product.image} detailImages={detailImages} />
+        <div className='product-description-content-wrapper'>
+          <ProductDescription product={product} />
+          {/* <ProductShoppingInfos /> */}
+          <AccordionInformations />
         </div>
-        <div class="product-description-wrapper">
-            <ProductImages/>
-            <div class="product-description-content-wrapper">
-                <ProductDescription/>
-                <ProductShoppingInfos/>
-                <AccordionInformations/>
-            </div>
-        </div>
+      </div>
     </section>
-  );
+  )
 };
 export default SingleProduct;

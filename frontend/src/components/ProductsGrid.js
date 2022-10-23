@@ -8,7 +8,6 @@ const ProductsGrid = () => {
   const [error, setError] = useState();
 
   useEffect(() => {
-    // axios.get('/api/v1/products');
     api
       .getProducts()
       .then((products) => {

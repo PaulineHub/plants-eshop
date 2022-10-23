@@ -18,8 +18,7 @@ const ProductsGrid = () => {
         setError(e)
       })
   }, [])
-  console.log('products:', products)
-  // boucle pour passer params a chaque product item
+  // console.log('products:', products)
 
   if (error) {
     return 'Enable to fetch the products!'
@@ -28,10 +27,9 @@ const ProductsGrid = () => {
   return (
     <div className='container section no-padding-mobile'>
       <div role='list' className='products-list' data-js-products-wrapper>
-        {/* <ProductItem /> */}
-        {
-          products.map(product => <div key={product.id}>{product.name}</div>)
-        }
+        {products.map((product) => (
+          <ProductItem key={product._id} product={product} />
+        ))}
       </div>
       {/* <Pagination /> */}
     </div>

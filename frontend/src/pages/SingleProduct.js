@@ -29,7 +29,7 @@ const SingleProduct = () => {
           setError(e)
         })
     }, [])
-
+    // loading for the first render before having data from the api
     if (!product || !detailImages) {
       return 'loading'
     }
@@ -49,7 +49,7 @@ const SingleProduct = () => {
         <ProductImages image={product.image} detailImages={detailImages} />
         <div className='product-description-content-wrapper'>
           <ProductDescription product={product} />
-          {/* <ProductShoppingInfos /> */}
+          <ProductShoppingInfos product={product} />
           <AccordionInformations />
         </div>
       </div>

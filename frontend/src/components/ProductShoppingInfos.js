@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useContext, useEffect } from 'react'
+import { AppContext } from '../context'
 
 const ProductShoppingInfos = ({product}) => {
 
     const { _id, light, temperature } = product;
     const [quantity, setQuantity] = useState(1);
+    const { updateCart } = useContext(AppContext)
 
     function decreaseQuantity() {
         if(quantity > 1) setQuantity(quantity - 1);
@@ -28,12 +30,14 @@ const ProductShoppingInfos = ({product}) => {
         })
         if (!isUpdate) items.push(item);
         localStorage.setItem('shoppingList', JSON.stringify(items))
+        //update global cart in context file
+        updateCart(items);
     }
 
     function getLocalStorage() {
         return localStorage.getItem('shoppingList') ? JSON.parse(localStorage.getItem('shoppingList')) : [];
     }
-    
+
   return (
       <div>
           <div>

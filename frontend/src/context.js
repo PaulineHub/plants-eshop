@@ -1,30 +1,46 @@
 import React, { useEffect, useState } from 'react'
+import { api } from './api'
 
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
 
-  const [cart, setCart] = useState([]);
+    const [products, setProducts] = useState([])
+    const [cart, setCart] = useState([]);
 
-  useEffect(() => {
-    setCart(getLocalStorage);
-  }, [])
+    useEffect(() => {
+        setCart(getLocalStorage);
+        getApiProducts();
+    }, [])
 
-  const updateCart = (data) => {
+    const updateCart = (data) => {
     setCart(data);
-  };
+    };
 
-  function getLocalStorage() {
+    function getLocalStorage() {
     return localStorage.getItem('shoppingList')
-      ? JSON.parse(localStorage.getItem('shoppingList'))
-      : []
-  }
+        ? JSON.parse(localStorage.getItem('shoppingList'))
+        : []
+    }
 
-  return (
-    <AppContext.Provider value={{cart, updateCart}}>
-      {children}
+    function getApiProducts() {
+        api
+          .getProducts()
+          .then((products) => {
+            setProducts(products)
+          })
+          .catch((e) => {
+            setError(e)
+          })
+    }
+
+    
+
+    return (
+    <AppContext.Provider value={{cart, products, updateCart}}>
+        {children}
     </AppContext.Provider>
-  )
+    )
 }
 
 

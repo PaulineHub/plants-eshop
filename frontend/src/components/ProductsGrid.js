@@ -17,7 +17,6 @@ const ProductsGrid = () => {
         setError(e)
       })
   }, [])
-  // console.log('products:', products)
 
   if (error) {
     return 'Enable to fetch the products!'

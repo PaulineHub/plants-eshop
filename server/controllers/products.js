@@ -2,7 +2,7 @@ const Product = require('../models/product')
 
 // Get all products
 const getAllProducts = async (req, res) => {
-  const { featured, category, name, sort, fields } = req.query
+  const { featured, category, name, sort, fields, page } = req.query
   const queryObject = {}
 
   if (featured) {
@@ -32,11 +32,12 @@ const getAllProducts = async (req, res) => {
   }
 
   // PAGINATION
-  const page = Number(req.query.page) || 1
-  const limit = Number(req.query.limit) || 8
-  const skip = (page - 1) * limit
-
-  result = result.skip(skip).limit(limit)
+  if (page) {
+    const page = Number(req.query.page) || 1
+    const limit = Number(req.query.limit) || 8
+    const skip = (page - 1) * limit
+    result = result.skip(skip).limit(limit)
+  }
 
   const products = await result
   res.status(200).json({ products })

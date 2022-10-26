@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { productImages } from '../images'
 
-const ProductItem = ({product}) => {
+const ProductItem = ({product, carousel}) => {
   const {_id, category, name, image, price} = product; 
   const imgName = image.split('/')[3].split('.')[0];
 
@@ -10,10 +10,10 @@ const ProductItem = ({product}) => {
       <div role='listitem' id={_id}>
         <Link to={`/products/${_id}`}>
           <div className='product-slider'>
-            <div className='product-slider-img-wrapper'>
+            <div className={`product-slider-img-wrapper ${carousel ?'img-wrapper-width' : ''}`}>
               <img
                 src={productImages[imgName]}
-                alt=''
+                alt={name}
                 className='product-slider-img no-min-width'
               />
             </div>

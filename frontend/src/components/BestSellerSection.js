@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-// import ProductItem from './ProductItem'
+import { AppContext } from '../context'
+import ProductItem from './ProductItem'
 
 const BestSellerSection = () => {
+  const { products } = useContext(AppContext);
+  const [featuredProducts, setFeaturedProducts] = useState([])
+
+  useEffect(() => {
+    let bestProducts = [];
+    if (products.length > 0) {
+      bestProducts = products.filter(product => (product.featured === true))
+    }
+    setFeaturedProducts(bestProducts)
+  }, [products])
+
+  console.log('featuredProducts', featuredProducts)
+
   // <ProductItem/> a linker dans le carousel
 
   return (
@@ -32,7 +46,13 @@ const BestSellerSection = () => {
               <i className='fas fa-chevron-right' data-js-right></i>
             </div>
           </div>
-          <div className='product-slider-wrapper' data-js-products-wrapper></div>
+          <div className='product-slider-wrapper'>
+            {featuredProducts.length > 0
+              ? featuredProducts.map((product) => (
+                  <ProductItem key={product._id} product={product} carousel={true}/>
+                ))
+              : ''}
+          </div>
         </div>
       </section>
     </>

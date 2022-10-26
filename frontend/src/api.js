@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 export const api = {
-  getProducts: () =>
+  getProducts: (params) =>
     axios
-    .get('/api/v1/products')
+    .get('/api/v1/products', {params})
     .then((response) => response.data.products),
   getSingleProduct: (id) =>
     axios

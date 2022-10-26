@@ -22,8 +22,6 @@ export default class Carousel {
     init() {
         this._elNextBtns.forEach(elNextBtn => {
             elNextBtn.addEventListener('click', () => {    
-                console.log(this.counter);
-                console.log(this._elProducts);
                 if (this.counter < this._elProducts.length - 1) { 
                     this.counter++;
                     this.moveCarousel();
@@ -39,8 +37,6 @@ export default class Carousel {
                 }
             });
         })
-        
-
     }
     
     /**

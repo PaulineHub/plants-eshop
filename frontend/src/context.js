@@ -7,15 +7,27 @@ const AppProvider = ({ children }) => {
 
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([]);
+    const [searchParams, setSearchParams] = useState(getSearchParamsFromUrl)
 
     useEffect( () => {
-        getApiProducts();
         setCart(getLocalStorage);
     }, [])
+
+    useEffect(() => {
+      console.log('test');
+      getApiProducts(searchParams)
+    }, [searchParams])
+
 
     const updateCart = (data) => {
       setCart(data);
     };
+
+    const updateSearchParams = (data) => {
+      console.log('searchParams', data)
+      setSearchParams(data);
+      
+    }
 
     function getLocalStorage() {
       return localStorage.getItem('shoppingList')
@@ -23,9 +35,9 @@ const AppProvider = ({ children }) => {
           : []
     }
 
-    function getApiProducts() {
+    function getApiProducts(params) {
       api
-        .getProducts()
+        .getProducts(params)
         .then((products) => {
           setProducts(products)
         })
@@ -34,12 +46,36 @@ const AppProvider = ({ children }) => {
         })
     }
 
+    function getSearchParamsFromUrl() {
+      const url = new URL(`${window.location.href}`)
+      let params = { category: 'all', sort: 'createdAt' }
+      let urlSearch
+      if (url.hash || url.search) {
+        if (url.hash) urlSearch = url.hash.split(`#!/products?`)[1]
+        else if (url.search) urlSearch = url.search
+
+        let searchParams = new URLSearchParams(urlSearch)
+        for (let key of searchParams.keys()) {
+          params[key] = searchParams.get(key)
+        }
+      }
+      return params
+    }
+
     
 
     return (
-    <AppContext.Provider value={{cart, products, updateCart}}>
+      <AppContext.Provider
+        value={{
+          cart,
+          products,
+          updateSearchParams,
+          updateCart,
+          getSearchParamsFromUrl,
+        }}
+      >
         {children}
-    </AppContext.Provider>
+      </AppContext.Provider>
     )
 }
 

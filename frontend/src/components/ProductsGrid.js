@@ -1,6 +1,6 @@
 import Pagination from './Pagination'
 import ProductItem from './ProductItem'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { AppContext } from '../context'
 
 const ProductsGrid = () => {
@@ -11,6 +11,8 @@ const ProductsGrid = () => {
   if (error) {
     return 'Enable to fetch the products!'
   }
+
+
 
   return (
     <div className='container section no-padding-mobile'>

@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 import { AppContext } from '../context'
 
 const ProductShoppingInfos = ({product}) => {

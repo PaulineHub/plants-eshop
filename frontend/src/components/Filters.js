@@ -1,10 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react'
+import { AppContext } from '../context'
+import { useParams} from 'react-router-dom'
 
 const Filters = () => {
-
-  const [isActive, setActive] = useState(false);
+  const [isActive, setActive] = useState(false)
   const displayMobileFilters = () => {
-    setActive(!isActive);
+    setActive(!isActive)
+  }
+  const { updateSearchParams, getSearchParamsFromUrl } = useContext(AppContext)
+  const [filterParams, setFilterParams] = useState(getSearchParamsFromUrl)
+  const [sortParams, setSortParams] = useState(getSearchParamsFromUrl)
+  let params = useParams()
+
+  function updateSearchParamsInUrl(paramsObject) {
+    const url = new URL(`${window.location.href}`)
+    url.hash = `#!/products?`
+    let params = new URLSearchParams(url.search)
+    for (let paramName in paramsObject) {
+      params.append(paramName, paramsObject[paramName])
+    }
+    window.location = `${url}${params}`
+  }
+
+  const handleSortChange = (e) => {
+    setSortParams({ sort: e.target.value })
+    updateSearchParamsInUrl({ ...filterParams, sort: e.target.value })
+    updateSearchParams({ ...filterParams, sort: e.target.value })
+  }
+
+  const handleFilterChange = (e) => {
+    // let params = { ...sortParams, category: e.target.value };
+    // params['category'] = e.target.value
+    setFilterParams({ category: e.target.value })
+    updateSearchParamsInUrl({ ...sortParams, category: e.target.value })
+    // Copy the object and add category propriety
+    updateSearchParams({ ...sortParams, category: e.target.value })
   }
 
   return (
@@ -15,7 +45,6 @@ const Filters = () => {
         onClick={displayMobileFilters}
       ></i>
       <section
-        data-js-catalogue-filter
         className={`filter-section ${isActive ? 'show-filter-mobile' : ''}`}
       >
         <i
@@ -26,19 +55,57 @@ const Filters = () => {
         <ul>
           <span>Sélection</span>
           <li>
-            <input type='radio' value='all' name='filter' id='all' />
+            <input
+              type='radio'
+              value='all'
+              name='filter'
+              id='all'
+              defaultChecked={
+                !filterParams || filterParams.category === 'all'
+                  ? 'checked'
+                  : ''
+              }
+              onClick={handleFilterChange}
+            />
             <label htmlFor='all'>Tout</label>
           </li>
           <li>
-            <input type='radio' value='plantes' name='filter' id='plantes' />
+            <input
+              type='radio'
+              value='plantes'
+              name='filter'
+              id='plantes'
+              defaultChecked={
+                filterParams.category === 'plantes' ? 'checked' : ''
+              }
+              onClick={handleFilterChange}
+            />
             <label htmlFor='plantes'>Plantes</label>
           </li>
           <li>
-            <input type='radio' value='cactus' name='filter' id='cactus' />
+            <input
+              type='radio'
+              value='cactus'
+              name='filter'
+              id='cactus'
+              defaultChecked={
+                filterParams.category === 'cactus' ? 'checked' : ''
+              }
+              onClick={handleFilterChange}
+            />
             <label htmlFor='cactus'>Cactus</label>
           </li>
           <li>
-            <input type='radio' value='fleurs' name='filter' id='fleurs' />
+            <input
+              type='radio'
+              value='fleurs'
+              name='filter'
+              id='fleurs'
+              defaultChecked={
+                filterParams.category === 'fleurs' ? 'checked' : ''
+              }
+              onClick={handleFilterChange}
+            />
             <label htmlFor='fleurs'>Fleurs</label>
           </li>
         </ul>
@@ -47,7 +114,7 @@ const Filters = () => {
             name='sort'
             id='sort'
             defaultValue='createdAt'
-            /* onChange={updateSort} */
+            onChange={handleSortChange}
           >
             <option value='createdAt'>Plus récent</option>
             <option value='price'>Prix croissants</option>

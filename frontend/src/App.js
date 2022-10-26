@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
-import { useState } from 'react';
 import SharedLayout from './pages/SharedLayout'
 import Home from './pages/Home';
 import About from './pages/About';

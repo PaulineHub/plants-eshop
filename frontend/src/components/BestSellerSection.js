@@ -6,6 +6,7 @@ import ProductItem from './ProductItem'
 const BestSellerSection = () => {
   const { products } = useContext(AppContext);
   const [featuredProducts, setFeaturedProducts] = useState([])
+  const [counter, setCounter] = useState(0)
 
   useEffect(() => {
     let bestProducts = [];
@@ -15,7 +16,16 @@ const BestSellerSection = () => {
     setFeaturedProducts(bestProducts)
   }, [products])
 
-  console.log('featuredProducts', featuredProducts)
+  // function moveCarousel() {
+  //   if (counter >= 0 && counter < featuredProducts.length) {
+  //     const elProducts = document.querySelectorAll('[data-js-product]')
+  //     elProducts.forEach((elProduct) => {
+  //       elProduct.style.transform = `translateX(-${counter * 100}%)`
+  //     })
+  //   } else {
+  //     counter = 0
+  //   }
+  // }
 
   // <ProductItem/> a linker dans le carousel
 

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { AppContext } from '../context'
 import { Link } from 'react-router-dom'
 import logo from '../assets/images/logo.png'
@@ -8,12 +8,32 @@ import ShoppingList from './ShoppingList'
 const Navbar = () => {
   const [isActive, setActive] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const { cart, products } = useContext(AppContext)
+  const { cart, products } = useContext(AppContext);
+  const [cartProducts, setCartProducts] = useState([]);
   
   function displayMobileNav() {
     setActive(!isActive)
   }
-  console.log(products);
+  
+
+  useEffect(() => {
+    let list = [];
+    if (cart.length > 0 && products.length > 0) {
+      for (let item in cart) {
+        for (let product in products) {
+          if (products[product]._id === cart[item]._id) {
+            list.push({
+              _id: products[product]._id,
+              name: products[product].name,
+              image: products[product].image,
+              quantity: cart[item].quantity
+            })
+          }
+        }
+      }
+    }
+    setCartProducts(list);
+  }, [cart, products])
   
 
   return (
@@ -39,19 +59,27 @@ const Navbar = () => {
           <div className='shop-icon-ctn'>
             <i
               className='fas fa-shopping-bag dark-color'
-              onMouseEnter={() => {setShowCart(true)}}
-              onMouseLeave={() => {setShowCart(false)}}
+              onMouseEnter={() => {
+                setShowCart(true)
+              }}
+              onMouseLeave={() => {
+                setShowCart(false)
+              }}
             ></i>
             <div
               className={`circle ${cart.length > 0 ? 'show-circle' : ''}`}
             ></div>
           </div>
         </div>
-        <div className={`shopping-list${showCart ? 'show-shop-list' : ''}`}>
+        <div className={`shopping-list ${showCart ? 'show-shop-list' : ''}`}>
           <h3>{`${
-            cart.length > 0 ? 'Votre panier' : 'Votre panier est vide.'
+            cartProducts.length > 0 ? 'Votre panier' : 'Votre panier est vide.'
           }`}</h3>
-          <div data-js-shop-list-ctn>{<ShoppingList />}</div>
+          <div data-js-shop-list-ctn>
+            {cartProducts.length > 0 ? cartProducts.map((product) => (
+              <ShoppingList key={product._id} product={product} />
+            )) : ''}
+          </div>
         </div>
       </nav>
     </>

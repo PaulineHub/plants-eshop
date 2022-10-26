@@ -10,23 +10,23 @@ import insta7 from '../assets/images/img-accueil/insta7-440px.jpg'
 const InstagramSection = () => {
   return (
     <>
-      <section class='instagram-section'>
-        <div class='heading-wrapper-centered heading-wrapper-centered--insta'>
-          <img src={instaCircle} alt='Suis notre aventure' class='rotate' />
-          <div class='divider-line'></div>
+      <section className='instagram-section'>
+        <div className='heading-wrapper-centered heading-wrapper-centered--insta'>
+          <img src={instaCircle} alt='Suis notre aventure' className='rotate' />
+          <div className='divider-line'></div>
           <h3>
             Viens nous faire un coucou et jeter un oeil à nos actualités
             @lamaisonjungle
           </h3>
         </div>
-        <div class='instagram-grid'>
-          <img src={insta5} alt='' class='image-cover ig-image ig-image--01' />
-          <img src={insta6} alt='' class='image-cover ig-image ig-image--02' />
-          <img src={insta7} alt='' class='image-cover ig-image ig-image--03' />
-          <img src={insta1} alt='' class='image-cover ig-image ig-image--04' />
-          <img src={insta2} alt='' class='image-cover ig-image ig-image--05' />
-          <img src={insta3} alt='' class='image-cover ig-image ig-image--06' />
-          <img src={insta4} alt='' class='image-cover ig-image ig-image--07' />
+        <div className='instagram-grid'>
+          <img src={insta5} alt='' className='image-cover ig-image ig-image--01' />
+          <img src={insta6} alt='' className='image-cover ig-image ig-image--02' />
+          <img src={insta7} alt='' className='image-cover ig-image ig-image--03' />
+          <img src={insta1} alt='' className='image-cover ig-image ig-image--04' />
+          <img src={insta2} alt='' className='image-cover ig-image ig-image--05' />
+          <img src={insta3} alt='' className='image-cover ig-image ig-image--06' />
+          <img src={insta4} alt='' className='image-cover ig-image ig-image--07' />
         </div>
       </section>
     </>

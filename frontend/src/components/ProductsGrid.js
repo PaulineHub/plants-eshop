@@ -1,22 +1,12 @@
 import Pagination from './Pagination'
 import ProductItem from './ProductItem'
-import { useState, useEffect } from 'react'
-import { api } from '../api'
+import { useState, useContext } from 'react'
+import { AppContext } from '../context'
 
 const ProductsGrid = () => {
-  const [products, setProducts] = useState([]);
-  const [error, setError] = useState();
 
-  useEffect(() => {
-    api
-      .getProducts()
-      .then((products) => {
-        setProducts(products)
-      })
-      .catch((e) => {
-        setError(e)
-      })
-  }, [])
+  const [error, setError] = useState();
+  const { products } = useContext(AppContext)
 
   if (error) {
     return 'Enable to fetch the products!'

@@ -8,30 +8,30 @@ const AppProvider = ({ children }) => {
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([]);
 
-    useEffect(() => {
-        setCart(getLocalStorage);
+    useEffect( () => {
         getApiProducts();
+        setCart(getLocalStorage);
     }, [])
 
     const updateCart = (data) => {
-    setCart(data);
+      setCart(data);
     };
 
     function getLocalStorage() {
-    return localStorage.getItem('shoppingList')
-        ? JSON.parse(localStorage.getItem('shoppingList'))
-        : []
+      return localStorage.getItem('shoppingList')
+          ? JSON.parse(localStorage.getItem('shoppingList'))
+          : []
     }
 
     function getApiProducts() {
-        api
-          .getProducts()
-          .then((products) => {
-            setProducts(products)
-          })
-          .catch((e) => {
-            setError(e)
-          })
+      api
+        .getProducts()
+        .then((products) => {
+          setProducts(products)
+        })
+        .catch((e) => {
+          setError(e)
+        })
     }
 
     

@@ -6,21 +6,23 @@ const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
 
     const [products, setProducts] = useState([])
-    const [cart, setCart] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState([])
+    const [cart, setCart] = useState(getLocalStorage)
     const [searchParams, setSearchParams] = useState(getSearchParamsFromUrl)
 
     useEffect( () => {
         setCart(getLocalStorage);
+        getApiProducts()
     }, [])
 
     useEffect(() => {
-      console.log('test');
-      getApiProducts(searchParams)
+      getApiFilteredProducts(searchParams)
     }, [searchParams])
 
 
     const updateCart = (data) => {
       setCart(data);
+      
     };
 
     const updateSearchParams = (data) => {
@@ -35,11 +37,22 @@ const AppProvider = ({ children }) => {
           : []
     }
 
-    function getApiProducts(params) {
+    function getApiProducts() {
+      api
+        .getProducts()
+        .then((products) => {
+          setProducts(products)
+        })
+        .catch((e) => {
+          setError(e)
+        })
+    }
+
+    function getApiFilteredProducts(params) {
       api
         .getProducts(params)
         .then((products) => {
-          setProducts(products)
+          setFilteredProducts(products)
         })
         .catch((e) => {
           setError(e)

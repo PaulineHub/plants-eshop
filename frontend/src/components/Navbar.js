@@ -15,7 +15,6 @@ const Navbar = () => {
     setActive(!isActive)
   }
   
-
   useEffect(() => {
     let list = [];
     if (cart.length > 0 && products.length > 0) {
@@ -32,9 +31,9 @@ const Navbar = () => {
         }
       }
     }
+    
     setCartProducts(list);
   }, [cart, products])
-  
 
   return (
     <>

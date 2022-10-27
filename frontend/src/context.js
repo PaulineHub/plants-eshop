@@ -9,6 +9,7 @@ const AppProvider = ({ children }) => {
     const [filteredProducts, setFilteredProducts] = useState([])
     const [cart, setCart] = useState(getLocalStorage)
     const [searchParams, setSearchParams] = useState(getSearchParamsFromUrl)
+    const [pages, setPages] = useState([1])
 
     useEffect( () => {
         setCart(getLocalStorage);
@@ -22,13 +23,10 @@ const AppProvider = ({ children }) => {
 
     const updateCart = (data) => {
       setCart(data);
-      
     };
 
     const updateSearchParams = (data) => {
-      console.log('searchParams', data)
       setSearchParams(data);
-      
     }
 
     function getLocalStorage() {
@@ -48,15 +46,61 @@ const AppProvider = ({ children }) => {
         })
     }
 
-    function getApiFilteredProducts(params) {
-      api
-        .getProducts(params)
-        .then((products) => {
-          setFilteredProducts(products)
-        })
-        .catch((e) => {
-          setError(e)
-        })
+    function getApiFilteredProducts(urlParams) {
+      console.log('urlParams', urlParams)
+      // set the params of the query
+      let params = {}
+      if (urlParams.category) {
+        if (urlParams.category == 'all') {
+          params = {} // we don't send any category filter
+          if (!urlParams.page) params.page = '1'
+        } else params.category = urlParams.category
+      }
+      // get the total of products for pagination
+      calculateNbPages(params)
+      .then((nbPages) => {
+        // get the products
+        params.limit = 8
+        params.fields = '_id, createdAt, featured, category, image, name, price'
+        if (urlParams.sort) params.sort = urlParams.sort
+        else params.sort = 'createdAt'
+        if (urlParams.page) params.page = urlParams.page
+        else params.page = '1'
+        api
+          .getProducts(params)
+          .then((products) => {
+            setFilteredProducts(products)
+          })
+          .catch((e) => {
+            setError(e)
+          })
+      })
+    }
+
+    async function calculateNbPages(params) {
+        params.limit = 40;
+        params.fields = '_id';
+        let nbPages = 1;
+        try {
+            const  products  = await api.getProducts(params)
+            let productsQuantity = products.length;
+            if (productsQuantity > 8) {
+                while (productsQuantity > 8) {
+                    nbPages++;
+                    productsQuantity -= 8;
+                }
+            }
+        } catch (error) {
+            console.log(error);
+        }
+        
+        let pagesArray = []
+        for (let i = 1; i <= nbPages; i++) {
+          pagesArray.push(i)
+        }
+        setPages(pagesArray)
+  
+        return nbPages;
     }
 
     function getSearchParamsFromUrl() {
@@ -82,6 +126,8 @@ const AppProvider = ({ children }) => {
         value={{
           cart,
           products,
+          filteredProducts,
+          pages,
           updateSearchParams,
           updateCart,
           getSearchParamsFromUrl,

@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react'
 import { AppContext } from '../context'
-import { useParams} from 'react-router-dom'
 
 const Filters = () => {
   const [isActive, setActive] = useState(false)
@@ -10,7 +9,6 @@ const Filters = () => {
   const { updateSearchParams, getSearchParamsFromUrl } = useContext(AppContext)
   const [filterParams, setFilterParams] = useState(getSearchParamsFromUrl)
   const [sortParams, setSortParams] = useState(getSearchParamsFromUrl)
-  let params = useParams()
 
   function updateSearchParamsInUrl(paramsObject) {
     const url = new URL(`${window.location.href}`)
@@ -29,8 +27,6 @@ const Filters = () => {
   }
 
   const handleFilterChange = (e) => {
-    // let params = { ...sortParams, category: e.target.value };
-    // params['category'] = e.target.value
     setFilterParams({ category: e.target.value })
     updateSearchParamsInUrl({ ...sortParams, category: e.target.value })
     // Copy the object and add category propriety

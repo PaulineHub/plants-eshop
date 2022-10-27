@@ -45,7 +45,7 @@ const Navbar = () => {
         </Link>
         <div className={`menu ${isActive ? ' show-nav' : 'menu'}`}>
           <ul className='menuPrincipal'>
-            <Link to='./products'>
+            <Link to='./products#!/products?category=all&sort=createdAt'>
               <li className='menuPrincipalLi dark-color'>Nos Produits</li>
             </Link>
             <Link to='./about'>
@@ -75,9 +75,11 @@ const Navbar = () => {
             cartProducts.length > 0 ? 'Votre panier' : 'Votre panier est vide.'
           }`}</h3>
           <div data-js-shop-list-ctn>
-            {cartProducts.length > 0 ? cartProducts.map((product) => (
-              <ShoppingList key={product._id} product={product} />
-            )) : ''}
+            {cartProducts.length > 0
+              ? cartProducts.map((product) => (
+                  <ShoppingList key={product._id} product={product} />
+                ))
+              : ''}
           </div>
         </div>
       </nav>

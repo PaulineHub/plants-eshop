@@ -2,35 +2,31 @@ import React, { useState, useContext } from 'react'
 import { AppContext } from '../context'
 
 const Filters = () => {
+
   const [isActive, setActive] = useState(false)
-  const displayMobileFilters = () => {
-    setActive(!isActive)
-  }
-  const { updateSearchParams, getSearchParamsFromUrl } = useContext(AppContext)
+  const displayMobileFilters = () => { setActive(!isActive)}
+  const {
+    updateSearchParams,
+    getSearchParamsFromUrl,
+    updateSearchParamsInUrl,
+  } = useContext(AppContext)
   const [filterParams, setFilterParams] = useState(getSearchParamsFromUrl)
   const [sortParams, setSortParams] = useState(getSearchParamsFromUrl)
 
-  function updateSearchParamsInUrl(paramsObject) {
-    const url = new URL(`${window.location.href}`)
-    url.hash = `#!/products?`
-    let params = new URLSearchParams(url.search)
-    for (let paramName in paramsObject) {
-      params.append(paramName, paramsObject[paramName])
-    }
-    window.location = `${url}${params}`
-  }
-
   const handleSortChange = (e) => {
     setSortParams({ sort: e.target.value })
-    updateSearchParamsInUrl({ ...filterParams, sort: e.target.value })
-    updateSearchParams({ ...filterParams, sort: e.target.value })
+    let params = {...filterParams, sort: e.target.value }
+    updateSearchParamsInUrl(params )
+    updateSearchParams(params)
   }
 
   const handleFilterChange = (e) => {
     setFilterParams({ category: e.target.value })
-    updateSearchParamsInUrl({ ...sortParams, category: e.target.value })
     // Copy the object and add category propriety
-    updateSearchParams({ ...sortParams, category: e.target.value })
+    let params = { ...sortParams, category: e.target.value }
+    if (params.page) delete params.page
+    updateSearchParamsInUrl(params)
+    updateSearchParams(params)
   }
 
   return (

@@ -8,7 +8,7 @@ import ShoppingList from './ShoppingList'
 const Navbar = () => {
   const [isActive, setActive] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const { cart, products } = useContext(AppContext);
+  const { cart, products, updateSearchParams, getSearchParamsFromUrl } = useContext(AppContext)
   const [cartProducts, setCartProducts] = useState([]);
   
   function displayMobileNav() {
@@ -31,9 +31,12 @@ const Navbar = () => {
         }
       }
     }
-    
     setCartProducts(list);
   }, [cart, products])
+
+  function handleClickProducts() {
+    updateSearchParams(getSearchParamsFromUrl);
+  }
 
   return (
     <>
@@ -45,7 +48,7 @@ const Navbar = () => {
         </Link>
         <div className={`menu ${isActive ? ' show-nav' : 'menu'}`}>
           <ul className='menuPrincipal'>
-            <Link to='./products#!/products?category=all&sort=createdAt'>
+            <Link to='./products' onClick={handleClickProducts}>
               <li className='menuPrincipalLi dark-color'>Nos Produits</li>
             </Link>
             <Link to='./about'>

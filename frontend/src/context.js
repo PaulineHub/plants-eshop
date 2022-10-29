@@ -47,7 +47,6 @@ const AppProvider = ({ children }) => {
     }
 
     function getApiFilteredProducts(urlParams) {
-      console.log('urlParams', urlParams)
       // set the params of the query
       let params = {}
       if (urlParams.category) {
@@ -119,6 +118,16 @@ const AppProvider = ({ children }) => {
       return params
     }
 
+    function updateSearchParamsInUrl(paramsObject) {
+      const url = new URL(`${window.location.href}`)
+      url.hash = `#!/products?`
+      let params = new URLSearchParams(url.search)
+      for (let paramName in paramsObject) {
+        params.append(paramName, paramsObject[paramName])
+      }
+      window.location = `${url}${params}`
+    }
+
     
 
     return (
@@ -128,9 +137,11 @@ const AppProvider = ({ children }) => {
           products,
           filteredProducts,
           pages,
+          searchParams,
           updateSearchParams,
           updateCart,
           getSearchParamsFromUrl,
+          updateSearchParamsInUrl,
         }}
       >
         {children}

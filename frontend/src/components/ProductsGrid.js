@@ -6,8 +6,8 @@ import { AppContext } from '../context'
 const ProductsGrid = () => {
 
   const [error, setError] = useState();
-  const { filteredProducts, pages } = useContext(AppContext)
-console.log('pages',pages);
+  const { filteredProducts, pages, searchParams } = useContext(AppContext)
+
   if (error) {
     return 'Enable to fetch the products!'
   }
@@ -23,9 +23,21 @@ console.log('pages',pages);
           ))}
         </div>
         <div className='pagination'>
-          {pages.map((page) => (
-            <Pagination key={page} number={page}/>
-          ))}
+          {pages.map((page) => {
+            let isPageActive = false;
+            if (!searchParams.page) {
+              if (page === 1) isPageActive = true
+            } else {
+              if (page == searchParams.page) isPageActive = true
+            }
+            return (
+              <Pagination
+                key={page}
+                number={page}
+                isPageActive={isPageActive}
+              />
+            )
+          })}
         </div>
       </div>
     )

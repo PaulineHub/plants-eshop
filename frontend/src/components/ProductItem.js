@@ -3,12 +3,14 @@ import { productImages } from '../images'
 
 
 const ProductItem = ({product, carousel, counter}) => {
+  
   const { _id, category, name, image, price } = product
   const imgName = image.split('/')[3].split('.')[0]
 
-const transformStyle = {
-  transform: `translateX(-${counter * 100}%)`,
-}
+  const transformStyle = {
+    transform: `translateX(-${counter * 100}%)`,
+  }
+
   return (
     <>
       <div

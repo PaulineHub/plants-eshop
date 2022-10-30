@@ -40,7 +40,7 @@ const Filters = () => {
         className={`filter-section ${isActive ? 'show-filter-mobile' : ''}`}
       >
         <i
-          className='fa-solid fa-xmark dark-color'
+          className='fa-solid fa-xmark '
           id='closeFilterBtn'
           onClick={displayMobileFilters}
         ></i>

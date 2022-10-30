@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { AppContext } from '../context'
 import ProductItem from './ProductItem'
@@ -16,18 +16,26 @@ const BestSellerSection = () => {
     setFeaturedProducts(bestProducts)
   }, [products])
 
-  // function moveCarousel() {
-  //   if (counter >= 0 && counter < featuredProducts.length) {
-  //     const elProducts = document.querySelectorAll('[data-js-product]')
-  //     elProducts.forEach((elProduct) => {
-  //       elProduct.style.transform = `translateX(-${counter * 100}%)`
-  //     })
-  //   } else {
-  //     counter = 0
-  //   }
-  // }
+  function moveCarousel() {
+    if (counter < 0 || counter >= featuredProducts.length) {
+      setCounter(0)
+    }
+  }
 
-  // <ProductItem/> a linker dans le carousel
+  function moveToLeft() {
+    if (counter > 0) {
+      setCounter(counter - 1)
+      moveCarousel()
+    }
+  }
+
+  function moveToRight() {
+    if (counter < featuredProducts.length - 1) {
+      setCounter(counter + 1)
+      moveCarousel()
+    }
+  }
+
 
   return (
     <>
@@ -48,18 +56,23 @@ const BestSellerSection = () => {
         <div id='carousel-ctn'>
           <div className='arrow-wrapper'>
             <div className='arrows'>
-              <i className='fas fa-chevron-left' data-js-left></i>
-              <i className='fas fa-chevron-left' data-js-left></i>
+              <i className='fas fa-chevron-left' onClick={moveToLeft}></i>
+              <i className='fas fa-chevron-left' onClick={moveToLeft}></i>
             </div>
             <div className='arrows'>
-              <i className='fas fa-chevron-right' data-js-right></i>
-              <i className='fas fa-chevron-right' data-js-right></i>
+              <i className='fas fa-chevron-right' onClick={moveToRight}></i>
+              <i className='fas fa-chevron-right' onClick={moveToRight}></i>
             </div>
           </div>
           <div className='product-slider-wrapper'>
             {featuredProducts.length > 0
               ? featuredProducts.map((product) => (
-                  <ProductItem key={product._id} product={product} carousel={true}/>
+                  <ProductItem
+                    key={product._id}
+                    product={product}
+                    carousel={true}
+                    counter={counter}
+                  />
                 ))
               : ''}
           </div>

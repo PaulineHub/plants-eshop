@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "react-scripts start"
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "postbuild": "mkdir ../server/public && cp -r ./build/* ../server/public/"
   },
   "proxy": "http://localhost:3001",
   "keywords": [],

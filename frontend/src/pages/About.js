@@ -1,17 +1,29 @@
 import { Link } from 'react-router-dom'
-import aProposImg from '../assets/images/aPropos.jpg'
+import mainsImg from '../assets/images/img-about/about-mains.jpg'
+import terreImg from '../assets/images/img-about/terre.jpg'
+import Hero from '../components/Hero'
 
 const About = () => {
   return (
     <>
       <div className='nav-hider'></div>
-      <main>
-        <div className='big-img-ctn'>
-          <img src={aProposImg} alt='' />
+      <Hero
+        title='Notre histoire'
+        subtitle='Comment tout a commencé...'
+        imageClass='about'
+      />
+      <main className='flex-ctn'>
+        <div className='side-img-ctn'>
+          <div className='about-img-ctn--1'>
+            <img src={mainsImg} alt='mains tenant une plante' />
+          </div>
+          <div className='about-img-ctn--2'>
+            <img src={terreImg} alt='' />
+          </div>
         </div>
+
         <section className='about-section'>
-          <h1>Notre histoire</h1>
-          <h2>Comment tout a commencé</h2>
+          <h2>Nos valeurs</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum quidem
             recusandae debitis maxime dolorum, ea at cumque unde, nobis
@@ -37,8 +49,6 @@ const About = () => {
             numquam quas aperiam minima dolorem voluptas, deleniti asperiores,
             assumenda nulla veniam officiis?
           </p>
-        </section>
-        <div>
           <Link to='./catalogue.html'>
             <button className='btn btn--clair'>
               <div className='btn-text'>Magasiner</div>
@@ -48,7 +58,7 @@ const About = () => {
               </div>
             </button>
           </Link>
-        </div>
+        </section>
       </main>
     </>
   )

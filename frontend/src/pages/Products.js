@@ -5,9 +5,14 @@ import ProductsGrid from '../components/ProductsGrid'
 const Products = () => {
   return (
     <>
-      <Hero />
+      <Hero
+        title='Nos Produits'
+        subtitle='Transformer votre intérieur en jungle avec nos assortiments de
+              plantes, cactus et fleurs séchées.'
+        imageClass='products'
+      />
       <Filters />
-      <ProductsGrid/>
+      <ProductsGrid />
     </>
   )
 }

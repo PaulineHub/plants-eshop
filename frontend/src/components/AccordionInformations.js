@@ -31,7 +31,7 @@ const AccordionInformations = () => {
           </div>
         </div>
         <div
-          className={`accordion-content ${showDetails ? 'show-content' : ''}`}
+          className={`accordion-content ${showDetails ? 'show-height' : ''}`}
         >
           <ul role='list' className='accordion-ul'>
             <li className='accordion-li'>
@@ -68,7 +68,7 @@ const AccordionInformations = () => {
           </div>
         </div>
         <div
-          className={`accordion-content ${showDelivery ? 'show-content' : ''}`}
+          className={`accordion-content ${showDelivery ? 'show-height' : ''}`}
         >
           <ul role='list' className='accordion-ul'>
             <li className='accordion-li'>Cueillette en magasin</li>
@@ -104,7 +104,7 @@ const AccordionInformations = () => {
         </div>
         <div
           className={`accordion-content ${
-            showCustomerSupport ? 'show-content' : ''
+            showCustomerSupport ? 'show-height' : ''
           }`}
         >
           <ul role='list' className='accordion-ul'>

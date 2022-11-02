@@ -30,6 +30,8 @@ nav {
   font-size: 1.2rem;
   a {
     margin-right: 30px;
+    font-family: 'Playfair Display', serif;
+    width: 120px;
   }
 }
 
@@ -137,7 +139,7 @@ nav {
   position: absolute;
   right: 0;
   top: 70px;
-  background-color: white;
+  background-color: #fcf8f3;
   height: 0;
   overflow: hidden;
   width: 320px;

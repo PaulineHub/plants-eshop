@@ -137,7 +137,7 @@
   align-items: baseline;
   text-align: center;
   position: relative;
-  a {
+  div {
       transition: all 1s ease-in-out;
     }
 }
@@ -275,7 +275,7 @@
 }
 
 .category-image-wrapper {
-  height : 480px;
+  // height : 480px;
   overflow: hidden;
   .explore-product-img {
     width: 100%;

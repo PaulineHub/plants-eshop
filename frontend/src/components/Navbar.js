@@ -62,7 +62,7 @@ const Navbar = () => {
             <i
               className='fas fa-shopping-bag dark-color'
               onMouseEnter={() => {
-                setShowCart(true)
+                cart.length > 0 ? setShowCart(true) : setShowCart(false)
               }}
               onMouseLeave={() => {
                 setShowCart(false)
@@ -75,7 +75,7 @@ const Navbar = () => {
         </div>
         <div className={`shopping-list ${showCart ? 'show-shop-list' : ''}`}>
           <h3>{`${
-            cartProducts.length > 0 ? 'Votre panier' : 'Votre panier est vide.'
+            cartProducts.length > 0 ? 'Votre panier' : ''
           }`}</h3>
           <div data-js-shop-list-ctn>
             {cartProducts.length > 0

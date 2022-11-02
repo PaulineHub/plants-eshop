@@ -306,7 +306,8 @@ nav {
 .hero-mid-split-wrapper {
   display: flex;
   min-height: 70vh;
-  justify-content: center; }
+  justify-content: flex-end;
+  position: relative; }
 
 .hero-split-content {
   padding-right: 3em;
@@ -318,9 +319,15 @@ nav {
 
 .hero-split-left-column {
   display: flex;
-  width: 50%;
+  width: 40%;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 70vh;
+  z-index: 3;
+  transition: width 1.4s ease-in-out; }
 
 .hero-split-left-column--products {
   background-color: #f9e9e0; }
@@ -333,16 +340,17 @@ nav {
 .hero-split-right-column {
   position: relative;
   overflow: hidden;
-  width: 60%;
-  transition: width 1.2s ease-in-out; }
+  width: 70%; }
 
 .grow-width {
-  width: 80%; }
+  width: 32%; }
 
 .split-image {
   width: 100%;
   height: 100%;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 0%; }
 
 .split-image--products {
   background-image: url("../images/img-produits/plantesCouv.jpg"); }

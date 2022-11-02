@@ -716,6 +716,9 @@ footer {
   font-size: 1em;
   width: fit-content; }
 
+.go-back-wrapper-a:hover .btn-chevron {
+  transform: translate3d(-4px, 0px, 0px); }
+
 .go-back-text {
   padding-left: 0.5em;
   font-size: 0.8em;

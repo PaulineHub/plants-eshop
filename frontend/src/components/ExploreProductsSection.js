@@ -2,8 +2,11 @@ import { Link } from 'react-router-dom'
 import plants from '../assets/images/img-accueil/explore-plantes-470px.png'
 import cactus from '../assets/images/img-accueil/explore-cactus-470px.png'
 import flowers from '../assets/images/img-accueil/explore-fleurs-470px.png'
+import React, { useContext } from 'react'
+import { AppContext } from '../context'
 
 const ExploreProductsSection = () => {
+  const {updateSearchParams} = useContext(AppContext)
   return (
     <>
       <section className='explore-products-section container'>
@@ -12,7 +15,12 @@ const ExploreProductsSection = () => {
         </div>
         <div className='explore-products-wrapper'>
           <div className='explore-product-category'>
-            <Link to='/products#!/products?category=plantes'>
+            <Link
+              to='/products#!/products?category=plantes'
+              onClick={() => {
+                updateSearchParams({ category: 'plantes' })
+              }}
+            >
               <div className='category-image-wrapper'>
                 <img src={plants} alt='' className='explore-product-img' />
               </div>
@@ -22,7 +30,12 @@ const ExploreProductsSection = () => {
             </Link>
           </div>
           <div className='explore-product-category'>
-            <Link to='/products#!/products?category=cactus'>
+            <Link
+              to='/products#!/products?category=cactus'
+              onClick={() => {
+                updateSearchParams({ category: 'cactus' })
+              }}
+            >
               <div className='category-image-wrapper'>
                 <img src={cactus} alt='' className='explore-product-img' />
               </div>
@@ -32,7 +45,12 @@ const ExploreProductsSection = () => {
             </Link>
           </div>
           <div className='explore-product-category'>
-            <Link to='/products#!/products?category=fleurs'>
+            <Link
+              to='/products#!/products?category=fleurs'
+              onClick={() => {
+                updateSearchParams({ category: 'fleurs' })
+              }}
+            >
               <div className='category-image-wrapper'>
                 <img src={flowers} alt='' className='explore-product-img' />
               </div>

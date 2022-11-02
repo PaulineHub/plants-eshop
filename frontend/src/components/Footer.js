@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo-dark.png'
+import React, { useContext } from 'react'
+import { AppContext } from '../context'
 
 const Footer = () => {
+  const { updateSearchParams } = useContext(AppContext)
   return (
     <footer>
       <div className='footer-container'>
@@ -25,16 +28,31 @@ const Footer = () => {
             </div>
             <div>
               <ul>
-                <Link to='./catalogue'>
+                <Link to='./products'>
                   <li>Magasiner tout</li>
                 </Link>
-                <Link to='./catalogue?#!category=plantes'>
+                <Link
+                  to='/products#!/products?category=plantes'
+                  onClick={() => {
+                    updateSearchParams({ category: 'plantes' })
+                  }}
+                >
                   <li>Plantes</li>
                 </Link>
-                <Link to='./catalogue?#!category=cactus'>
+                <Link
+                  to='/products#!/products?category=cactus'
+                  onClick={() => {
+                    updateSearchParams({ category: 'cactus' })
+                  }}
+                >
                   <li>Cactus</li>
                 </Link>
-                <Link to='./catalogue?#!category=fleurs'>
+                <Link
+                  to='/products#!/products?category=fleurs'
+                  onClick={() => {
+                    updateSearchParams({ category: 'fleurs' })
+                  }}
+                >
                   <li>Fleurs séchées</li>
                 </Link>
               </ul>
@@ -49,7 +67,7 @@ const Footer = () => {
                 <Link to='/about'>
                   <li>Notre histoire</li>
                 </Link>
-                <Link to='#'>
+                <Link to='/about'>
                   <li>Nos valeurs</li>
                 </Link>
               </ul>
@@ -79,14 +97,6 @@ const Footer = () => {
             <p className='footer-p'>
               Ceci est un faux site d'e-commerce pour un projet en développement
               web.
-            </p>
-          </div>
-          <div>
-            <p className='footer-p'>
-              Design original du site{' '}
-              <Link to='https://www.twigspaper.com/' target='_blank'>
-                Twigs Paper
-              </Link>
             </p>
           </div>
         </div>

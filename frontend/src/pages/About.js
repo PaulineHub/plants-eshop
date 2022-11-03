@@ -2,8 +2,12 @@ import { Link } from 'react-router-dom'
 import mainsImg from '../assets/images/img-about/about-mains.jpg'
 import terreImg from '../assets/images/img-about/terre.jpg'
 import Hero from '../components/Hero'
+import React, { useState, useEffect } from 'react'
+import Fade from 'react-reveal/Fade'
 
 const About = () => {
+    const [changeHeight, setChangeHeight] = useState(false)
+
   return (
     <>
       <div className='nav-hider'></div>
@@ -17,9 +21,16 @@ const About = () => {
           <div className='about-img-ctn--1'>
             <img src={mainsImg} alt='mains tenant une plante' />
           </div>
-          <div className='about-img-ctn--2'>
-            <img src={terreImg} alt='' />
-          </div>
+          <Fade bottom>
+            <div
+              className={`about-img-ctn--2  ${
+                changeHeight ? 'change-height' : ''
+              }`}
+            >
+              <img src={terreImg} alt='plantes' />
+            </div>
+
+          </Fade>
         </div>
 
         <section className='about-section'>

@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 
 const Hero = (props) => {
   const { title, subtitle, imageClass } = props
-  const [growWidth, setgrowWidth] = useState(false)
+  const [growWidth, setGrowWidth] = useState(false)
 
   useEffect(() => {
-    setgrowWidth(true);
+    setGrowWidth(true);
   }, [])
 
   return (

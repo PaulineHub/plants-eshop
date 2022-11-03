@@ -297,8 +297,8 @@ nav {
   padding-bottom: 3.5em;
   border-bottom: 1px solid rgba(66, 73, 40, 0.5); }
 
-.width-70 {
-  width: 70%; }
+.width-text {
+  max-width: 350px; }
 
 .feature-paragraph {
   font-size: 1.25em; }

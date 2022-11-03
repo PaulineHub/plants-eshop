@@ -16,9 +16,9 @@ const Hero = (props) => {
             growWidth ? 'grow-width' : ''
           }`}
         >
-          <div className='hero-split-content no-margin-bottom'>
+          <div className='hero-split-content no-margin-bottom width-text'>
             <h1>{title}</h1>
-            <p className='feature-paragraph width-70'>{subtitle}</p>
+            <p className='feature-paragraph'>{subtitle}</p>
           </div>
         </div>
         <div className={`hero-split-right-column `}>

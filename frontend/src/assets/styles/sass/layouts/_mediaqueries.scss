@@ -111,8 +111,6 @@
     /* CONTAINER */
 
     .container {
-        // padding-right: 0;
-        // padding-left: 0;
         padding-right: 20px;
         padding-left: 20px;
     }
@@ -433,6 +431,17 @@
 
     .product-slider-wrapper {
         width: 50vw;
+    }
+
+    /* ERROR PAGE */
+
+    .error-background {
+        h1 {
+            font-size: 12em;
+        }
+        h4 {
+            font-size: 2em;
+        }
     }
 }
 
@@ -824,6 +833,18 @@
         top: 80px;
         left: 186px;
         width: 145px;
+    }
+
+    /* ERROR PAGE */
+
+    .error-background {
+        h1 {
+            font-size: 9em;
+        }
+
+        h4 {
+            font-size: 1.8em;
+        }
     }
 }
 

@@ -1047,6 +1047,24 @@ ul label:nth-child(2) {
 .change-height {
   transform: translate3d(0px, -20%, 0px); }
 
+.error-background {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/leaves.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .error-background h1 {
+    color: white;
+    font-size: 16em;
+    text-align: center; }
+  .error-background h4 {
+    color: white;
+    font-size: 2em;
+    text-align: center; }
+
 @media screen and (max-width: 1299px) {
   /* WELCOME PAGE */
   .concept-image-container--1 {
@@ -1330,7 +1348,13 @@ ul label:nth-child(2) {
     margin-bottom: 20px; } }
 @media screen and (max-width: 700px) {
   .product-slider-wrapper {
-    width: 50vw; } }
+    width: 50vw; }
+
+  /* ERROR PAGE */
+  .error-background h1 {
+    font-size: 12em; }
+  .error-background h4 {
+    font-size: 2em; } }
 @media screen and (max-width: 650px) {
   /* CATALOGUE */
   .filter-section {
@@ -1610,7 +1634,13 @@ ul label:nth-child(2) {
   .about-img-ctn--2 {
     top: 80px;
     left: 186px;
-    width: 145px; } }
+    width: 145px; }
+
+  /* ERROR PAGE */
+  .error-background h1 {
+    font-size: 9em; }
+  .error-background h4 {
+    font-size: 1.8em; } }
 @media screen and (max-width: 370px) {
   /* ABOUT PAGE */
   .about-img-ctn--2 {

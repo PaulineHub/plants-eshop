@@ -5,15 +5,17 @@
 .main-hero-section {
   position: relative;
   height: 110vh;
+  // overflow: hidden;
   .hero-bcg-wrapper {
     position: absolute;
     background: url('../images/img-accueil/boutique-plantes.jpg') no-repeat;
     background-size: cover;
-    overflow: hidden;
     height: 110vh;
     left: 0;
     right: 0;
     top: 0;
+    bottom: 0;
+    transform: scale3d(1, 1, 1);
   }
   .titleContent {
     position: absolute;
@@ -25,6 +27,8 @@
     color: $beige-clair;
   }
 }
+
+
 
 //***REVIEW-RUBAN***//
 

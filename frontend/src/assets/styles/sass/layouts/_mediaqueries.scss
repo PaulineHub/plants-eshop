@@ -1,3 +1,12 @@
+@media screen and (max-width: 1500px) {
+    
+    /* CATALOGUE PAGE */
+
+    .products-list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
 @media screen and (max-width: 1299px){
 
     /* WELCOME PAGE */
@@ -27,6 +36,7 @@
     .about-section {
         padding-left: 100px;
     }
+
 }
 
 @media screen and (max-width: 1260px){

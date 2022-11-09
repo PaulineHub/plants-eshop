@@ -216,7 +216,12 @@ input[type=number] {
 .accordion-ul {
     list-style-type: circle;
     padding-left: 2em;
-    padding-bottom: 1em;
+    padding-bottom: 2em;
+    li {
+        margin-bottom: 10px;
+        font-size: 1.2em;
+        color: rgba(33, 40, 6, 0.8)
+    }
 }
 
 .more {
@@ -228,5 +233,5 @@ input[type=number] {
 }
 
 .show-height {
-    height: 90px !important;
+    height: 140px !important;
 }

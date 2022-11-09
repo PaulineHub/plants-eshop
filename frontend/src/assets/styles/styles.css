@@ -906,7 +906,11 @@ input[type=number] {
 .accordion-ul {
   list-style-type: circle;
   padding-left: 2em;
-  padding-bottom: 1em; }
+  padding-bottom: 2em; }
+  .accordion-ul li {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: rgba(33, 40, 6, 0.8); }
 
 .more {
   display: none; }
@@ -915,7 +919,7 @@ input[type=number] {
   display: block !important; }
 
 .show-height {
-  height: 90px !important; }
+  height: 140px !important; }
 
 /* FILTER SECTION */
 .filter-section {

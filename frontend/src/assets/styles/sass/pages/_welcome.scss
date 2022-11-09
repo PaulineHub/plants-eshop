@@ -19,8 +19,8 @@
   }
   .titleContent {
     position: absolute;
-    width: 790px;
-    top: 41%;
+    width: 1000px;
+    top: 38%;
     padding-left: 60px;
   }
   .main-hero-title {
@@ -81,8 +81,8 @@
 
 .concept-image-container {
   position: absolute;
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   &:hover {
     animation: img-zoom 1000ms forwards;

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import CercleFemmeImg from '../assets/images/img-accueil/cercle-femme.jpg'
 import CercleHomeImg from '../assets/images/img-accueil/cercle-home-jungle.jpg'
 import CerclePlantImg from '../assets/images/img-accueil/cercle-plante.jpg'
+import { motion } from 'framer-motion'
 
 const ConceptSection = () => {
   return (

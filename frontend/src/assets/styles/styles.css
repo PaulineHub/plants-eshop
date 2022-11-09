@@ -12,7 +12,7 @@ body {
   font-family: 'Open Sans', sans-serif; }
 
 h1 {
-  font-size: 4em;
+  font-size: 5em;
   color: #212806;
   font-family: 'Playfair Display', serif;
   margin-bottom: 50px; }
@@ -440,8 +440,8 @@ footer {
     transform: scale3d(1, 1, 1); }
   .main-hero-section .titleContent {
     position: absolute;
-    width: 790px;
-    top: 41%;
+    width: 1000px;
+    top: 38%;
     padding-left: 60px; }
   .main-hero-section .main-hero-title {
     color: #fcf8f3; }
@@ -485,8 +485,8 @@ footer {
 
 .concept-image-container {
   position: absolute;
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%; }
   .concept-image-container:hover {
     animation: img-zoom 1000ms forwards; }
@@ -1071,6 +1071,18 @@ ul label:nth-child(2) {
     text-align: center; }
 
 @media screen and (max-width: 1500px) {
+  /* WELCOME PAGE */
+  h1 {
+    font-size: 4.5em; }
+
+  .main-hero-section .titleContent {
+    width: 800px;
+    top: 38%; }
+
+  .concept-image-container {
+    height: 160px;
+    width: 160px; }
+
   /* CATALOGUE PAGE */
   .products-list {
     grid-template-columns: 1fr 1fr 1fr; } }
@@ -1120,7 +1132,7 @@ ul label:nth-child(2) {
     font-size: 16px; }
 
   h1 {
-    font-size: 3.5em; }
+    font-size: 3.8em; }
 
   h2 {
     font-size: 2.5em; }
@@ -1229,7 +1241,7 @@ ul label:nth-child(2) {
 
   /* WELCOME PAGE */
   .main-hero-section .titleContent {
-    width: 500px; }
+    width: 600px; }
 
   .btn--product-slider {
     margin-top: 2em; }

@@ -1,4 +1,19 @@
 @media screen and (max-width: 1500px) {
+
+    /* WELCOME PAGE */
+    h1 {
+        font-size: 4.5em;
+    }
+
+    .main-hero-section .titleContent {
+        width: 800px;
+        top: 38%;
+    }
+
+    .concept-image-container {
+        height: 160px;
+        width: 160px;
+    }
     
     /* CATALOGUE PAGE */
 
@@ -89,7 +104,7 @@
     }
 
     h1 {
-        font-size: 3.5em;
+        font-size: 3.8em;
     }
 
     h2 {
@@ -241,7 +256,7 @@
 
     .main-hero-section {
         .titleContent {
-            width: 500px;
+            width: 600px;
         }
     }
 

@@ -12,7 +12,6 @@ https://la-maison-jungle.onrender.com
 ## Technologies
 - Front-end : Sass, Javascript, Axios, React 
 - Back-end : Node.js, Express, Mongo DB
-- test
 
 
 
